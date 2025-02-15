@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "endupdate:abyssal_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "endupdate:abyssal_planks"
+  }
+}

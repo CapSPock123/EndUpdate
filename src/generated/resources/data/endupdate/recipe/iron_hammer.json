@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "EEE",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "count": 1,
+    "id": "endupdate:iron_hammer"
+  }
+}

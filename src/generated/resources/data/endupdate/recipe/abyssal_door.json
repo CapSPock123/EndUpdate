@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "abyssal",
+  "key": {
+    "#": {
+      "item": "endupdate:abyssal_planks"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "id": "endupdate:abyssal_door"
+  }
+}

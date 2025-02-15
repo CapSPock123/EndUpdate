@@ -1,0 +1,16 @@
+// 1.21.1	2025-02-15T14:34:42.683179	Tags for minecraft:item mod id endupdate
+088949920f53f09f00aaffff12bd83f035e557fb data/endupdate/tags/item/transformable_items.json
+741e68ca3f9bd157ba3310b71864b3cf2ece4361 data/minecraft/tags/item/fence_gates.json
+abecec6b69e0f47ed40849c5b5e9209b866d43f5 data/minecraft/tags/item/logs_that_burn.json
+93306d682e719b3133cfc3a639b965b10ee120dc data/minecraft/tags/item/planks.json
+d58dc30a34578b703a0155a7546d6ff3eece0a60 data/minecraft/tags/item/saplings.json
+32a438704d2649f7cab90c45d63c989319a5f7ff data/minecraft/tags/item/trim_materials.json
+0f8b756283e6f016c3ebe41b233f454d205e8be2 data/minecraft/tags/item/trim_templates.json
+e9c1a12f47e9f31cd9c6afd9c9476146af7b090d data/minecraft/tags/item/trimmable_armor.json
+6c922f1707cf85e55c76c2b5fd69311ad587ffd6 data/minecraft/tags/item/wooden_buttons.json
+c386a46291495a2e206cc760af12232d78bf9853 data/minecraft/tags/item/wooden_doors.json
+7cbf39856758f0f3d4c0045b62e212b8b8c2eaf8 data/minecraft/tags/item/wooden_fences.json
+61f06fd7405527ee7fc1fdd368d72ae39dfb7481 data/minecraft/tags/item/wooden_pressure_plates.json
+820a2c0f45594d4b3b268119929d9aac953264f4 data/minecraft/tags/item/wooden_slabs.json
+2422e7a73321710d6123f71077a992d5def2fd61 data/minecraft/tags/item/wooden_stairs.json
+5c5ba10730a684b8afb886efc5b559f3c1669013 data/minecraft/tags/item/wooden_trapdoors.json

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "endupdate:block/abyssal_log_top",
+    "side": "endupdate:block/abyssal_log"
+  }
+}

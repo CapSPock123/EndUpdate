@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "endupdate:block/abyssal_slab"
+    },
+    "type=double": {
+      "model": "endupdate:block/abyssal_planks"
+    },
+    "type=top": {
+      "model": "endupdate:block/abyssal_slab_top"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "minecraft:shulker_shell"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "SES",
+    "OSO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "endupdate:shulker_plate"
+  }
+}

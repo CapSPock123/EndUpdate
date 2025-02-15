@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "endupdate:endersteel_ingot"
+    },
+    "A": {
+      "item": "endupdate:aurora_powder"
+    },
+    "O": {
+      "item": "endupdate:shulker_plate"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " #S",
+    "OAS",
+    " #S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "endupdate:ender_bow"
+  }
+}

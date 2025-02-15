@@ -1,0 +1,8 @@
+{
+  "asset_id": "endupdate:shulker",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.endupdate.shulker"
+  },
+  "template_item": "endupdate:shulker_smithing_template"
+}

@@ -1,0 +1,18 @@
+// 1.21.1	2025-02-15T16:08:53.137458	Tags for minecraft:block mod id endupdate
+edc541eb9e5046b17bfdaa3c4ee85ab6c910eeb2 data/endupdate/tags/block/incorrect_for_endersteel_tool.json
+a249c46329a41538f49a564e1f14338aaf1be5a0 data/endupdate/tags/block/needs_endersteel_tool.json
+49e207c019347c1c4e78fd58884b22ca6a9ed17a data/minecraft/tags/block/fence_gates.json
+7cbf39856758f0f3d4c0045b62e212b8b8c2eaf8 data/minecraft/tags/block/fences.json
+abecec6b69e0f47ed40849c5b5e9209b866d43f5 data/minecraft/tags/block/logs_that_burn.json
+93306d682e719b3133cfc3a639b965b10ee120dc data/minecraft/tags/block/mineable/axe.json
+fb2b0e5b541c2fd6c4379cfe79d05e9242ca5e2e data/minecraft/tags/block/mineable/pickaxe.json
+acb6b362fbac29dff7043e9e430bb2394c362e5c data/minecraft/tags/block/needs_diamond_tool.json
+0f1b369cbfdf1ef7d57b1e4d0a4123a37419cde7 data/minecraft/tags/block/needs_iron_tool.json
+d58dc30a34578b703a0155a7546d6ff3eece0a60 data/minecraft/tags/block/saplings.json
+6c922f1707cf85e55c76c2b5fd69311ad587ffd6 data/minecraft/tags/block/wooden_buttons.json
+c386a46291495a2e206cc760af12232d78bf9853 data/minecraft/tags/block/wooden_doors.json
+7cbf39856758f0f3d4c0045b62e212b8b8c2eaf8 data/minecraft/tags/block/wooden_fences.json
+61f06fd7405527ee7fc1fdd368d72ae39dfb7481 data/minecraft/tags/block/wooden_pressure_plates.json
+820a2c0f45594d4b3b268119929d9aac953264f4 data/minecraft/tags/block/wooden_slabs.json
+2422e7a73321710d6123f71077a992d5def2fd61 data/minecraft/tags/block/wooden_stairs.json
+5c5ba10730a684b8afb886efc5b559f3c1669013 data/minecraft/tags/block/wooden_trapdoors.json

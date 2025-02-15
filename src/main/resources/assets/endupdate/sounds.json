@@ -1,0 +1,38 @@
+{
+  "aurora_powder_use": {
+    "subtitle": "sounds.endupdate.aurora_powder_use",
+    "sounds": [
+      "endupdate:aurora_powder_use"
+    ]
+  },
+  "magic_block_break": {
+    "subtitle": "sounds.endupdate.magic_block_break",
+    "sounds": [
+      "endupdate:magic_block_break"
+    ]
+  },
+  "magic_block_step": {
+    "subtitle": "sounds.endupdate.magic_block_step",
+    "sounds": [
+      "endupdate:magic_block_step"
+    ]
+  },
+  "magic_block_place": {
+    "subtitle": "sounds.endupdate.magic_block_place",
+    "sounds": [
+      "endupdate:magic_block_place"
+    ]
+  },
+  "magic_block_hit": {
+    "subtitle": "sounds.endupdate.magic_block_hit",
+    "sounds": [
+      "endupdate:magic_block_hit"
+    ]
+  },
+  "magic_block_fall": {
+    "subtitle": "sounds.endupdate.magic_block_fall",
+    "sounds": [
+      "endupdate:magic_block_fall"
+    ]
+  }
+}

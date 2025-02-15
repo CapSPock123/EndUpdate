@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "endupdate:block/abyssal_moss_bottom",
+    "side": "endupdate:block/abyssal_moss_side",
+    "top": "endupdate:block/abyssal_moss_top"
+  }
+}

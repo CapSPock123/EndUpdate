@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#endupdate:needs_endersteel_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_netherite_tool"
+  ]
+}

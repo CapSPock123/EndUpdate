@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 3.0,
+  "group": "endersteel",
+  "ingredient": {
+    "item": "endupdate:raw_endersteel"
+  },
+  "result": {
+    "id": "endupdate:endersteel"
+  }
+}

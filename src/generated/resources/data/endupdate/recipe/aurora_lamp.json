@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "S": {
+      "item": "endupdate:aurora_ashes"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SBS",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "endupdate:aurora_lamp"
+  }
+}

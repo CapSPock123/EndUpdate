@@ -1,0 +1,111 @@
+{
+  "item.endupdate.shulker_plate": "Shulker Plate",
+  "item.endupdate.endersteel_ingot": "Endersteel Ingot",
+  "item.endupdate.endersteel": "Endersteel",
+  "item.endupdate.raw_endersteel": "Raw Endersteel",
+
+  "item.endupdate.aurora_ashes": "Aurora Ashes",
+
+
+  "item.endupdate.shulker_smithing_template": "Shulker Smithing Template",
+
+
+  "item.endupdate.endersteel_sword": "Endersteel Sword",
+  "item.endupdate.endersteel_pickaxe": "Endersteel Pickaxe",
+  "item.endupdate.endersteel_shovel": "Endersteel Shovel",
+  "item.endupdate.endersteel_axe": "Endersteel Axe",
+  "item.endupdate.endersteel_hoe": "Endersteel Hoe",
+  "item.endupdate.endersteel_hammer": "Endersteel Hammer",
+
+  "item.endupdate.ender_bow": "Ender Bow",
+
+  "item.endupdate.iron_hammer": "Iron Hammer",
+  "item.endupdate.diamond_hammer": "Diamond Hammer",
+  "item.endupdate.netherite_hammer": "Netherite Hammer",
+
+
+  "item.endupdate.shulker_helmet": "Shulker Helmet",
+  "item.endupdate.shulker_chestplate": "Shulker Chestplate",
+  "item.endupdate.shulker_leggings": "Shulker Leggings",
+  "item.endupdate.shulker_boots": "Shulker Boots",
+
+  "item.endupdate.shulker_plated_netherite_helmet": "Shulker-plated Netherite Helmet",
+  "item.endupdate.shulker_plated_netherite_chestplate": "Shulker-plated Netherite Chestplate",
+  "item.endupdate.shulker_plated_netherite_leggings": "Shulker-plated Netherite Leggings",
+  "item.endupdate.shulker_plated_netherite_boots": "Shulker-plated Netherite Boots",
+
+
+
+  "block.endupdate.endersteel_block": "Block of Endersteel",
+  "block.endupdate.endersteel_ore": "Endersteel Ore",
+  "block.endupdate.aurora_lamp": "Aurora Lamp",
+
+
+  "block.endupdate.abyssal_log": "Abyssal Log",
+  "block.endupdate.abyssal_wood": "Abyssal Wood",
+  "block.endupdate.stripped_abyssal_log": "Stripped Abyssal Log",
+  "block.endupdate.stripped_abyssal_wood": "Stripped Abyssal Wood",
+
+  "block.endupdate.abyssal_leaves": "Abyssal Leaves",
+
+  "block.endupdate.abyssal_sapling": "Abyssal Sapling",
+
+  "block.endupdate.abyssal_planks": "Abyssal Planks",
+
+  "block.endupdate.abyssal_moss": "Abyssal Moss",
+
+  "block.endupdate.abyssal_stairs": "Abyssal Stairs",
+  "block.endupdate.abyssal_slab": "Abyssal Slab",
+  "block.endupdate.abyssal_button": "Abyssal Button",
+  "block.endupdate.abyssal_pressure_plate": "Abyssal Pressure Plate",
+  "block.endupdate.abyssal_fence": "Abyssal Fence",
+  "block.endupdate.abyssal_fence_gate": "Abyssal Fence Gate",
+  "block.endupdate.abyssal_door": "Abyssal Door",
+  "block.endupdate.abyssal_trapdoor": "Abyssal Trapdoor",
+
+
+  "item.endupdate.aurora_powder": "Aurora Powder",
+  "block.endupdate.magic_block": "Magic Block",
+
+
+
+  "creativetab.endupdate.end_update_items": "End Update Items",
+  "creativetab.endupdate.end_update_blocks": "End Update Blocks",
+  "creativetab.endupdate.end_update_equipment": "End Update Equipment",
+
+
+
+  "tooltip.endupdate.aurora_powder.tooltip": "Press §eSHIFT§r for more info",
+  "tooltip.endupdate.aurora_powder.shift_down.tooltip": "§7§oThis powder has a magnificent shine, like that of a §a§l§oBlock of Emerald",
+
+  "tooltip.endupdate.magic_block.tooltip": "§oThis block warrants an",
+  "tooltip.endupdate.magic_block.tooltip2": "§b§oelectric, §d§omystical §r§ofeeling",
+
+  "tooltip.endupdate.aurora_ashes.tooltip": "§7§oThe blazing hot residue of an End Aurora",
+  "tooltip.endupdate.aurora_lamp.tooltip": "§7§oThe light of this lamp burns §lforever",
+
+
+
+  "trim_pattern.endupdate.shulker": "Shulker Armor Trim",
+  "trim_material.endupdate.endersteel": "Endersteel Material",
+
+
+
+  "effect.endupdate.void": "Void",
+
+  "item.minecraft.potion.effect.void_potion": "Potion of Void",
+  "item.minecraft.splash_potion.effect.void_potion": "Splash Potion of Void",
+  "item.minecraft.lingering_potion.effect.void_potion": "Lingering Potion of Void",
+
+  "item.minecraft.potion.effect.long_void_potion": "Potion of Void",
+  "item.minecraft.splash_potion.effect.long_void_potion": "Splash Potion of Void",
+  "item.minecraft.lingering_potion.effect.long_void_potion": "Lingering Potion of Void",
+
+  "item.minecraft.tipped_arrow.effect.void_potion": "Arrow of Void",
+  "item.minecraft.tipped_arrow.effect.long_void_potion": "Arrow of Void",
+
+
+
+  "enchantment.endupdate.levitation": "Levitation",
+  "enchantment.endupdate.void_strike": "Void Strike"
+}

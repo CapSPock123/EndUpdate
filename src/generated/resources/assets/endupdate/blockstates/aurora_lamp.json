@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "endupdate:block/aurora_lamp_off"
+    },
+    "clicked=true": {
+      "model": "endupdate:block/aurora_lamp_on"
+    }
+  }
+}
