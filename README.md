@@ -4,7 +4,7 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
-endupdate-1.21.1-0.6.0
+endupdate-1.21.1-0.6.0 <br/>
 -Balancing: Void effect damage increased by 4x (+)
 -Balancing: Void effect damage tick rate halved (-)
 -Balancing: Increased Magic Block Blast Resistance (0 -> 1200) (+)
