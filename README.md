@@ -4,6 +4,11 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.1 <br/>
+-Bug Fix: Magic Block Loot Table error <br/>
+-ENTITY Ender Slime added <br/>
+-ITEM Ender Slime Spawn Egg added <br/>
+
 endupdate-1.21.1-0.6.0 <br/>
 -Balancing: Void effect damage increased by 4x (+) <br/>
 -Balancing: Void effect damage tick rate halved (-) <br/>
