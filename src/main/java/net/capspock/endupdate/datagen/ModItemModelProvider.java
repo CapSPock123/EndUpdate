@@ -77,6 +77,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceItem(ModBlocks.ABYSSAL_FENCE, ModBlocks.ABYSSAL_PLANKS);
 
         simpleBlockItem(ModBlocks.ABYSSAL_DOOR);
+
+        withExistingParent(ModItems.ENDER_SLIME_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> baseBlock) {

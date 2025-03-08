@@ -27,6 +27,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AURORA_POWDER.get());
 
                         output.accept(ModItems.SHULKER_SMITHING_TEMPLATE.get());
+
+                        output.accept(ModItems.ENDER_SLIME_SPAWN_EGG.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("end_update_blocks_tab",

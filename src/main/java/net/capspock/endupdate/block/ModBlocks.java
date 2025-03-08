@@ -38,7 +38,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
-                    .strength(15f).explosionResistance(1200f).sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
+                    .strength(15f).explosionResistance(1200f).sound(ModSounds.MAGIC_BLOCK_SOUNDS).noLootTable()));
 
     public static final RegistryObject<Block> AURORA_LAMP = registerBlock("aurora_lamp",
             () -> new AuroraLampBlock(BlockBehaviour.Properties.of().strength(9f).explosionResistance(6f)

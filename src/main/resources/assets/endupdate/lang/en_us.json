@@ -65,6 +65,7 @@
 
 
   "item.endupdate.aurora_powder": "Aurora Powder",
+  "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
   "block.endupdate.magic_block": "Magic Block",
 
 
@@ -107,5 +108,7 @@
 
 
   "enchantment.endupdate.levitation": "Levitation",
-  "enchantment.endupdate.void_strike": "Void Strike"
+  "enchantment.endupdate.void_strike": "Void Strike",
+
+  "entity.endupdate.ender_slime": "Ender Slime"
 }

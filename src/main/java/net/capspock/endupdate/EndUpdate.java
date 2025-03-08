@@ -5,12 +5,15 @@ import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.component.ModDataComponentTypes;
 import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.enchantment.ModEnchantmentEffects;
+import net.capspock.endupdate.entity.ModEntities;
+import net.capspock.endupdate.entity.client.EnderSlimeRenderer;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.potion.ModPotions;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.capspock.endupdate.worldgen.tree.custom.ModTrunkPlacerTypes;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,7 +47,9 @@ public class EndUpdate {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModSounds.register(modEventBus);
+
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
@@ -52,6 +57,8 @@ public class EndUpdate {
         ModDataComponentTypes.register(modEventBus);
 
         ModTrunkPlacerTypes.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -84,6 +91,8 @@ public class EndUpdate {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
+
+            EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
         }
     }
 }
