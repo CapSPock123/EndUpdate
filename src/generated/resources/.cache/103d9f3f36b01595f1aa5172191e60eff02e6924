@@ -1,7 +1,8 @@
-// 1.21.1	2025-02-12T22:53:07.87984	Registries
+// 1.21.1	2025-03-09T20:49:43.36314	Registries
 c93323b1266aa5e5e2bfc10c4abf17fb74cf2c33 data/endupdate/enchantment/levitation.json
 737b5f7107a377502c1bc38d4a8b946e87150dee data/endupdate/enchantment/void_strike.json
 cd4f5e9fb43243ef7d7260c45390c525cc57867a data/endupdate/forge/biome_modifier/add_endersteel_ore.json
+665e18ac8fca62ff995b5d475ab175a8f17a374f data/endupdate/forge/biome_modifier/spawn_ender_slime.json
 3141fca67293f9fd9842c1ff292702706675cf06 data/endupdate/trim_material/endersteel.json
 2d4771b9ac91eebc5fbf89d1381fbe6281d93ba7 data/endupdate/trim_pattern/shulker.json
 479ca03fd194e055fcea5b0a033c8b244f65316d data/endupdate/worldgen/configured_feature/abyssal.json

@@ -4,6 +4,9 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.3 <br/>
+-SPAWNING Ender Slime spawning added <br/>
+
 endupdate-1.21.1-0.6.2 <br/>
 -ITEM Ender Slimeball added <br/>
 -LOOT TABLE Ender Slimeball drop from Ender Slime added <br/>
