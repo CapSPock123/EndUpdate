@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDERSTEEL.get());
                         output.accept(ModItems.RAW_ENDERSTEEL.get());
                         output.accept(ModItems.SHULKER_PLATE.get());
+                        output.accept(ModItems.ENDER_SLIMEBALL.get());
 
                         output.accept(ModItems.AURORA_ASHES.get());
                         output.accept(ModItems.AURORA_POWDER.get());

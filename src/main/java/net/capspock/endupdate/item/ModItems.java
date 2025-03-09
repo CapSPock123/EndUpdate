@@ -30,6 +30,9 @@ public class ModItems {
     public static final RegistryObject<Item> SHULKER_PLATE = ITEMS.register("shulker_plate",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> AURORA_ASHES = ITEMS.register("aurora_ashes",
             () -> new FuelItem(new Item.Properties(), 25600) {
                 @Override

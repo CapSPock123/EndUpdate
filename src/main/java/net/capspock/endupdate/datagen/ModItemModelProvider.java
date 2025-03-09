@@ -46,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ENDERSTEEL_INGOT.get());
         basicItem(ModItems.RAW_ENDERSTEEL.get());
         basicItem(ModItems.SHULKER_PLATE.get());
+        basicItem(ModItems.ENDER_SLIMEBALL.get());
         basicItem(ModItems.AURORA_ASHES.get());
         basicItem(ModItems.AURORA_POWDER.get());
         basicItem(ModItems.SHULKER_SMITHING_TEMPLATE.get());
