@@ -2,25 +2,29 @@ package net.capspock.endupdate.entity.custom;
 
 import net.capspock.endupdate.util.ModTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.BiomeTags;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.Slime;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 
 public class EnderSlimeEntity extends Slime {
     public EnderSlimeEntity(EntityType<? extends Slime> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    protected ParticleOptions getParticleType() {
+        return ParticleTypes.REVERSE_PORTAL;
     }
 
     public static AttributeSupplier.Builder createAttributes() {

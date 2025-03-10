@@ -25,7 +25,6 @@ public class ModBiomeTagProvider extends BiomeTagsProvider {
                 .add(Biomes.END_BARRENS)
                 .add(Biomes.END_HIGHLANDS)
                 .add(Biomes.END_MIDLANDS)
-                .add(Biomes.SMALL_END_ISLANDS)
-                .add(Biomes.THE_END);
+                .add(Biomes.SMALL_END_ISLANDS);
     }
 }

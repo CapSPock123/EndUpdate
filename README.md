@@ -4,6 +4,11 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.4 <br/>
+-Balancing: Removed Ender Slime Spawning from main End island <br/>
+-Tweaked Ender Slime Entity Texture <br/>
+-Bug Fix: Ender Slime Particles: Default Slime Particles -> Portal Particles <br/>
+
 endupdate-1.21.1-0.6.3 <br/>
 -SPAWNING Ender Slime spawning added <br/>
 
