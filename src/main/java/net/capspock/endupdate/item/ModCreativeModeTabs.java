@@ -61,6 +61,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ABYSSAL_FENCE_GATE.get());
                         output.accept(ModBlocks.ABYSSAL_DOOR.get());
                         output.accept(ModBlocks.ABYSSAL_TRAPDOOR.get());
+
+                        output.accept(ModBlocks.ENDER_SLIME_BLOCK.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_EQUIPMENT_TAB = CREATIVE_MODE_TABS.register("end_update_equipment_tab",

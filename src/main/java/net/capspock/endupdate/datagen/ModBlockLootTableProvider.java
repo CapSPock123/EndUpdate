@@ -29,6 +29,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.ENDERSTEEL_BLOCK.get());
         dropSelf(ModBlocks.AURORA_LAMP.get());
+        dropSelf(ModBlocks.ENDER_SLIME_BLOCK.get());
+
         dropSelf(ModBlocks.ABYSSAL_MOSS.get());
         dropSelf(ModBlocks.ABYSSAL_STAIRS.get());
         dropSelf(ModBlocks.ABYSSAL_PRESSURE_PLATE.get());

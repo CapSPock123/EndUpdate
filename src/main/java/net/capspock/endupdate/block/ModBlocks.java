@@ -1,10 +1,7 @@
 package net.capspock.endupdate.block;
 
 import net.capspock.endupdate.EndUpdate;
-import net.capspock.endupdate.block.custom.AuroraLampBlock;
-import net.capspock.endupdate.block.custom.MagicBlock;
-import net.capspock.endupdate.block.custom.ModFlammableRotatedPillarBlock;
-import net.capspock.endupdate.block.custom.ModSaplingBlock;
+import net.capspock.endupdate.block.custom.*;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.worldgen.tree.ModTreeGrowers;
@@ -244,6 +241,10 @@ public class ModBlocks {
                     return 5;
                 }
             });
+
+    public static final RegistryObject<Block> ENDER_SLIME_BLOCK = registerBlock("ender_slime_block",
+            () -> new EnderSlimeBlock(BlockBehaviour.Properties.of()
+                    .strength(0f).sound(SoundType.SLIME_BLOCK).explosionResistance(0f).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T>  registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

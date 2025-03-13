@@ -13,7 +13,6 @@ import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
-import net.minecraftforge.common.world.MobSpawnSettingsBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
@@ -34,7 +33,7 @@ public class ModBiomeModifiers {
 
         context.register(SPAWN_ENDER_SLIME, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.END_BARRENS), biomes.getOrThrow(Biomes.END_HIGHLANDS), biomes.getOrThrow(Biomes.END_MIDLANDS),
-                        biomes.getOrThrow(Biomes.THE_END), biomes.getOrThrow(Biomes.SMALL_END_ISLANDS)), List.of(new MobSpawnSettings.SpawnerData(ModEntities.ENDER_SLIME.get(), 20, 3, 5))));
+                        biomes.getOrThrow(Biomes.THE_END), biomes.getOrThrow(Biomes.SMALL_END_ISLANDS)), List.of(new MobSpawnSettings.SpawnerData(ModEntities.ENDER_SLIME.get(), 15, 2, 5))));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

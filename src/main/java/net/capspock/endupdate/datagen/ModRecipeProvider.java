@@ -183,6 +183,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ModBlocks.STRIPPED_ABYSSAL_LOG.get())
                 .unlockedBy(getHasName(ModBlocks.STRIPPED_ABYSSAL_LOG.get()), has(ModBlocks.STRIPPED_ABYSSAL_LOG.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENDER_SLIME_BLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.ENDER_SLIMEBALL.get())
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pRecipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.AURORA_POWDER.get())
                 .requires(ModItems.AURORA_ASHES.get())
@@ -212,6 +218,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ABYSSAL_PLANKS.get(), 4)
                 .requires(ModBlocks.ABYSSAL_WOOD.get())
                 .unlockedBy(getHasName(ModBlocks.ABYSSAL_WOOD.get()), has(ModBlocks.ABYSSAL_WOOD.get())).save(pRecipeOutput, EndUpdate.MOD_ID + ":abyssal_planks_from_wood");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDER_SLIMEBALL.get(), 9)
+                .requires(ModBlocks.ENDER_SLIME_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pRecipeOutput);
 
         oreSmelting(pRecipeOutput, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL.get(), 3f, 200, "endersteel");
         oreBlasting(pRecipeOutput, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL.get(), 3f, 100, "endersteel");

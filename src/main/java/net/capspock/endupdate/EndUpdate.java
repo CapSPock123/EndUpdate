@@ -2,6 +2,7 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
+import net.capspock.endupdate.block.custom.EnderSlimeBlock;
 import net.capspock.endupdate.component.ModDataComponentTypes;
 import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.enchantment.ModEnchantmentEffects;
@@ -13,6 +14,8 @@ import net.capspock.endupdate.potion.ModPotions;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.capspock.endupdate.worldgen.tree.custom.ModTrunkPlacerTypes;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -93,6 +96,8 @@ public class EndUpdate {
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDER_SLIME_BLOCK.get(), RenderType.translucent());
         }
     }
 }
