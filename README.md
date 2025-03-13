@@ -4,8 +4,13 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.5 <br/>
+-Balancing: Decreased Ender Slime Spawn Rates: 20 -> 15 (-) <br/>
+-Balancing: Decreased Ender Slime Minimum Spawns: 3 -> 2 (-) <br/>
+-ADVANCED BLOCK Ender Slime Block added <br/>
+
 endupdate-1.21.1-0.6.4 <br/>
--Balancing: Removed Ender Slime Spawning from main End island <br/>
+-Balancing: Removed Ender Slime Spawning from main End island (-) <br/>
 -Tweaked Ender Slime Entity Texture <br/>
 -Bug Fix: Ender Slime Particles: Default Slime Particles -> Portal Particles <br/>
 
