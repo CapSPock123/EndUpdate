@@ -29,6 +29,45 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(Items.LAPIS_LAZULI)
                 .add(Items.IRON_BLOCK);
 
+        tag(ItemTags.HEAD_ARMOR)
+                .add(ModItems.SHULKER_HELMET.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_HELMET.get());
+
+        tag(ItemTags.CHEST_ARMOR)
+                .add(ModItems.SHULKER_CHESTPLATE.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get());
+
+        tag(ItemTags.LEG_ARMOR)
+                .add(ModItems.SHULKER_LEGGINGS.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS.get());
+
+        tag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.SHULKER_BOOTS.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get())
+                .add(ModItems.ENDER_SLIME_BOOTS.get());
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.ENDERSTEEL_SWORD.get());
+
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.IRON_HAMMER.get())
+                .add(ModItems.DIAMOND_HAMMER.get())
+                .add(ModItems.NETHERITE_HAMMER.get())
+                .add(ModItems.ENDERSTEEL_HAMMER.get())
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+
+        tag(ItemTags.AXES)
+                .add(ModItems.ENDERSTEEL_AXE.get());
+
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.ENDERSTEEL_SHOVEL.get());
+
+        tag(ItemTags.HOES)
+                .add(ModItems.ENDERSTEEL_HOE.get());
+
+        tag(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.ENDER_BOW.get());
+
         tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.SHULKER_HELMET.get())
                 .add(ModItems.SHULKER_CHESTPLATE.get())

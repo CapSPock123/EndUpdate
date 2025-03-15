@@ -1,9 +1,19 @@
-// 1.21.1	2025-02-15T14:34:42.683179	Tags for minecraft:item mod id endupdate
+// 1.21.1	2025-03-14T16:42:48.223435	Tags for minecraft:item mod id endupdate
 088949920f53f09f00aaffff12bd83f035e557fb data/endupdate/tags/item/transformable_items.json
+133ce4877dcb2ff6f62895a16dca4a37e9f79f50 data/minecraft/tags/item/axes.json
+e404507f44f890a2c3458a8eb1dbbc10861e565f data/minecraft/tags/item/chest_armor.json
+0f642e5ac729c9fe6176afa138bb7223ca7f3e27 data/minecraft/tags/item/enchantable/bow.json
 741e68ca3f9bd157ba3310b71864b3cf2ece4361 data/minecraft/tags/item/fence_gates.json
+d76e60a1786628056ad126b7daec0b915431800c data/minecraft/tags/item/foot_armor.json
+de553c3a8c2a75c80ebcc251e7143b9a54722125 data/minecraft/tags/item/head_armor.json
+93ab2c998e46b7f1171da2cb03f9c14e80616bf2 data/minecraft/tags/item/hoes.json
+6e69dfd6bc75a80ce33c38bf1adbe92429671a96 data/minecraft/tags/item/leg_armor.json
 abecec6b69e0f47ed40849c5b5e9209b866d43f5 data/minecraft/tags/item/logs_that_burn.json
+fc2b966e4625d634798ad01ecffbb7317fbbf1c8 data/minecraft/tags/item/pickaxes.json
 93306d682e719b3133cfc3a639b965b10ee120dc data/minecraft/tags/item/planks.json
 d58dc30a34578b703a0155a7546d6ff3eece0a60 data/minecraft/tags/item/saplings.json
+033a8a05472878ffbc0cc719b0a8187d768dc0e8 data/minecraft/tags/item/shovels.json
+0cb3fdf69b26ca72fc875e21bef9f7c01fc96c47 data/minecraft/tags/item/swords.json
 32a438704d2649f7cab90c45d63c989319a5f7ff data/minecraft/tags/item/trim_materials.json
 0f8b756283e6f016c3ebe41b233f454d205e8be2 data/minecraft/tags/item/trim_templates.json
 e9c1a12f47e9f31cd9c6afd9c9476146af7b090d data/minecraft/tags/item/trimmable_armor.json

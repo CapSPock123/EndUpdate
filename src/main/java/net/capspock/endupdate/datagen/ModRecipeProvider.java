@@ -161,6 +161,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SHULKER_PLATE.get())
                 .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
 
+        /* ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_HELMET.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S', ModItems.SHULKER_PLATE.get())
+                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_CHESTPLATE.get())
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.SHULKER_PLATE.get())
+                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_LEGGINGS.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.SHULKER_PLATE.get())
+                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput); */
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENDER_SLIME_BOOTS.get())
+                .pattern("S S")
+                .pattern("B B")
+                .define('S', ModItems.ENDER_SLIMEBALL.get())
+                .define('B', ModBlocks.ENDER_SLIME_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pRecipeOutput);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDER_BOW.get())
                 .pattern(" #S")
                 .pattern("OAS")
