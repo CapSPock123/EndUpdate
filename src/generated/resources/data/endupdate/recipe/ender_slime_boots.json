@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "endupdate:ender_slime_block"
+    },
+    "S": {
+      "item": "endupdate:ender_slimeball"
+    }
+  },
+  "pattern": [
+    "S S",
+    "B B"
+  ],
+  "result": {
+    "count": 1,
+    "id": "endupdate:ender_slime_boots"
+  }
+}

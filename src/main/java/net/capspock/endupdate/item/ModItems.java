@@ -18,12 +18,16 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, EndUpdate.MOD_ID);
 
+    /*Texture adapted (changed) from Draconic Evolution by brandon3055
+      Link to his mod (Art released under the CC BY-NC-SA 4.0): https://github.com/Draconic-Inc/Draconic-Evolution*/
     public static final RegistryObject<Item> ENDERSTEEL_INGOT = ITEMS.register("endersteel_ingot",
             () -> new Item(new Item.Properties()));
 
+    //Texture adapted from FurfSky Reborn at https://furfsky.net/
     public static final RegistryObject<Item> ENDERSTEEL = ITEMS.register("endersteel",
             () -> new Item(new Item.Properties()));
 
+    //Texture adapted from FurfSky Reborn at https://furfsky.net/
     public static final RegistryObject<Item> RAW_ENDERSTEEL = ITEMS.register("raw_endersteel",
             () -> new Item(new Item.Properties()));
 
@@ -33,6 +37,8 @@ public class ModItems {
     public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
             () -> new Item(new Item.Properties()));
 
+    /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
     public static final RegistryObject<Item> AURORA_ASHES = ITEMS.register("aurora_ashes",
             () -> new FuelItem(new Item.Properties(), 25600) {
                 @Override
@@ -110,6 +116,12 @@ public class ModItems {
     public static final RegistryObject<Item> SHULKER_BOOTS = ITEMS.register("shulker_boots",
             () ->  new ArmorItem(ModArmorMaterials.SHULKER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(45))));
+
+    /*Textures adapted from Tinkers' Construct by SlimeKnights
+      Distributed under the MIT License*/
+    public static final RegistryObject<Item> ENDER_SLIME_BOOTS = ITEMS.register("ender_slime_boots",
+            () -> new EnderSlimeArmorItem(ModArmorMaterials.ENDER_SLIME, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(20))));
 
     public static final RegistryObject<Item> SHULKER_SMITHING_TEMPLATE = ITEMS.register("shulker_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "shulker")));

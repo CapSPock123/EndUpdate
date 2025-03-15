@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-08T10:41:16.590052	Item Models: endupdate
+// 1.21.1	2025-03-14T17:15:33.558302	Item Models: endupdate
 ae2d49122029ddd704e5e92e5e11ca712177fe62 assets/endupdate/models/item/abyssal_button.json
 1564ec5799787bc7329475879403a041059a0ffd assets/endupdate/models/item/abyssal_door.json
 ab0ab6b90b48273493234fa0cf03e59662f120b0 assets/endupdate/models/item/abyssal_fence.json
@@ -6,6 +6,7 @@ d512fd017b46fca68da34e08abda2ccf73299e3d assets/endupdate/models/item/abyssal_sa
 fc041288ca2acb0cb9d0904aa1596f5684fa2226 assets/endupdate/models/item/aurora_ashes.json
 9096ccc900cc8628e291c68ddd933fe4f28b2c1e assets/endupdate/models/item/aurora_powder.json
 74da08653a55c038bfbe50ab142a993cf896967a assets/endupdate/models/item/diamond_hammer.json
+a9029bd16b915a7bac316fec7ac7fb6aaf2dca07 assets/endupdate/models/item/ender_slime_boots.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/endupdate/models/item/ender_slime_spawn_egg.json
 344dc3a79ebcabec739e640bb651cc10e4c9d241 assets/endupdate/models/item/ender_slimeball.json
 c231939e969711c58a2d1d509285b8088a5b8f93 assets/endupdate/models/item/endersteel.json

@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-11T21:14:45.96633	Recipes
+// 1.21.1	2025-03-14T22:20:19.262886	Recipes
 23bc003e176aac67589e9b59891a6a6f6e533b9e data/endupdate/advancement/recipes/building_blocks/abyssal_planks.json
 ab9799b8bd17a35b91c96bb51f445d32a396d9d4 data/endupdate/advancement/recipes/building_blocks/abyssal_planks_from_wood.json
 c10bdff443fc526badf6a1eeb0d3e5aae10f43aa data/endupdate/advancement/recipes/building_blocks/abyssal_slab.json
@@ -6,6 +6,7 @@ c10bdff443fc526badf6a1eeb0d3e5aae10f43aa data/endupdate/advancement/recipes/buil
 24fc3b6a14c6a859be0dbafe723b7c5efc750200 data/endupdate/advancement/recipes/building_blocks/abyssal_wood.json
 ac8fc6e8c69fb6eab80ff9fbe8b871c0c8ae4ba0 data/endupdate/advancement/recipes/building_blocks/ender_slime_block.json
 03724b73a850891c2ca8b80cc27f193e1010179d data/endupdate/advancement/recipes/building_blocks/stripped_abyssal_wood.json
+d012a0e1982e872065ad187b2cc066cb50ff6173 data/endupdate/advancement/recipes/combat/ender_slime_boots.json
 079e7288616a48c0239dc236936246fe403d71f3 data/endupdate/advancement/recipes/combat/shulker_boots.json
 2c5eb160d6b04e7298551f51cc1ee82191776a98 data/endupdate/advancement/recipes/combat/shulker_chestplate.json
 378d6caf7f2370fd04dc1b992545349044f02edb data/endupdate/advancement/recipes/combat/shulker_helmet.json
@@ -56,6 +57,7 @@ efd2fa6280881154bd9b40af04e080f53a209cb6 data/endupdate/recipe/aurora_powder.jso
 d36299eec9fc962dcef1be6a5a2573b2bbf2a333 data/endupdate/recipe/ender.json
 491a82eab0e20dbbf0a2c24cc28cb264a98e7a51 data/endupdate/recipe/ender_bow.json
 464d3e61d631245607ba54b387a60123f9836a5a data/endupdate/recipe/ender_slime_block.json
+04c99261b76f7af24d2f97a8f538403561e7a1e1 data/endupdate/recipe/ender_slime_boots.json
 f4739c270a3854e07588971245c65a178aa6b825 data/endupdate/recipe/ender_slimeball.json
 6cb828e70d8a568a0c95ef164d09c19f46c02846 data/endupdate/recipe/endersteel_axe.json
 5cd3078779e74cd9d2aa386f288585b872c3b0ad data/endupdate/recipe/endersteel_block.json

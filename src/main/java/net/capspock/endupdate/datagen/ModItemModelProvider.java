@@ -72,6 +72,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS);
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_BOOTS);
 
+        armorItem(ModItems.ENDER_SLIME_BOOTS);
+
         saplingItem(ModBlocks.ABYSSAL_SAPLING);
 
         buttonItem(ModBlocks.ABYSSAL_BUTTON, ModBlocks.ABYSSAL_PLANKS);
@@ -151,6 +153,16 @@ public class ModItemModelProvider extends ItemModelProvider {
                                 ResourceLocation.fromNamespaceAndPath(MOD_ID,
                                         "item/" + itemRegistryObject.getId().getPath()));
             });
+        }
+    }
+
+    private void armorItem(RegistryObject<Item> itemRegistryObject) {
+        if(itemRegistryObject.get() instanceof ArmorItem) {
+                this.withExistingParent(itemRegistryObject.getId().getPath(),
+                                mcLoc("item/generated"))
+                        .texture("layer0",
+                                ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID,
+                                        "item/" + itemRegistryObject.getId().getPath()));
         }
     }
 
