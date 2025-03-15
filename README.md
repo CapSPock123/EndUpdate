@@ -4,6 +4,13 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.6 <br/>
+-Datagen added for equipment enchanting <br/>
+-Bug Fix: Ender Bow is now enchantable <br/>
+-MOD ARMOR ITEM Ender Slime Boots <br/>
+ 
+Released on 15/3/2025>
+
 endupdate-1.21.1-0.6.5 <br/>
 -Balancing: Decreased Ender Slime Spawn Rates: 20 -> 15 (-) <br/>
 -Balancing: Decreased Ender Slime Minimum Spawns: 3 -> 2 (-) <br/>
