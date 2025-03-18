@@ -26,7 +26,6 @@ public class EnderSlimeArmorItem extends ArmorItem {
         if(!level.isClientSide() && hasBootsOn(player)) {
             evaluateArmorEffects(player);
         }
-        player.resetFallDistance();
     }
 
     private void evaluateArmorEffects(Player player) {
@@ -41,6 +40,7 @@ public class EnderSlimeArmorItem extends ArmorItem {
 
     private void addEffectToPlayer(Player player, List<MobEffectInstance> mapEffect) {
         boolean hasPlayerEffect = mapEffect.stream().allMatch(effect -> player.hasEffect(effect.getEffect()));
+        player.resetFallDistance();
         if(player.isShiftKeyDown()) {
             if(!hasPlayerEffect) {
                 for (MobEffectInstance effect : mapEffect) {
