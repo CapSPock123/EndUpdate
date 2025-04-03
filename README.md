@@ -1,8 +1,18 @@
-End Update 
+### End Update 
 
 Finally bringing an update to the End Dimension
 
-Changelog
+### Installation
+
+This is a Minecraft Forge Mod for 1.21.1. Please note that this is only for Java Edition.
+
+To download the mod, go to "Releases", and download the .jar file of whichever version you wish. Then, drag the file into your "mods" folder in your minecraft directory.
+
+This is **NOT** a tutorial on how to install Forge. Please search online for a detailed guide.
+
+The version titled "Latest Release" is the latest stable release. Pre-releases may contain severe bugs.
+
+### Changelog
 
 endupdate-1.21.1-0.6.8 <br/>
 -Bug Fix: Endersteel Blocks can now be used as beacon base blocks<br/>
@@ -14,8 +24,6 @@ endupdate-1.21.1-0.6.8 <br/>
 -LICENSE Updated License in gradle.properties file <br/>
 -PARTICLE TYPE Ender Slimeball Particles added <br/>
 -EFFECT Sticky Effect added <br/>
-
-Released on 3/4/2025 <br/>
 
 endupdate-1.21.1-0.6.7 <br/>
 -Bug Fix: Ender Slime Boots now negates all fall damage <br/>
