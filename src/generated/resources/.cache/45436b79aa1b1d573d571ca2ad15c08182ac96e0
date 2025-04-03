@@ -1,6 +1,7 @@
-// 1.21.1	2025-02-15T16:08:53.137458	Tags for minecraft:block mod id endupdate
+// 1.21.1	2025-04-01T21:20:06.631951	Tags for minecraft:block mod id endupdate
 edc541eb9e5046b17bfdaa3c4ee85ab6c910eeb2 data/endupdate/tags/block/incorrect_for_endersteel_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/endupdate/tags/block/needs_endersteel_tool.json
+6594fa9109fffaa217dd4b88916d970ad76beada data/minecraft/tags/block/beacon_base_blocks.json
 49e207c019347c1c4e78fd58884b22ca6a9ed17a data/minecraft/tags/block/fence_gates.json
 7cbf39856758f0f3d4c0045b62e212b8b8c2eaf8 data/minecraft/tags/block/fences.json
 abecec6b69e0f47ed40849c5b5e9209b866d43f5 data/minecraft/tags/block/logs_that_burn.json

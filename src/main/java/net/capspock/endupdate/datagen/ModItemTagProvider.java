@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -68,6 +69,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.ENDER_BOW.get());
 
+        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                .add(ModItems.SLINGSHOT.get());
+
         tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.SHULKER_HELMET.get())
                 .add(ModItems.SHULKER_CHESTPLATE.get())
@@ -121,5 +125,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.WOODEN_TRAPDOORS)
                 .add(ModBlocks.ABYSSAL_TRAPDOOR.get().asItem());
+
+        tag(ModTags.Items.SLINGSHOT_PROJECTILES)
+                .add(ModItems.ENDER_SLIMEBALL.get());
+
+        tag(ItemTags.BEACON_PAYMENT_ITEMS)
+                .add(ModItems.ENDERSTEEL_INGOT.get());
     }
 }

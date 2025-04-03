@@ -69,6 +69,7 @@
 
   "item.endupdate.aurora_powder": "Aurora Powder",
   "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
+  "item.endupdate.slingshot": "Slingshot",
   "block.endupdate.magic_block": "Magic Block",
   "block.endupdate.ender_slime_block": "Ender Slime Block",
 
@@ -97,6 +98,7 @@
 
 
   "effect.endupdate.void": "Void",
+  "effect.endupdate.sticky": "Sticky",
 
   "item.minecraft.potion.effect.void_potion": "Potion of Void",
   "item.minecraft.splash_potion.effect.void_potion": "Splash Potion of Void",
@@ -114,5 +116,6 @@
   "enchantment.endupdate.levitation": "Levitation",
   "enchantment.endupdate.void_strike": "Void Strike",
 
-  "entity.endupdate.ender_slime": "Ender Slime"
+  "entity.endupdate.ender_slime": "Ender Slime",
+  "entity.endupdate.ender_slimeball": "Ender Slimeball"
 }

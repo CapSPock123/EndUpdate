@@ -83,5 +83,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.WOODEN_TRAPDOORS)
                 .add(ModBlocks.ABYSSAL_TRAPDOOR.get());
+
+        tag(BlockTags.BEACON_BASE_BLOCKS)
+                .add(ModBlocks.ENDERSTEEL_BLOCK.get());
     }
 }

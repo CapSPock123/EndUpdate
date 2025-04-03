@@ -1,4 +1,4 @@
-package net.capspock.endupdate.effect;
+package net.capspock.endupdate.effect.custom;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;

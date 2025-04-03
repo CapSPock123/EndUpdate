@@ -1,8 +1,11 @@
-// 1.21.1	2025-03-14T16:42:48.223435	Tags for minecraft:item mod id endupdate
+// 1.21.1	2025-04-03T22:05:00.002072	Tags for minecraft:item mod id endupdate
+4941aa81a57997b9dc485012362b25f029f5b8c5 data/endupdate/tags/item/slingshot_projectiles.json
 088949920f53f09f00aaffff12bd83f035e557fb data/endupdate/tags/item/transformable_items.json
 133ce4877dcb2ff6f62895a16dca4a37e9f79f50 data/minecraft/tags/item/axes.json
+32a438704d2649f7cab90c45d63c989319a5f7ff data/minecraft/tags/item/beacon_payment_items.json
 e404507f44f890a2c3458a8eb1dbbc10861e565f data/minecraft/tags/item/chest_armor.json
 0f642e5ac729c9fe6176afa138bb7223ca7f3e27 data/minecraft/tags/item/enchantable/bow.json
+77999e0771cedf7f095eb295423aa4bbae9215ee data/minecraft/tags/item/enchantable/durability.json
 741e68ca3f9bd157ba3310b71864b3cf2ece4361 data/minecraft/tags/item/fence_gates.json
 d76e60a1786628056ad126b7daec0b915431800c data/minecraft/tags/item/foot_armor.json
 de553c3a8c2a75c80ebcc251e7143b9a54722125 data/minecraft/tags/item/head_armor.json

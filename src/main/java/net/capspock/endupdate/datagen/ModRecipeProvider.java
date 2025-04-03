@@ -161,26 +161,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SHULKER_PLATE.get())
                 .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
 
-        /* ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .define('S', ModItems.SHULKER_PLATE.get())
-                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', ModItems.SHULKER_PLATE.get())
-                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.SHULKER_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S', ModItems.SHULKER_PLATE.get())
-                .unlockedBy(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput); */
-
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENDER_SLIME_BOOTS.get())
                 .pattern("S S")
                 .pattern("B B")
@@ -197,6 +177,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('O', ModItems.SHULKER_PLATE.get())
                 .define('A', ModItems.AURORA_POWDER.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get()) ).save(pRecipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SLINGSHOT.get())
+                .pattern("SRS")
+                .pattern("#S#")
+                .pattern(" S ")
+                .define('#', ModItems.ENDER_SLIMEBALL.get())
+                .define('S', Items.STICK)
+                .define('R', Items.STRING)
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pRecipeOutput);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ABYSSAL_WOOD.get(), 3)
                 .pattern("##")

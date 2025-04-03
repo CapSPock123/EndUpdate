@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-14T22:20:19.262886	Recipes
+// 1.21.1	2025-04-01T21:14:25.587254	Recipes
 23bc003e176aac67589e9b59891a6a6f6e533b9e data/endupdate/advancement/recipes/building_blocks/abyssal_planks.json
 ab9799b8bd17a35b91c96bb51f445d32a396d9d4 data/endupdate/advancement/recipes/building_blocks/abyssal_planks_from_wood.json
 c10bdff443fc526badf6a1eeb0d3e5aae10f43aa data/endupdate/advancement/recipes/building_blocks/abyssal_slab.json
@@ -40,6 +40,7 @@ b5282d12c6b09f7d1bd5d9812e20d34e94a53fe4 data/endupdate/advancement/recipes/tool
 d7a32088ce8fa92e789d58d622c1c1ae22015384 data/endupdate/advancement/recipes/tools/endersteel_sword.json
 a360857059b28cbf9f97ba14138402d0cf63f28c data/endupdate/advancement/recipes/tools/iron_hammer.json
 edf131cf4adb9368a8c661f562a26960ae046b2a data/endupdate/advancement/recipes/tools/netherite_hammer.json
+0939015f9b1770f93eae2eeb479094f221726965 data/endupdate/advancement/recipes/tools/slingshot.json
 2e9630bbaf7a56bb48bacc6e5fa79c8838fd2fb1 data/endupdate/recipe/abyssal_button.json
 86860ca3ce69e2e091409d2281aba349fa2c1eb4 data/endupdate/recipe/abyssal_door.json
 50e56b2e0b5250bfe974e0a0c3fe3789c277d4b2 data/endupdate/recipe/abyssal_fence.json
@@ -80,6 +81,7 @@ e1d445a170af8954683efa706bac7e3262b7d65c data/endupdate/recipe/shulker_boots.jso
 82c42df7e0fce7e0f7fbf398ef8e01e8e29b8fc7 data/endupdate/recipe/shulker_leggings.json
 b25f5748656b7e018bbe2b5d499eef20551932bd data/endupdate/recipe/shulker_plate.json
 017cbacb023e3bc328b32e6242848af1b934acd1 data/endupdate/recipe/shulker_smithing_template.json
+7a4eaeb42c7c6cfc8720b375f18f697ed129c843 data/endupdate/recipe/slingshot.json
 03d2cdba026f9ad4217cf7a92fa4b9aa497c49c2 data/endupdate/recipe/stripped_abyssal_wood.json
 4d1e1e55f72a63bd3c585d496ded4336b592ac77 data/minecraft/advancement/recipes/misc/shulker_plated_netherite_boots_smithing.json
 7b3c86333cfebbed72c15a3f89613adf8666f0ad data/minecraft/advancement/recipes/misc/shulker_plated_netherite_chestplate_smithing.json

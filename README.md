@@ -4,6 +4,19 @@ Finally bringing an update to the End Dimension
 
 Changelog
 
+endupdate-1.21.1-0.6.8 <br/>
+-Bug Fix: Endersteel Blocks can now be used as beacon base blocks<br/>
+-Bug Fix: Endersteel Ingots can now be used as payment items for activating a beacon<br/>
+-Tweak: Ender Slimes now have the same “breaking particle” texture from normal slimes <br/>
+-Added a logoFile for display in launchers such as Prism Launcher <br/>
+-ADVANCED ITEM Slingshot added <br/>
+-ITEM PROJECTILE Ender Slimeball Item Projectile Entity added <br/>
+-LICENSE Updated License in gradle.properties file <br/>
+-PARTICLE TYPE Ender Slimeball Particles added <br/>
+-EFFECT Sticky Effect added <br/>
+
+Released on 3/4/2025 <br/>
+
 endupdate-1.21.1-0.6.7 <br/>
 -Bug Fix: Ender Slime Boots now negates all fall damage <br/>
 

@@ -1,5 +1,6 @@
 package net.capspock.endupdate.entity.custom;
 
+import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
@@ -24,7 +25,7 @@ public class EnderSlimeEntity extends Slime {
 
     @Override
     protected ParticleOptions getParticleType() {
-        return ParticleTypes.REVERSE_PORTAL;
+        return ModParticles.ITEM_ENDER_SLIME.get();
     }
 
     public static AttributeSupplier.Builder createAttributes() {

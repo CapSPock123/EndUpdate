@@ -88,6 +88,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get());
 
                         output.accept(ModItems.ENDER_SLIME_BOOTS.get());
+
+                        output.accept(ModItems.SLINGSHOT.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

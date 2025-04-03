@@ -35,7 +35,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
-            () -> new Item(new Item.Properties()));
+            () -> new EnderSlimeballItem(new Item.Properties()));
 
     /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
     Distributed under the MIT License*/
@@ -129,6 +129,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x711a9c, 0x8b00dc, new Item.Properties()));
+
+    /*Textures adapted from SupersLegend by superworldsun at https://github.com/superworldsun/SupersLegend
+      Distributed under the MIT License
+     */
+    public static final RegistryObject<Item> SLINGSHOT = ITEMS.register("slingshot",
+            () -> new SlingshotItem(new Item.Properties().durability(577)));
 
 
     public static void register(IEventBus eventBus) {

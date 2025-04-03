@@ -2,14 +2,16 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
-import net.capspock.endupdate.block.custom.EnderSlimeBlock;
 import net.capspock.endupdate.component.ModDataComponentTypes;
 import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.enchantment.ModEnchantmentEffects;
 import net.capspock.endupdate.entity.ModEntities;
 import net.capspock.endupdate.entity.client.EnderSlimeRenderer;
+import net.capspock.endupdate.entity.client.EnderSlimeballRenderer;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.particle.custom.EnderSlimeballParticles;
+import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.potion.ModPotions;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
@@ -19,6 +21,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -63,6 +66,8 @@ public class EndUpdate {
 
         ModEntities.register(modEventBus);
 
+        ModParticles.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
@@ -96,8 +101,14 @@ public class EndUpdate {
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
+            EntityRenderers.register(ModEntities.ENDER_SLIMEBALL.get(), EnderSlimeballRenderer::new);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDER_SLIME_BLOCK.get(), RenderType.translucent());
+        }
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+            event.registerSpecial(ModParticles.ITEM_ENDER_SLIME.get(), new EnderSlimeballParticles.EnderSlimeProvider());
         }
     }
 }
