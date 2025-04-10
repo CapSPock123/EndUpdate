@@ -23,6 +23,9 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_INGOT = ITEMS.register("endersteel_ingot",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ENDERSTEEL_NUGGET = ITEMS.register("endersteel_nugget",
+            () -> new Item(new Item.Properties()));
+
     //Texture adapted from FurfSky Reborn at https://furfsky.net/
     public static final RegistryObject<Item> ENDERSTEEL = ITEMS.register("endersteel",
             () -> new Item(new Item.Properties()));

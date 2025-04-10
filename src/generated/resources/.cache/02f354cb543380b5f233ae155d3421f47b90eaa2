@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-14T17:15:33.558302	Item Models: endupdate
+// 1.21.1	2025-04-04T07:48:17.442507	Item Models: endupdate
 ae2d49122029ddd704e5e92e5e11ca712177fe62 assets/endupdate/models/item/abyssal_button.json
 1564ec5799787bc7329475879403a041059a0ffd assets/endupdate/models/item/abyssal_door.json
 ab0ab6b90b48273493234fa0cf03e59662f120b0 assets/endupdate/models/item/abyssal_fence.json
@@ -14,6 +14,7 @@ c231939e969711c58a2d1d509285b8088a5b8f93 assets/endupdate/models/item/endersteel
 c3dff900dab2ae8253e8bf8029a644835844b98b assets/endupdate/models/item/endersteel_hammer.json
 87885bed1fc0cdf0d85ced1e7ec7b342bbdf940e assets/endupdate/models/item/endersteel_hoe.json
 9734334f07c579b07d7abab308e9d910e2b5b99e assets/endupdate/models/item/endersteel_ingot.json
+53987ec418c408ef12146607b1a03e52d9b39f13 assets/endupdate/models/item/endersteel_nugget.json
 00417ab413e511adec826dc15d65f411d09c800c assets/endupdate/models/item/endersteel_pickaxe.json
 629572e7bc34b08eb0b438f62870872c2008e061 assets/endupdate/models/item/endersteel_shovel.json
 a119e0c72e90b989e68334775c3d3873d45bd0f4 assets/endupdate/models/item/endersteel_sword.json

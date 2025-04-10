@@ -1,6 +1,7 @@
 {
   "item.endupdate.shulker_plate": "Shulker Plate",
   "item.endupdate.endersteel_ingot": "Endersteel Ingot",
+  "item.endupdate.endersteel_nugget": "Endersteel Nugget",
   "item.endupdate.endersteel": "Endersteel",
   "item.endupdate.raw_endersteel": "Raw Endersteel",
   "item.endupdate.ender_slimeball": "Ender Slimeball",
@@ -99,6 +100,7 @@
 
   "effect.endupdate.void": "Void",
   "effect.endupdate.sticky": "Sticky",
+  "effect.endupdate.slimey": "Slimey",
 
   "item.minecraft.potion.effect.void_potion": "Potion of Void",
   "item.minecraft.splash_potion.effect.void_potion": "Splash Potion of Void",
@@ -108,8 +110,13 @@
   "item.minecraft.splash_potion.effect.long_void_potion": "Splash Potion of Void",
   "item.minecraft.lingering_potion.effect.long_void_potion": "Lingering Potion of Void",
 
+  "item.minecraft.potion.effect.slimey_potion": "Potion of Slimey",
+  "item.minecraft.splash_potion.effect.slimey_potion": "Splash Potion of Slimey",
+  "item.minecraft.lingering_potion.effect.slimey_potion": "Lingering Potion of Slimey",
+
   "item.minecraft.tipped_arrow.effect.void_potion": "Arrow of Void",
   "item.minecraft.tipped_arrow.effect.long_void_potion": "Arrow of Void",
+  "item.minecraft.tipped_arrow.effect.slimey_potion": "Arrow of Slimey",
 
 
 

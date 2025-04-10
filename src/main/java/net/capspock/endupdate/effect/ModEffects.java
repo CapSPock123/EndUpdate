@@ -1,10 +1,9 @@
 package net.capspock.endupdate.effect;
 
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.effect.custom.SlimeyEffect;
 import net.capspock.endupdate.effect.custom.StickyEffect;
 import net.capspock.endupdate.effect.custom.VoidEffect;
-import net.capspock.endupdate.entity.ModEntities;
-import net.capspock.endupdate.particle.ModParticles;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -14,6 +13,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.w3c.dom.Attr;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS =
@@ -32,6 +32,17 @@ public class ModEffects {
                             -0.6f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
                     .addAttributeModifier(Attributes.JUMP_STRENGTH, ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "sticky"),
                             -0.5f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+
+    /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
+    public static final RegistryObject<MobEffect> SLIMEY_EFFECT = MOB_EFFECTS.register("slimey",
+            () -> new SlimeyEffect(MobEffectCategory.NEUTRAL, 0xa159cb)
+                    .addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "slimey"),
+                            -0.25f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(Attributes.JUMP_STRENGTH, ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "slimey"),
+                            0.5f, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL)
+                    .addAttributeModifier(Attributes.SAFE_FALL_DISTANCE, ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "slimey"),
+                            1.0, AttributeModifier.Operation.ADD_VALUE));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

@@ -19,6 +19,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.endupdate.end_update_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ENDERSTEEL_INGOT.get());
+                        output.accept(ModItems.ENDERSTEEL_NUGGET.get());
                         output.accept(ModItems.ENDERSTEEL.get());
                         output.accept(ModItems.RAW_ENDERSTEEL.get());
                         output.accept(ModItems.SHULKER_PLATE.get());

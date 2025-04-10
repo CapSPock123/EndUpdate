@@ -34,6 +34,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', ModItems.ENDERSTEEL_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pRecipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDERSTEEL_INGOT.get())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .define('E', ModItems.ENDERSTEEL_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pRecipeOutput, EndUpdate.MOD_ID + ":endersteel_from_endersteel_b");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SHULKER_PLATE.get())
                 .pattern("BSB")
                 .pattern("SES")
@@ -205,6 +212,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("###")
                 .define('#', ModItems.ENDER_SLIMEBALL.get())
                 .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pRecipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERSTEEL_NUGGET.get(), 9)
+                .requires(ModItems.ENDERSTEEL_INGOT.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pRecipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.AURORA_POWDER.get())
                 .requires(ModItems.AURORA_ASHES.get())

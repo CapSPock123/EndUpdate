@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         basicItem(ModItems.ENDERSTEEL.get());
         basicItem(ModItems.ENDERSTEEL_INGOT.get());
+        basicItem(ModItems.ENDERSTEEL_NUGGET.get());
         basicItem(ModItems.RAW_ENDERSTEEL.get());
         basicItem(ModItems.SHULKER_PLATE.get());
         basicItem(ModItems.ENDER_SLIMEBALL.get());

@@ -1,6 +1,7 @@
 package net.capspock.endupdate.event;
 
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -55,5 +56,7 @@ public class ModEvents {
 
         builder.addMix(Potions.AWKWARD, Items.BEDROCK, ModPotions.VOID_POTION.getHolder().get());
         builder.addMix(ModPotions.VOID_POTION.getHolder().get(), Items.REDSTONE, ModPotions.LONG_VOID_POTION.getHolder().get());
+
+        builder.addMix(Potions.AWKWARD, ModItems.ENDER_SLIMEBALL.get(), ModPotions.SLIMEY_POTION.getHolder().get());
     }
 }

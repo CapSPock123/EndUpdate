@@ -6,13 +6,20 @@ Finally bringing an update to the End Dimension
 
 This is a Minecraft Forge Mod for 1.21.1. Please note that this is only for Java Edition.
 
-To download the mod, go to "Releases", and download the .jar file of whichever version you wish. Then, drag the file into your "mods" folder in your minecraft directory.
+First, download Forge for 1.21.1 here: https://files.minecraftforge.net/net/minecraftforge/forge/index_1.21.1.html
 
 This is **NOT** a tutorial on how to install Forge. Please search online for a detailed guide.
+
+To download the mod, go to "Releases", and download the .jar file of whichever version you wish. Then, drag the file into your "mods" folder in your minecraft directory.
 
 The version titled "Latest Release" is the latest stable release. Pre-releases may contain severe bugs.
 
 ### Changelog
+
+endupdate-1.21.1-0.6.9 <br/>
+-ITEM Endersteel Nugget added <br/>
+-EFFECT Slimey Effect added <br/>
+-POTION Potion of Slimey added <br/>
 
 endupdate-1.21.1-0.6.8 <br/>
 -Bug Fix: Endersteel Blocks can now be used as beacon base blocks<br/>
