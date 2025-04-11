@@ -10,13 +10,17 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -106,8 +110,13 @@ public class SlingshotItem extends ProjectileWeaponItem {
 
     @Override
     protected Projectile createProjectile(Level pLevel, LivingEntity pShooter, ItemStack pWeapon, ItemStack pAmmo, boolean pIsCrit) {
-        EnderSlimeballItem enderSlimeballItem = pAmmo.getItem() instanceof EnderSlimeballItem enderSlimeballItem1 ? enderSlimeballItem1 : (EnderSlimeballItem) ModItems.ENDER_SLIMEBALL.get();
-        return enderSlimeballItem.createEnderSlimeball(pLevel, pAmmo, pShooter, pWeapon);
+        if(pAmmo.is(Items.FIRE_CHARGE)) {
+            Vec3 vec3 = new Vec3(pShooter.getXRot(), pShooter.getEyeY(), pShooter.getXRot());
+            return new SmallFireball(pLevel, pShooter.getX(), pShooter.getEyeY(), pShooter.getZ(), vec3.normalize());
+        } else {
+            EnderSlimeballItem enderSlimeballItem = pAmmo.getItem() instanceof EnderSlimeballItem enderSlimeballItem1 ? enderSlimeballItem1 : (EnderSlimeballItem) ModItems.ENDER_SLIMEBALL.get();
+            return enderSlimeballItem.createEnderSlimeball(pLevel, pAmmo, pShooter, pWeapon);
+        }
     }
 
     protected void shoot(ServerLevel pLevel, LivingEntity pShooter, InteractionHand pHand, ItemStack pWeapon, List<ItemStack> pProjectileItems,

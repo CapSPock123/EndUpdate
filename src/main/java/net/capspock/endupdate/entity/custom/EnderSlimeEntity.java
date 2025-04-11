@@ -29,11 +29,11 @@ public class EnderSlimeEntity extends Slime {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Slime.createMobAttributes()
+        return EnderSlimeEntity.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.35D)
                 .add(Attributes.ATTACK_DAMAGE, 1.0D)
-                .add(Attributes.FOLLOW_RANGE, 8.0D);
+                .add(Attributes.FOLLOW_RANGE, 16.0D);
     }
 
     public static boolean checkEnderSlimeSpawnRules(EntityType<EnderSlimeEntity> pSlime, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {

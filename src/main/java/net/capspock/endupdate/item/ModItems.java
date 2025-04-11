@@ -129,7 +129,6 @@ public class ModItems {
     public static final RegistryObject<Item> SHULKER_SMITHING_TEMPLATE = ITEMS.register("shulker_smithing_template",
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "shulker")));
 
-
     public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x711a9c, 0x8b00dc, new Item.Properties()));
 

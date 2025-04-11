@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-11T19:25:46.698029	Loot Tables
+// 1.21.1	2025-04-11T21:34:43.538161	Loot Tables
 66e2b12ace780a4c19da8dc1f8b2ec621ae6d32a data/endupdate/loot_table/blocks/abyssal_button.json
 585594d63b89ae7008fe189a4810a18233cdbc77 data/endupdate/loot_table/blocks/abyssal_door.json
 7fb2f0801b643d903cd00f7898d418c028dda410 data/endupdate/loot_table/blocks/abyssal_fence.json
@@ -17,5 +17,6 @@ b381659138dbe7a432c032b5f954fc3e3ed998d0 data/endupdate/loot_table/blocks/abyssa
 82a07ecca3a177b2b10ce6ec73c84747f47d1578 data/endupdate/loot_table/blocks/ender_slime_block.json
 fd70130150813e6f288db839b61d5969ced078a4 data/endupdate/loot_table/blocks/endersteel_block.json
 9e80cb05aa4886ba9dc30672c721f950649f671a data/endupdate/loot_table/blocks/endersteel_ore.json
+804623304a562c1ec8e1eb8e5d08b59747f204ee data/endupdate/loot_table/blocks/magic_block.json
 438bd25e07a708d780b5c437c4f25783af2defec data/endupdate/loot_table/blocks/stripped_abyssal_log.json
 31dfeb59a0ef1757569fc603bf5406b42faedcec data/endupdate/loot_table/blocks/stripped_abyssal_wood.json

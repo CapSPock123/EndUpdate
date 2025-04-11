@@ -16,6 +16,11 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.0 <br/>
+-Added Fire Charge as ammo for Slingshot <br/>
+-Added Loot Table for Magic Block (Silk Touch and Diamond Tool or above) <br/>
+-Bug Fix: Fixed Enchantability of Ender Slime Boots (12) and Shulker Armor (22) being swapped <br/>
+
 endupdate-1.21.1-0.6.9 <br/>
 -ITEM Endersteel Nugget added <br/>
 -EFFECT Slimey Effect added <br/>

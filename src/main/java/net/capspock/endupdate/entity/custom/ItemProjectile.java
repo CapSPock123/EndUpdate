@@ -1,5 +1,7 @@
 package net.capspock.endupdate.entity.custom;
 
+import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.item.custom.EnderSlimeballItem;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;

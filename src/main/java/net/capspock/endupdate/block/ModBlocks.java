@@ -35,7 +35,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
-                    .strength(15f).explosionResistance(1200f).sound(ModSounds.MAGIC_BLOCK_SOUNDS).noLootTable()));
+                    .strength(15f).explosionResistance(1200f).requiresCorrectToolForDrops().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final RegistryObject<Block> AURORA_LAMP = registerBlock("aurora_lamp",
             () -> new AuroraLampBlock(BlockBehaviour.Properties.of().strength(9f).explosionResistance(6f)
@@ -69,9 +69,7 @@ public class ModBlocks {
     });
 
     public static final RegistryObject<Block> ABYSSAL_LEAVES = registerBlock("abyssal_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES))
-
-    {
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
         @Override
         public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
             return true;
@@ -98,8 +96,7 @@ public class ModBlocks {
 
     public static final RegistryObject<StairBlock> ABYSSAL_STAIRS = registerBlock("abyssal_stairs",
             () -> new StairBlock(ModBlocks.ABYSSAL_PLANKS.get().defaultBlockState(),
-                    BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f))
-            {
+                    BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -116,8 +113,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<SlabBlock> ABYSSAL_SLAB = registerBlock("abyssal_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f))
-            {
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -134,8 +130,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<PressurePlateBlock> ABYSSAL_PRESSURE_PLATE = registerBlock("abyssal_pressure_plate",
-            () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(0.5f).explosionResistance(0.5f))
-            {
+            () -> new PressurePlateBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(0.5f).explosionResistance(0.5f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -152,8 +147,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<ButtonBlock> ABYSSAL_BUTTON = registerBlock("abyssal_button",
-            () -> new ButtonBlock(BlockSetType.OAK, 1, BlockBehaviour.Properties.of().strength(0.5f).explosionResistance(0.5f).noCollission())
-            {
+            () -> new ButtonBlock(BlockSetType.OAK, 1, BlockBehaviour.Properties.of().strength(0.5f).explosionResistance(0.5f).noCollission()) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -170,8 +164,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<FenceBlock> ABYSSAL_FENCE = registerBlock("abyssal_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f))
-            {
+            () -> new FenceBlock(BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -188,8 +181,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<FenceGateBlock> ABYSSAL_FENCE_GATE = registerBlock("abyssal_fence_gate",
-            () -> new FenceGateBlock(WoodType.OAK, BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f))
-            {
+            () -> new FenceGateBlock(WoodType.OAK, BlockBehaviour.Properties.of().strength(2f).explosionResistance(3f)) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -206,8 +198,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<DoorBlock> ABYSSAL_DOOR = registerBlock("abyssal_door",
-            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f).noOcclusion())
-            {
+            () -> new DoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f).noOcclusion()) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;
@@ -224,8 +215,7 @@ public class ModBlocks {
                 }
             });
     public static final RegistryObject<TrapDoorBlock> ABYSSAL_TRAPDOOR = registerBlock("abyssal_trapdoor",
-            () -> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f).noOcclusion())
-            {
+            () -> new TrapDoorBlock(BlockSetType.OAK, BlockBehaviour.Properties.of().strength(3f).explosionResistance(3f).noOcclusion()) {
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;

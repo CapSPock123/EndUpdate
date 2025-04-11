@@ -38,7 +38,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.ENDERSTEEL_BLOCK.get())
-                .add(ModBlocks.ENDERSTEEL_ORE.get());
+                .add(ModBlocks.ENDERSTEEL_ORE.get())
+                .add(ModBlocks.MAGIC_BLOCK.get());
 
         tag(ModTags.Blocks.NEEDS_ENDERSTEEL_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);

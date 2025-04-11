@@ -127,6 +127,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.ABYSSAL_TRAPDOOR.get().asItem());
 
         tag(ModTags.Items.SLINGSHOT_PROJECTILES)
+                .add(Items.FIRE_CHARGE)
                 .add(ModItems.ENDER_SLIMEBALL.get());
 
         tag(ItemTags.BEACON_PAYMENT_ITEMS)

@@ -35,7 +35,7 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 10);
                 attribute.put(ArmorItem.Type.HELMET, 5);
                 attribute.put(ArmorItem.Type.BODY, 14);
-            }), 12, 4f, 0.25f, () -> ModItems.SHULKER_PLATE.get());
+            }), 22, 4f, 0.25f, () -> ModItems.SHULKER_PLATE.get());
 
     public static final Holder<ArmorMaterial> ENDER_SLIME = register("ender_slime", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
@@ -44,7 +44,7 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 6);
                 attribute.put(ArmorItem.Type.HELMET, 2);
                 attribute.put(ArmorItem.Type.BODY, 5);
-            }), 22, 0f, 0f, () -> ModItems.ENDER_SLIMEBALL.get());
+            }), 12, 0f, 0f, () -> ModItems.ENDER_SLIMEBALL.get());
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,
