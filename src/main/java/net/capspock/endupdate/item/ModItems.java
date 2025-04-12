@@ -120,6 +120,10 @@ public class ModItems {
             () ->  new ArmorItem(ModArmorMaterials.SHULKER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(45))));
 
+    public static final RegistryObject<Item> NETHERITE_ELYTRA_CHESTPLATE = ITEMS.register("netherite_elytra_chestplate",
+            () -> new ElytraChestplateItem(ArmorMaterials.NETHERITE, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(74)).fireResistant()));
+
     /*Textures adapted from Tinkers' Construct by SlimeKnights
       Distributed under the MIT License*/
     public static final RegistryObject<Item> ENDER_SLIME_BOOTS = ITEMS.register("ender_slime_boots",

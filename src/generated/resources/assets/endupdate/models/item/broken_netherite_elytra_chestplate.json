@@ -1,0 +1,6 @@
+{
+  "parent": "endupdate:item/netherite_elytra_chestplate",
+  "textures": {
+    "layer0": "endupdate:item/broken_netherite_elytra_chestplate"
+  }
+}

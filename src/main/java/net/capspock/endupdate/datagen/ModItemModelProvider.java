@@ -3,11 +3,13 @@ package net.capspock.endupdate.datagen;
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.item.custom.ElytraChestplateItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
@@ -72,6 +74,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE);
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS);
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_BOOTS);
+
+        elytraItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
 
         armorItem(ModItems.ENDER_SLIME_BOOTS);
 
@@ -167,6 +171,23 @@ public class ModItemModelProvider extends ItemModelProvider {
         }
     }
 
+
+    public void elytraItem(RegistryObject<? extends Item> item) {
+        if(item.get() instanceof ElytraItem || item.get() instanceof ElytraChestplateItem) {
+            this.withExistingParent(item.getId().getPath(),
+                            mcLoc("item/generated"))
+                    .texture("layer0",
+                            ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID,
+                                    "item/" + item.getId().getPath()))
+                    .override()
+                    .predicate(ResourceLocation.parse("broken"), 1)
+                    .model(new ModelFile.UncheckedModelFile(EndUpdate.MOD_ID + ":item/broken_" + item.getId().getPath())).end();
+
+            getBuilder("broken_" + item.getId().getPath())
+                    .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", "item/broken_" + item.getId().getPath());
+        }
+    }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
