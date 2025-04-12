@@ -16,6 +16,9 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.1 <br/>
+-ITEM Netherite Elytra Chestplate added
+
 endupdate-1.21.1-0.7.0 <br/>
 -Added Fire Charge as ammo for Slingshot <br/>
 -Added Loot Table for Magic Block (Silk Touch and Diamond Tool or above) <br/>
