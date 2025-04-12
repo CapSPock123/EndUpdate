@@ -2,6 +2,9 @@
   "values": [
     "endupdate:shulker_chestplate",
     "endupdate:shulker_plated_netherite_chestplate",
-    "endupdate:netherite_elytra_chestplate"
+    "endupdate:diamond_elytra_chestplate",
+    "endupdate:netherite_elytra_chestplate",
+    "endupdate:shulker_plated_netherite_elytra_chestplate",
+    "endupdate:shulker_elytra_chestplate"
   ]
 }

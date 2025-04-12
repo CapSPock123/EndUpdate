@@ -16,6 +16,11 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.2 <br/>
+-ITEM Diamond Elytra Chestplate added <br/>
+-ITEM Shulker-plated Netherite Elytra Chestplate added <br/>
+-ITEM Shulker Elytra Chestplate added <br/>
+
 endupdate-1.21.1-0.7.1 <br/>
 -ITEM Netherite Elytra Chestplate added
 

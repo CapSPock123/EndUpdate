@@ -37,7 +37,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.CHEST_ARMOR)
                 .add(ModItems.SHULKER_CHESTPLATE.get())
                 .add(ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get())
-                .add(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
+                .add(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.SHULKER_ELYTRA_CHESTPLATE.get());
 
         tag(ItemTags.LEG_ARMOR)
                 .add(ModItems.SHULKER_LEGGINGS.get())

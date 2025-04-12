@@ -75,7 +75,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS);
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_BOOTS);
 
+        elytraItem(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
         elytraItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
+        elytraItem(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE);
+        elytraItem(ModItems.SHULKER_ELYTRA_CHESTPLATE);
 
         armorItem(ModItems.ENDER_SLIME_BOOTS);
 

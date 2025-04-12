@@ -9,7 +9,10 @@ import net.minecraft.world.item.Item;
 public class ModItemProperties {
     public static void addCustomItemProperties() {
         makeCustomBow(ModItems.ENDER_BOW.get());
+        makeCustomElytra(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
         makeCustomElytra(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
+        makeCustomElytra(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE.get());
+        makeCustomElytra(ModItems.SHULKER_ELYTRA_CHESTPLATE.get());
     }
 
     private static void makeCustomBow(Item item) {

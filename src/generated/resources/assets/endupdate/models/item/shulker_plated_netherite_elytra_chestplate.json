@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "endupdate:item/broken_shulker_plated_netherite_elytra_chestplate",
+      "predicate": {
+        "minecraft:broken": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "endupdate:item/shulker_plated_netherite_elytra_chestplate"
+  }
+}

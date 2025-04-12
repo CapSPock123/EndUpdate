@@ -23,12 +23,12 @@ import net.minecraft.world.entity.player.PlayerModelPart;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.IForgeElytraLayer;
 
-public class NetheriteElytraChestplateLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> implements IForgeElytraLayer<T> {
-    private final ElytraModel<T> netheriteElytraChestplateModel;
+public class ShulkerElytraChestplateLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> implements IForgeElytraLayer<T> {
+    private final ElytraModel<T> shulkerElytraChestplateModel;
 
-    public NetheriteElytraChestplateLayer(RenderLayerParent<T, M> pRenderer, EntityModelSet pModelSet) {
+    public ShulkerElytraChestplateLayer(RenderLayerParent<T, M> pRenderer, EntityModelSet pModelSet) {
         super(pRenderer);
-        this.netheriteElytraChestplateModel = new ElytraModel<>(pModelSet.bakeLayer(ModelLayers.ELYTRA));
+        this.shulkerElytraChestplateModel = new ElytraModel<>(pModelSet.bakeLayer(ModelLayers.ELYTRA));
     }
 
     public void render(PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, T pLivingEntity,
@@ -52,17 +52,17 @@ public class NetheriteElytraChestplateLayer<T extends LivingEntity, M extends En
 
             pPoseStack.pushPose();
             pPoseStack.translate(0.0F, 0.0F, 0.125F);
-            this.getParentModel().copyPropertiesTo(this.netheriteElytraChestplateModel);
-            this.netheriteElytraChestplateModel.setupAnim(pLivingEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
+            this.getParentModel().copyPropertiesTo(this.shulkerElytraChestplateModel);
+            this.shulkerElytraChestplateModel.setupAnim(pLivingEntity, pLimbSwing, pLimbSwingAmount, pAgeInTicks, pNetHeadYaw, pHeadPitch);
             VertexConsumer vertexconsumer = ItemRenderer.getArmorFoilBuffer(pBuffer, RenderType.armorCutoutNoCull(resourcelocation), itemstack.hasFoil());
-            this.netheriteElytraChestplateModel.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY);
+            this.shulkerElytraChestplateModel.renderToBuffer(pPoseStack, vertexconsumer, pPackedLight, OverlayTexture.NO_OVERLAY);
             pPoseStack.popPose();
         }
     }
 
     @Override
     public boolean shouldRender(ItemStack stack, T entity) {
-        return stack.getItem() == ModItems.NETHERITE_ELYTRA_CHESTPLATE.get();
+        return stack.getItem() == ModItems.SHULKER_ELYTRA_CHESTPLATE.get();
     }
 
     @Override
