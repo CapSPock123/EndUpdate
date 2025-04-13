@@ -34,8 +34,19 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_ENDERSTEEL = ITEMS.register("raw_endersteel",
             () -> new Item(new Item.Properties()));
 
+    //Texture adapted from FurfSky Reborn at https://furfsky.net/
     public static final RegistryObject<Item> SHULKER_PLATE = ITEMS.register("shulker_plate",
             () -> new Item(new Item.Properties()));
+
+    //Texture adapted from FurfSky Reborn at https://furfsky.net/
+    public static final RegistryObject<Item> VOID_ESSENCE = ITEMS.register("void_essence",
+            () -> new Item(new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.endupdate.void_essence.tooltip"));
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                }
+            });
 
     public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
             () -> new EnderSlimeballItem(new Item.Properties()));
@@ -75,6 +86,8 @@ public class ModItems {
             () -> new HoeItem(ModToolTiers.ENDERSTEEL, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.ENDERSTEEL, -4, 0f))));
 
+    /*Hammer Textures adapted from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
     public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
             () -> new HammerItem(ModToolTiers.ENDERSTEEL_BLOCK, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.ENDERSTEEL_BLOCK, 6, -3.2f))));
@@ -91,6 +104,7 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.IRON_BLOCK, new Item.Properties()
                     .attributes(HammerItem.createAttributes(ModToolTiers.IRON_BLOCK, 6, -3.2f))));
 
+    //Texture adapted from FurfSky Reborn at https://furfsky.net/
     public static final RegistryObject<Item> ENDER_BOW = ITEMS.register("ender_bow",
             () -> new BowItem(new Item.Properties().durability(1208)));
 
@@ -146,11 +160,10 @@ public class ModItems {
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "shulker")));
 
     public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x711a9c, 0x8b00dc, new Item.Properties()));
+            () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x5b1386, 0xa159cb, new Item.Properties()));
 
     /*Textures adapted from SupersLegend by superworldsun at https://github.com/superworldsun/SupersLegend
-      Distributed under the MIT License
-     */
+      Distributed under the MIT License*/
     public static final RegistryObject<Item> SLINGSHOT = ITEMS.register("slingshot",
             () -> new SlingshotItem(new Item.Properties().durability(577)));
 

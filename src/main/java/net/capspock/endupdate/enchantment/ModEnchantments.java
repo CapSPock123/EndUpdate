@@ -46,7 +46,6 @@ public class ModEnchantments {
                         Enchantment.dynamicCost(23,10),
                         3,
                         EquipmentSlotGroup.MAINHAND))
-                .exclusiveWith(enchantments.getOrThrow(EnchantmentTags.DAMAGE_EXCLUSIVE))
                 .withEffect(EnchantmentEffectComponents.POST_ATTACK, EnchantmentTarget.ATTACKER,
                         EnchantmentTarget.VICTIM, new VoidStrikeEnchantmentEffect()));
     }

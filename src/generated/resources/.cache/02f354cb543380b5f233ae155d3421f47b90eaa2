@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-12T20:03:17.184247	Item Models: endupdate
+// 1.21.1	2025-04-12T22:56:27.139386	Item Models: endupdate
 ae2d49122029ddd704e5e92e5e11ca712177fe62 assets/endupdate/models/item/abyssal_button.json
 1564ec5799787bc7329475879403a041059a0ffd assets/endupdate/models/item/abyssal_door.json
 ab0ab6b90b48273493234fa0cf03e59662f120b0 assets/endupdate/models/item/abyssal_fence.json
@@ -119,3 +119,4 @@ d59732edaba6cd1ba76b3c99f8414c07fbaa03c7 assets/endupdate/models/item/shulker_pl
 80112d811d2f55b9979e10ac83374aeaefc880b7 assets/endupdate/models/item/shulker_plated_netherite_leggings_quartz_trim.json
 7b1730082cd8c70364e3a4cba8f5a85dfb2a3e4c assets/endupdate/models/item/shulker_plated_netherite_leggings_redstone_trim.json
 3e3345382dd1c781882f2c631d10ab3d29ba144f assets/endupdate/models/item/shulker_smithing_template.json
+1277ea4fc17d55ae516ca38a6103a81814f228fa assets/endupdate/models/item/void_essence.json

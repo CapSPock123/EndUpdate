@@ -25,6 +25,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SHULKER_PLATE.get());
                         output.accept(ModItems.ENDER_SLIMEBALL.get());
 
+                        output.accept(ModItems.VOID_ESSENCE.get());
+
                         output.accept(ModItems.AURORA_ASHES.get());
                         output.accept(ModItems.AURORA_POWDER.get());
 

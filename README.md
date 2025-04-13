@@ -16,6 +16,13 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.3 <br/>
+-Tweak: Ender Slime Spawn Egg texture tweaked <br/>
+-Tweak: Shulker Armor Model texture tweaked <br/>
+-Tweak: Shulker Helmet texture tweaked <br/>
+-Balancing: Void Strike does not conflict with damage enchants anymore (Sharpness, Smite…) (+) <br/>
+-ITEM Void Essence added <br/>
+
 endupdate-1.21.1-0.7.2 <br/>
 -ITEM Diamond Elytra Chestplate added <br/>
 -ITEM Shulker-plated Netherite Elytra Chestplate added <br/>

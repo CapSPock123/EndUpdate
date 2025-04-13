@@ -4,6 +4,7 @@
   "item.endupdate.endersteel_nugget": "Endersteel Nugget",
   "item.endupdate.endersteel": "Endersteel",
   "item.endupdate.raw_endersteel": "Raw Endersteel",
+  "item.endupdate.void_essence": "Void Essence",
   "item.endupdate.ender_slimeball": "Ender Slimeball",
 
   "item.endupdate.aurora_ashes": "Aurora Ashes",
@@ -95,6 +96,8 @@
 
   "tooltip.endupdate.aurora_ashes.tooltip": "§7§oThe blazing hot residue of an End Aurora",
   "tooltip.endupdate.aurora_lamp.tooltip": "§7§oThe light of this lamp burns §lforever",
+
+  "tooltip.endupdate.void_essence.tooltip": "§7§oThis pulsating orb radiates a strange and mystical aura, like §da call §7§ofrom §5another world",
 
 
 
