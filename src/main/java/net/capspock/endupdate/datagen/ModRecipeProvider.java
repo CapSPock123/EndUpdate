@@ -253,10 +253,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pRecipeOutput, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL.get(), 3f, 200, "endersteel");
         oreBlasting(pRecipeOutput, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL.get(), 3f, 100, "endersteel");
 
-        shulkerSmithing(pRecipeOutput, Items.NETHERITE_HELMET, RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_HELMET.get());
-        shulkerSmithing(pRecipeOutput, Items.NETHERITE_CHESTPLATE, RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get());
-        shulkerSmithing(pRecipeOutput, Items.NETHERITE_LEGGINGS, RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS.get());
-        shulkerSmithing(pRecipeOutput, Items.NETHERITE_BOOTS, RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get());
+        smithingUpgrade(pRecipeOutput, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_HELMET, ModItems.SHULKER_PLATE.get(), RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_HELMET.get());
+        smithingUpgrade(pRecipeOutput, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_CHESTPLATE, ModItems.SHULKER_PLATE.get(), RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get());
+        smithingUpgrade(pRecipeOutput, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_LEGGINGS, ModItems.SHULKER_PLATE.get(), RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS.get());
+        smithingUpgrade(pRecipeOutput, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, Items.NETHERITE_BOOTS, ModItems.SHULKER_PLATE.get(), RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get());
+
+        smithingUpgrade(pRecipeOutput, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.DIAMOND_CHESTPLATE, Items.ELYTRA, RecipeCategory.MISC, ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
+        smithingUpgrade(pRecipeOutput, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.NETHERITE_CHESTPLATE, Items.ELYTRA, RecipeCategory.MISC, ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
+        smithingUpgrade(pRecipeOutput, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get(), Items.ELYTRA, RecipeCategory.MISC, ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE.get());
+        smithingUpgrade(pRecipeOutput, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.SHULKER_CHESTPLATE.get(), Items.ELYTRA, RecipeCategory.MISC, ModItems.SHULKER_ELYTRA_CHESTPLATE.get());
 
         trimSmithing(pRecipeOutput, ModItems.SHULKER_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "ender"));
 
@@ -276,9 +281,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.ABYSSAL_PLANKS.get()), has(ModBlocks.ABYSSAL_PLANKS.get())).save(pRecipeOutput);
     }
 
-    protected static void shulkerSmithing(RecipeOutput pRecipeOutput, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(new ItemLike[]{Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE}), Ingredient.of(new ItemLike[]{pIngredientItem}), Ingredient.of(new ItemLike[]{ModItems.SHULKER_PLATE.get()}), pCategory, pResultItem)
-                .unlocks(getHasName(ModItems.SHULKER_PLATE.get()), has(ModItems.SHULKER_PLATE.get())).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
+    protected static void smithingUpgrade(RecipeOutput pRecipeOutput, Item pTemplateItem, Item pBaseItem, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(pTemplateItem), Ingredient.of(pBaseItem), Ingredient.of(pIngredientItem),
+                pCategory, pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pRecipeOutput, getItemName(pResultItem) + "_smithing");
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

@@ -9,7 +9,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
@@ -54,6 +53,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.AURORA_ASHES.get());
         basicItem(ModItems.AURORA_POWDER.get());
         basicItem(ModItems.SHULKER_SMITHING_TEMPLATE.get());
+        basicItem(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get());
 
         handheldItem(ModItems.ENDERSTEEL_SWORD);
         handheldItem(ModItems.ENDERSTEEL_PICKAXE);
@@ -76,10 +76,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS);
         trimmedArmorItem(ModItems.SHULKER_PLATED_NETHERITE_BOOTS);
 
-        elytraItem(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
-        elytraItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
-        elytraItem(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE);
-        elytraItem(ModItems.SHULKER_ELYTRA_CHESTPLATE);
+        elytraChestplateItem(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
+        elytraChestplateItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
+        elytraChestplateItem(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE);
+        elytraChestplateItem(ModItems.SHULKER_ELYTRA_CHESTPLATE);
 
         armorItem(ModItems.ENDER_SLIME_BOOTS);
 
@@ -176,20 +176,20 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
 
-    public void elytraItem(RegistryObject<? extends Item> item) {
-        if(item.get() instanceof ElytraItem || item.get() instanceof ElytraChestplateItem) {
-            this.withExistingParent(item.getId().getPath(),
+    public void elytraChestplateItem(RegistryObject<? extends Item> itemRegistryObject) {
+        if(itemRegistryObject.get() instanceof ElytraChestplateItem) {
+            this.withExistingParent(itemRegistryObject.getId().getPath(),
                             mcLoc("item/generated"))
                     .texture("layer0",
                             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID,
-                                    "item/" + item.getId().getPath()))
+                                    "item/" + itemRegistryObject.getId().getPath()))
                     .override()
                     .predicate(ResourceLocation.parse("broken"), 1)
-                    .model(new ModelFile.UncheckedModelFile(EndUpdate.MOD_ID + ":item/broken_" + item.getId().getPath())).end();
+                    .model(new ModelFile.UncheckedModelFile(EndUpdate.MOD_ID + ":item/broken_" + itemRegistryObject.getId().getPath())).end();
 
-            getBuilder("broken_" + item.getId().getPath())
+            getBuilder("broken_" + itemRegistryObject.getId().getPath())
                     .parent(new ModelFile.UncheckedModelFile("item/generated"))
-                    .texture("layer0", "item/broken_" + item.getId().getPath());
+                    .texture("layer0", "item/broken_" + itemRegistryObject.getId().getPath());
         }
     }
 

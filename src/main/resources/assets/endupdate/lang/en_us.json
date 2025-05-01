@@ -132,5 +132,12 @@
   "enchantment.endupdate.void_strike": "Void Strike",
 
   "entity.endupdate.ender_slime": "Ender Slime",
-  "entity.endupdate.ender_slimeball": "Ender Slimeball"
+  "entity.endupdate.ender_slimeball": "Ender Slimeball",
+
+  "item.endupdate.elytra_chestplate_upgrade_smithing_template": "Smithing Template",
+  "upgrade.endupdate.elytra_chestplate_upgrade": "Elytra Chestplate Upgrade",
+  "item.endupdate.smithing_template.elytra_chestplate_upgrade.applies_to": "Diamond, Netherite, Shulker-plated Netherite or Shulker Chestplate",
+  "item.endupdate.smithing_template.elytra_chestplate_upgrade.base_slot_description": "Add Diamond, Netherite, Shulker-plated Netherite or Shulker Chestplate",
+  "item.endupdate.smithing_template.elytra_chestplate_upgrade.additions_slot_description": "Add Elytra"
+
 }

@@ -91,6 +91,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERSTEEL_INGOT.get());
 
         tag(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get())
                 .add(ModItems.SHULKER_SMITHING_TEMPLATE.get());
 
         tag(ItemTags.LOGS_THAT_BURN)

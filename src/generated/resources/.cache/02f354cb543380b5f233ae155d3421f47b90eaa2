@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-12T22:56:27.139386	Item Models: endupdate
+// 1.21.1	2025-05-01T21:11:01.210143	Item Models: endupdate
 ae2d49122029ddd704e5e92e5e11ca712177fe62 assets/endupdate/models/item/abyssal_button.json
 1564ec5799787bc7329475879403a041059a0ffd assets/endupdate/models/item/abyssal_door.json
 ab0ab6b90b48273493234fa0cf03e59662f120b0 assets/endupdate/models/item/abyssal_fence.json
@@ -11,6 +11,7 @@ ad15dc4b91f995898127e858991970768de5cdfb assets/endupdate/models/item/broken_shu
 1c3d7b18bd74cc9c74e076aad4b366d8cf45edbb assets/endupdate/models/item/broken_shulker_plated_netherite_elytra_chestplate.json
 423c34a7e9382d0612cde2bd6091f109b4ef5c1b assets/endupdate/models/item/diamond_elytra_chestplate.json
 74da08653a55c038bfbe50ab142a993cf896967a assets/endupdate/models/item/diamond_hammer.json
+f723e7f57c2cdbdd3998d4c5dbfaf7700623f864 assets/endupdate/models/item/elytra_chestplate_upgrade_smithing_template.json
 a9029bd16b915a7bac316fec7ac7fb6aaf2dca07 assets/endupdate/models/item/ender_slime_boots.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/endupdate/models/item/ender_slime_spawn_egg.json
 344dc3a79ebcabec739e640bb651cc10e4c9d241 assets/endupdate/models/item/ender_slimeball.json

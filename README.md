@@ -16,6 +16,10 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.4
+-ITEM Elytra Chestplate Upgrade Smithing Template added
+-Recipes for Elytra Chestplates added
+
 endupdate-1.21.1-0.7.3 <br/>
 -Tweak: Ender Slime Spawn Egg texture tweaked <br/>
 -Tweak: Shulker Armor Model texture tweaked <br/>

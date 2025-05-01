@@ -31,6 +31,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.AURORA_POWDER.get());
 
                         output.accept(ModItems.SHULKER_SMITHING_TEMPLATE.get());
+                        output.accept(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get());
 
                         output.accept(ModItems.ENDER_SLIME_SPAWN_EGG.get());
                     }).build());

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:elytra"
+  },
+  "base": {
+    "item": "minecraft:diamond_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "endupdate:diamond_elytra_chestplate"
+  },
+  "template": {
+    "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
+  }
+}

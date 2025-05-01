@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-12T20:03:17.185191	Tags for minecraft:item mod id endupdate
+// 1.21.1	2025-05-01T11:27:19.978977	Tags for minecraft:item mod id endupdate
 74df109e3546876779a4cb080bb2692ce45617fe data/endupdate/tags/item/slingshot_projectiles.json
 088949920f53f09f00aaffff12bd83f035e557fb data/endupdate/tags/item/transformable_items.json
 133ce4877dcb2ff6f62895a16dca4a37e9f79f50 data/minecraft/tags/item/axes.json
@@ -18,7 +18,7 @@ d58dc30a34578b703a0155a7546d6ff3eece0a60 data/minecraft/tags/item/saplings.json
 033a8a05472878ffbc0cc719b0a8187d768dc0e8 data/minecraft/tags/item/shovels.json
 0cb3fdf69b26ca72fc875e21bef9f7c01fc96c47 data/minecraft/tags/item/swords.json
 32a438704d2649f7cab90c45d63c989319a5f7ff data/minecraft/tags/item/trim_materials.json
-0f8b756283e6f016c3ebe41b233f454d205e8be2 data/minecraft/tags/item/trim_templates.json
+d2038a474bda778a375a88b237dc20cb668b3dcb data/minecraft/tags/item/trim_templates.json
 e9c1a12f47e9f31cd9c6afd9c9476146af7b090d data/minecraft/tags/item/trimmable_armor.json
 6c922f1707cf85e55c76c2b5fd69311ad587ffd6 data/minecraft/tags/item/wooden_buttons.json
 c386a46291495a2e206cc760af12232d78bf9853 data/minecraft/tags/item/wooden_doors.json

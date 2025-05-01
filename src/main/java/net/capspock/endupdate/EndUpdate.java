@@ -84,6 +84,8 @@ public class EndUpdate {
             event.accept(ModItems.IRON_HAMMER);
             event.accept(ModItems.DIAMOND_HAMMER);
             event.accept(ModItems.NETHERITE_HAMMER);
+        } else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
         }
     }
 
