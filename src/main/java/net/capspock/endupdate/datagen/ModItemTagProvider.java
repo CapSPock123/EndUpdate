@@ -85,7 +85,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.SHULKER_PLATED_NETHERITE_HELMET.get())
                 .add(ModItems.SHULKER_PLATED_NETHERITE_CHESTPLATE.get())
                 .add(ModItems.SHULKER_PLATED_NETHERITE_LEGGINGS.get())
-                .add(ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get());
+                .add(ModItems.SHULKER_PLATED_NETHERITE_BOOTS.get())
+
+                .add(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.SHULKER_PLATED_NETHERITE_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.SHULKER_ELYTRA_CHESTPLATE.get());
 
         tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());

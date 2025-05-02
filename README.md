@@ -16,9 +16,13 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
-endupdate-1.21.1-0.7.4
--ITEM Elytra Chestplate Upgrade Smithing Template added
--Recipes for Elytra Chestplates added
+endupdate-1.21.1-0.7.5  <br/>
+-GLOBAL LOOT MODIFIER Elytra Chestplate Upgrade Smithing Template added to End City Chest Loot Table <br/>
+-Bug Fix: Fixed Elytra Chestplates not being compatible with armor trims <br/>
+
+endupdate-1.21.1-0.7.4  <br/>
+-ITEM Elytra Chestplate Upgrade Smithing Template added  <br/>
+-Recipes for Elytra Chestplates added  <br/>
 
 endupdate-1.21.1-0.7.3 <br/>
 -Tweak: Ender Slime Spawn Egg texture tweaked <br/>

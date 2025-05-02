@@ -177,7 +177,39 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 
     public void elytraChestplateItem(RegistryObject<? extends Item> itemRegistryObject) {
-        if(itemRegistryObject.get() instanceof ElytraChestplateItem) {
+        if(itemRegistryObject.get() instanceof ElytraChestplateItem elytraChestplateItem) {
+            trimMaterials.forEach((trimMaterial, value) -> {
+                float trimValue = value;
+                String armorType = "chestplate";
+                String armorItemPath = elytraChestplateItem.toString();
+                String trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
+                String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
+                ResourceLocation armorItemResLoc = ResourceLocation.parse(armorItemPath);
+                ResourceLocation trimResLoc = ResourceLocation.parse(trimPath); // minecraft namespace
+                ResourceLocation trimNameResLoc = ResourceLocation.parse(currentTrimName);
+
+                /* This is used for making the ExistingFileHelper acknowledge that this texture exist, so this will
+                avoid an IllegalArgumentException
+                */
+
+                existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
+
+                // Trimmed armorItem files
+                getBuilder(currentTrimName)
+                        .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                        .texture("layer0", armorItemResLoc.getNamespace() + ":item/" + armorItemResLoc.getPath())
+                        .texture("layer1", trimResLoc);
+
+                // Non-trimmed armorItem file (normal variant)
+                this.withExistingParent(itemRegistryObject.getId().getPath(),
+                                mcLoc("item/generated"))
+                        .override()
+                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc.getNamespace()  + ":item/" + trimNameResLoc.getPath()))
+                        .predicate(mcLoc("trim_type"), trimValue).end()
+                        .texture("layer0",
+                                ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID,
+                                        "item/" + itemRegistryObject.getId().getPath()));
+            });
             this.withExistingParent(itemRegistryObject.getId().getPath(),
                             mcLoc("item/generated"))
                     .texture("layer0",

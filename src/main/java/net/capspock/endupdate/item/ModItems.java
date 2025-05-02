@@ -160,7 +160,7 @@ public class ModItems {
             () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "shulker")));
 
     public static final RegistryObject<Item> ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("elytra_chestplate_upgrade_smithing_template",
-            CustomSmithingTemplateItem::createElytraChestplateUpgradeTemplate);
+            ModSmithingTemplateItem::createElytraChestplateUpgradeTemplate);
 
     /*Textures from ElytraChestplates by FrogMan650 at https://github.com/FrogMan650/ElytraChestplates
       Distributed under the MIT License*/

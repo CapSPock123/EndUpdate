@@ -11,8 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class CustomSmithingTemplateItem extends SmithingTemplateItem {
-    public CustomSmithingTemplateItem(Component pAppliesTo, Component pIngredients, Component pUpgradeDescription, Component pBaseSlotDescription, Component pAdditionsSlotDescription, List<ResourceLocation> pBaseSlotEmptyIcons, List<ResourceLocation> pAdditionalSlotEmptyIcons, FeatureFlag... pRequiredFeatures) {
+public class ModSmithingTemplateItem extends SmithingTemplateItem {
+    public ModSmithingTemplateItem(Component pAppliesTo, Component pIngredients, Component pUpgradeDescription, Component pBaseSlotDescription, Component pAdditionsSlotDescription, List<ResourceLocation> pBaseSlotEmptyIcons, List<ResourceLocation> pAdditionalSlotEmptyIcons, FeatureFlag... pRequiredFeatures) {
         super(pAppliesTo, pIngredients, pUpgradeDescription, pBaseSlotDescription, pAdditionsSlotDescription, pBaseSlotEmptyIcons, pAdditionalSlotEmptyIcons, pRequiredFeatures);
     }
 
@@ -40,8 +40,8 @@ public class CustomSmithingTemplateItem extends SmithingTemplateItem {
     private static List<ResourceLocation> createElytraChestplateUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_ELYTRA);
     }
-    public static CustomSmithingTemplateItem createElytraChestplateUpgradeTemplate() {
-        return new CustomSmithingTemplateItem(ELYTRA_CHESTPLATE_UPGRADE_APPLIES_TO, ELYTRA_CHESTPLATE_UPGRADE_INGREDIENTS,
+    public static ModSmithingTemplateItem createElytraChestplateUpgradeTemplate() {
+        return new ModSmithingTemplateItem(ELYTRA_CHESTPLATE_UPGRADE_APPLIES_TO, ELYTRA_CHESTPLATE_UPGRADE_INGREDIENTS,
                 ELYTRA_CHESTPLATE_UPGRADE, ELYTRA_CHESTPLATE_UPGRADE_BASE_SLOT_DESCRIPTION, ELYTRA_CHESTPLATE_UPGRADE_ADDITIONS_SLOT_DESCRIPTION,
                 createElytraChestplateUpgradeIconList(), createElytraChestplateUpgradeMaterialList());
     }

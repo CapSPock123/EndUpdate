@@ -10,6 +10,7 @@ import net.capspock.endupdate.entity.client.EnderSlimeRenderer;
 import net.capspock.endupdate.entity.client.EnderSlimeballRenderer;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.custom.EnderSlimeballParticles;
 import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.potion.ModPotions;
@@ -67,6 +68,8 @@ public class EndUpdate {
         ModEntities.register(modEventBus);
 
         ModParticles.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

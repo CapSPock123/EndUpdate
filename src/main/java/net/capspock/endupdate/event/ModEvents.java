@@ -59,4 +59,6 @@ public class ModEvents {
 
         builder.addMix(Potions.AWKWARD, ModItems.ENDER_SLIMEBALL.get(), ModPotions.SLIMEY_POTION.getHolder().get());
     }
+
+
 }
