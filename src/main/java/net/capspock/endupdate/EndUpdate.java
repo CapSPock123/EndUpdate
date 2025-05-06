@@ -2,6 +2,7 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
+import net.capspock.endupdate.block.entity.ModBlockEntities;
 import net.capspock.endupdate.component.ModDataComponentTypes;
 import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.enchantment.ModEnchantmentEffects;
@@ -14,9 +15,12 @@ import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.custom.EnderSlimeballParticles;
 import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.potion.ModPotions;
+import net.capspock.endupdate.screen.ModMenuTypes;
+import net.capspock.endupdate.screen.custom.VoidInfuserScreen;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.capspock.endupdate.worldgen.tree.custom.ModTrunkPlacerTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -66,10 +70,13 @@ public class EndUpdate {
         ModTrunkPlacerTypes.register(modEventBus);
 
         ModEntities.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         ModParticles.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -109,6 +116,8 @@ public class EndUpdate {
             EntityRenderers.register(ModEntities.ENDER_SLIMEBALL.get(), EnderSlimeballRenderer::new);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDER_SLIME_BLOCK.get(), RenderType.translucent());
+
+            MenuScreens.register(ModMenuTypes.VOID_INFUSER_MENU.get(), VoidInfuserScreen::new);
         }
 
         @SubscribeEvent

@@ -23,6 +23,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.ENDERSTEEL_BLOCK);
         blockWithItem(ModBlocks.ENDERSTEEL_ORE);
         blockWithItem(ModBlocks.MAGIC_BLOCK);
+        blockWithItem(ModBlocks.VOID_INFUSER);
 
         customLamp();
 

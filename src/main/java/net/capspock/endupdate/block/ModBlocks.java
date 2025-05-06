@@ -236,6 +236,10 @@ public class ModBlocks {
             () -> new EnderSlimeBlock(BlockBehaviour.Properties.of()
                     .strength(0f).sound(SoundType.SLIME_BLOCK).explosionResistance(0f).noOcclusion()));
 
+    public static final RegistryObject<Block> VOID_INFUSER = registerBlock("void_infuser",
+            () -> new VoidInfuserBlock(BlockBehaviour.Properties.of()));
+
+
     private static <T extends Block> RegistryObject<T>  registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-11T21:33:52.990987	Block States: endupdate
+// 1.21.1	2025-05-06T16:07:53.957566	Block States: endupdate
 0d9eb2c57c7ca7a52c8583c68b22fe142ef5561e assets/endupdate/blockstates/abyssal_button.json
 141fe9734c42c6e555e451e36f56069472b11c06 assets/endupdate/blockstates/abyssal_door.json
 8f7fd8b37f23422bf47bec725e22d8b1e672ced9 assets/endupdate/blockstates/abyssal_fence.json
@@ -19,6 +19,7 @@ a1d3b9b793948329c5b442b0f2ea5a37910f201c assets/endupdate/blockstates/endersteel
 d998cae26d1d0933fada4a30e5de9cbc6b29927f assets/endupdate/blockstates/magic_block.json
 f5fbe1706d0d1c93a5df5c6798e1295c94d54b77 assets/endupdate/blockstates/stripped_abyssal_log.json
 9d3a53953fbd8a96f92166f9e762bd4a7147c24f assets/endupdate/blockstates/stripped_abyssal_wood.json
+1eba0d8d8dad6a2a9b03ba512182ef389432b89b assets/endupdate/blockstates/void_infuser.json
 a883709e231d84998d09cbeeed33d699791562a0 assets/endupdate/models/block/abyssal_button.json
 fdc59fa9b9c14e69e98d7a380e4ab890861670d9 assets/endupdate/models/block/abyssal_button_pressed.json
 ac326ae032165950bd1bf2a2b77b655ac5b903ef assets/endupdate/models/block/abyssal_door_bottom_left.json
@@ -62,6 +63,7 @@ d137dbd998d24b050345516d9dd07e29b1b44cb9 assets/endupdate/models/block/magic_blo
 35c39a6870d7757dfcdf8a7bbbdba759473bbe9a assets/endupdate/models/block/stripped_abyssal_log_horizontal.json
 38e4e09b774b1b78061e76f0cd674dc40642c938 assets/endupdate/models/block/stripped_abyssal_wood.json
 54b6f6f9337e9d89f7a5d00343de55af9164352a assets/endupdate/models/block/stripped_abyssal_wood_horizontal.json
+d1cf02b17e8cf701574b050fc16f732cfdf1c8aa assets/endupdate/models/block/void_infuser.json
 dc18e14ec1c1a073356cc87b0d7b1ef4f268bd15 assets/endupdate/models/item/abyssal_fence.json
 d926729b4f11e3dda16a2c6621968170bf646635 assets/endupdate/models/item/abyssal_fence_gate.json
 1eb66e9487a76a9926882e43302ec6cbb2926abd assets/endupdate/models/item/abyssal_leaves.json
@@ -79,3 +81,4 @@ e38b1539c08e64c25f3e08a47aa5a06cd41343af assets/endupdate/models/item/endersteel
 295255ea0fe2347b02bb5a68b93d0f2f90b13b03 assets/endupdate/models/item/magic_block.json
 8f5bb8d205c46816aa40db8e540f535f04cf267d assets/endupdate/models/item/stripped_abyssal_log.json
 22dd4c025d3551963847f1f2721e7729ae309299 assets/endupdate/models/item/stripped_abyssal_wood.json
+ff04051d7496ca4ef7c2c098871ddd350ad29ffe assets/endupdate/models/item/void_infuser.json
