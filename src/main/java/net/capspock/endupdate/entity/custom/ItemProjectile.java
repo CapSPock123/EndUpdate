@@ -127,7 +127,7 @@ public abstract class ItemProjectile extends Projectile implements ItemSupplier 
         double baseDamage = this.baseDamage;
         float multiplier = (float) this.getDeltaMovement().length();
         if (this.getWeaponItem() != null && this.level() instanceof ServerLevel serverlevel) {
-            baseDamage = (double) EnchantmentHelper.modifyDamage(serverlevel, this.getWeaponItem(), entity, damagesource, (float)baseDamage);
+            baseDamage = EnchantmentHelper.modifyDamage(serverlevel, this.getWeaponItem(), entity, damagesource, (float)baseDamage);
         }
         int finalDamage = Mth.ceil(Mth.clamp((double)multiplier * baseDamage, 0.0, 2.147483647E9));
         entity.hurt(this.damageSources().thrown(this ,this.getOwner()), (float) finalDamage);

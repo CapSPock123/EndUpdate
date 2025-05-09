@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = EndUpdate.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ModClientEvents {
+
     @SubscribeEvent
     public static void onComputerFovModifierEvent(ComputeFovModifierEvent event) {
         if(event.getPlayer().isUsingItem()) {
