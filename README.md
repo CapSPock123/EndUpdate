@@ -16,6 +16,9 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.7  <br/>
+-Ender Bow can now hit Endermen
+
 endupdate-1.21.1-0.7.6  <br/>
 -BLOCK ENTITY Void Infuser Block Entity added <br/>
 

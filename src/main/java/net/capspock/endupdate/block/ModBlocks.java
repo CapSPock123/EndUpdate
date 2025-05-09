@@ -33,10 +33,14 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(40f).requiresCorrectToolForDrops().sound(SoundType.STONE).explosionResistance(720f)));
 
+    /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
                     .strength(15f).explosionResistance(1200f).requiresCorrectToolForDrops().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
+    /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
     public static final RegistryObject<Block> AURORA_LAMP = registerBlock("aurora_lamp",
             () -> new AuroraLampBlock(BlockBehaviour.Properties.of().strength(9f).explosionResistance(6f)
                     .lightLevel(state -> state.getValue(AuroraLampBlock.CLICKED) ? 15 : 0)));
@@ -236,6 +240,8 @@ public class ModBlocks {
             () -> new EnderSlimeBlock(BlockBehaviour.Properties.of()
                     .strength(0f).sound(SoundType.SLIME_BLOCK).explosionResistance(0f).noOcclusion()));
 
+    /*Texture from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
     public static final RegistryObject<Block> VOID_INFUSER = registerBlock("void_infuser",
             () -> new VoidInfuserBlock(BlockBehaviour.Properties.of()));
 

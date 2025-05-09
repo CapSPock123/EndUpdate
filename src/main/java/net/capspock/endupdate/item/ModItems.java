@@ -85,7 +85,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_HOE = ITEMS.register("endersteel_hoe",
             () -> new HoeItem(ModToolTiers.ENDERSTEEL, new Item.Properties()
                     .attributes(HoeItem.createAttributes(ModToolTiers.ENDERSTEEL, -4, 0f))));
-
+    
     /*Hammer Textures adapted from Forge TutorialMod 1.21.X by Kaupenjoe
     Distributed under the MIT License*/
     public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
