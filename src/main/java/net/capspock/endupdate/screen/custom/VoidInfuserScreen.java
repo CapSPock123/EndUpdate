@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
 public class VoidInfuserScreen extends AbstractContainerScreen<VoidInfuserMenu> {
@@ -14,6 +15,8 @@ public class VoidInfuserScreen extends AbstractContainerScreen<VoidInfuserMenu> 
             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "textures/gui/void_infuser/void_infuser_gui.png");
     private static final ResourceLocation ARROW_TEXTURE =
             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "textures/gui/arrow_progress.png");
+    private static final ResourceLocation VOID_FIRE_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "textures/gui/void_fire_progress.png");
 
     public VoidInfuserScreen(VoidInfuserMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -29,12 +32,15 @@ public class VoidInfuserScreen extends AbstractContainerScreen<VoidInfuserMenu> 
 
         pGuiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
+
         renderProgressArrow(pGuiGraphics, x, y);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
             guiGraphics.blit(ARROW_TEXTURE,x + 80, y + 35, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
+            guiGraphics.blit(VOID_FIRE_TEXTURE, x + 56, y + 37, 0, 0, 14, menu.getScaledFireProgress(), 14, 14);
+            System.out.println(menu.getScaledFireProgress());
         }
     }
 

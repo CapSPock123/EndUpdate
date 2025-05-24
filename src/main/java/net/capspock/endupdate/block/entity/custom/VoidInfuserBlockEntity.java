@@ -47,7 +47,7 @@ public class VoidInfuserBlockEntity extends BlockEntity implements MenuProvider 
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 144;
 
     public VoidInfuserBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.VOID_INFUSER_BE.get(), pPos, pBlockState);

@@ -4,6 +4,7 @@ import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.block.entity.custom.VoidInfuserBlockEntity;
 import net.capspock.endupdate.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -47,6 +48,14 @@ public class VoidInfuserMenu extends AbstractContainerMenu {
         int arrowPixelSize = 24;
 
         return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+    }
+
+    public int getScaledFireProgress() {
+        int progress = this.data.get(0);
+        int maxProgress = this.data.get(1);
+        int voidFirePixelSize = 14;
+
+        return maxProgress != 0 && progress != 0 ? voidFirePixelSize - (voidFirePixelSize * progress / maxProgress) : 0;
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

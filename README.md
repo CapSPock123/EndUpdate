@@ -16,6 +16,13 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.8 <br/>
+-Tweak: Texture changed for Elytra Chestplate Smithing Template <br/>
+-Tweak: Void Infuser GUI retextured <br/>
+-Bug Fix: Ender Bow now drops XP Orbs when killing Endermen <br/>
+-Bug Fix: Ender Bow now hits Endermen while shooting in off-hand <br/>
+-Bug Fix: Ender Bow now gives the “Take Aim” and “Monster Hunter” advancements when killing Endermen <br/>
+
 endupdate-1.21.1-0.7.7  <br/>
 -Ender Bow can now hit Endermen
 
