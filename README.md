@@ -16,6 +16,16 @@ The version titled "Latest Release" is the latest stable release. Pre-releases m
 
 ### Changelog
 
+endupdate-1.21.1-0.7.9 <br/>
+-RECIPE TYPE Void Infuser Recipe Type added <br/>
+-Test Recipes added (Diamond Tools -> Endersteel Tools) <br/>
+-Bug Fix: The Flame enchantment now applies when shooting Endermen with the Ender Bow <br/>
+-Bug Fix: Endermen no longer spontaneously take damage after being hit once <br/>
+-Bug Fix: Ender Bow now does the correct amount of damage with Power <br/>
+-Bug Fix: Ender Bow crash has been patched <br/>
+-Bug Fix: The “Quick Move Stack” of the Void Infuser GUI has been fixed <br/>
+-Punch has been disabled on the Ender Bow
+
 endupdate-1.21.1-0.7.8 <br/>
 -Tweak: Texture changed for Elytra Chestplate Smithing Template <br/>
 -Tweak: Void Infuser GUI retextured <br/>

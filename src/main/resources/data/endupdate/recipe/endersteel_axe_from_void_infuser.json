@@ -1,0 +1,12 @@
+{
+  "type": "endupdate:void_infuser",
+  "input_ingredient": {
+    "item": "minecraft:diamond_axe"
+  },
+  "infuse_ingredient": {
+    "item": "endupdate:void_essence"
+  },
+  "result": {
+    "id": "endupdate:endersteel_axe"
+  }
+}

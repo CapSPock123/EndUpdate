@@ -2,6 +2,9 @@ package net.capspock.endupdate.block.entity.custom;
 
 import net.capspock.endupdate.block.entity.ModBlockEntities;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.recipe.ModRecipes;
+import net.capspock.endupdate.recipe.VoidInfuserRecipe;
+import net.capspock.endupdate.recipe.VoidInfuserRecipeInput;
 import net.capspock.endupdate.screen.custom.VoidInfuserMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
@@ -20,6 +23,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,6 +31,8 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class VoidInfuserBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemStackHandler = new ItemStackHandler(3) {
@@ -139,7 +145,8 @@ public class VoidInfuserBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.ENDERSTEEL_SWORD.get());
+        Optional<RecipeHolder<VoidInfuserRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
 
         itemStackHandler.extractItem(INPUT_SLOT, 1, false);
         itemStackHandler.extractItem(INPUT_SLOT_ESSENCE, 1, false);
@@ -157,14 +164,19 @@ public class VoidInfuserBlockEntity extends BlockEntity implements MenuProvider 
     }
 
     private boolean hasRecipe() {
-        Item input = Items.DIAMOND_SWORD;
-        Item essence = ModItems.VOID_ESSENCE.get();
-        ItemStack output = new ItemStack(ModItems.ENDERSTEEL_SWORD.get());
+        Optional<RecipeHolder<VoidInfuserRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()) {
+            return false;
+        }
 
-        return itemStackHandler.getStackInSlot(INPUT_SLOT).is(input) &&
-                itemStackHandler.getStackInSlot(INPUT_SLOT_ESSENCE).is(essence) &&
-                canInsertItemIntoOutputSlot(output)
+        ItemStack output = recipe.get().value().output();
+        return canInsertItemIntoOutputSlot(output)
                 && canInsertAmountIntoOutputSlot(output.getCount());
+    }
+
+    public Optional<RecipeHolder<VoidInfuserRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.VOID_INFUSER_TYPE.get(), new VoidInfuserRecipeInput(itemStackHandler.getStackInSlot(INPUT_SLOT), itemStackHandler.getStackInSlot(INPUT_SLOT_ESSENCE)), level);
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {

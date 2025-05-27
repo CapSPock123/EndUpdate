@@ -15,6 +15,7 @@ import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.custom.EnderSlimeballParticles;
 import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.potion.ModPotions;
+import net.capspock.endupdate.recipe.ModRecipes;
 import net.capspock.endupdate.screen.ModMenuTypes;
 import net.capspock.endupdate.screen.custom.VoidInfuserScreen;
 import net.capspock.endupdate.sound.ModSounds;
@@ -68,13 +69,14 @@ public class EndUpdate {
         ModTrunkPlacerTypes.register(modEventBus);
 
         ModEntities.register(modEventBus);
+
         ModBlockEntities.register(modEventBus);
+        ModRecipes.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         ModParticles.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-
-        ModMenuTypes.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

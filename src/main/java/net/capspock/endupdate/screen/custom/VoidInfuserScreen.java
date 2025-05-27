@@ -40,7 +40,6 @@ public class VoidInfuserScreen extends AbstractContainerScreen<VoidInfuserMenu> 
         if(menu.isCrafting()) {
             guiGraphics.blit(ARROW_TEXTURE,x + 80, y + 35, 0, 0, menu.getScaledArrowProgress(), 16, 24, 16);
             guiGraphics.blit(VOID_FIRE_TEXTURE, x + 56, y + 37, 0, 0, 14, menu.getScaledFireProgress(), 14, 14);
-            System.out.println(menu.getScaledFireProgress());
         }
     }
 
