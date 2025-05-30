@@ -14,7 +14,12 @@ To download the mod, go to "Releases", and download the .jar file of whichever v
 
 The version titled "Latest Release" is the latest stable release. Pre-releases may contain severe bugs.
 
+JEI is compatible and recommended to be used together with this mod.
+
 ### Changelog
+
+endupdate-1.21.1-0.7.10 <br/>
+-COMPAT JEI Compatibility added for Void Infuser <br/>
 
 endupdate-1.21.1-0.7.9 <br/>
 -RECIPE TYPE Void Infuser Recipe Type added <br/>
