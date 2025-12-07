@@ -35,7 +35,15 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.2
+- *ITEM* Enderanium Ingot added
+- *CREATIVE MODE TAB* End Update Items added 
+- Item Model Datagen added
+
+Released on 7/12/2025
+
 endupdate-1.20.1-0.0.1
 - Base Build
+- Parchment Mappings added
 
 Released on 6/12/2025

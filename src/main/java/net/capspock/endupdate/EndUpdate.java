@@ -1,6 +1,8 @@
 package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
+import net.capspock.endupdate.item.ModCreativeModeTabs;
+import net.capspock.endupdate.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,14 +27,16 @@ public class EndUpdate
 
     public EndUpdate(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-
         modEventBus.addListener(this::commonSetup);
 
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
+        ModCreativeModeTabs.register(modEventBus);
 
+        ModItems.register(modEventBus);
+
+        modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
