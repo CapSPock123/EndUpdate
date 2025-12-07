@@ -1,5 +1,8 @@
 {
   "item.endupdate.enderanium_ingot": "Enderanium Ingot",
 
-  "creativetab.endupdate.end_update_items": "End Update Items"
+  "block.endupdate.enderanium_ore": "Enderanium Ore",
+
+  "creativetab.endupdate.end_update_items": "End Update Items",
+  "creativetab.endupdate.end_update_blocks": "End Update Blocks"
 }

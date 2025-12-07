@@ -1,6 +1,7 @@
 package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
+import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
@@ -35,6 +36,7 @@ public class EndUpdate
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us

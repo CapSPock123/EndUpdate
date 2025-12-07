@@ -35,6 +35,12 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.3
+- *BLOCK* Enderanium Ore added
+- *CREATIVE MODE TAB* End Update Blocks added
+- Datagen fully implemented
+- *Bug Fix:* Enderanium Ingots can now be used as items for beacon payment
+
 endupdate-1.20.1-0.0.2
 - *ITEM* Enderanium Ingot added
 - *CREATIVE MODE TAB* End Update Items added 
