@@ -20,8 +20,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.ENDERANIUM_ORE.get());
+                .add(ModBlocks.ENDERANIUM_ORE.get())
+                .add(ModBlocks.ENDERANIUM_BLOCK.get());
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
-                .add(ModBlocks.ENDERANIUM_ORE.get());
+                .add(ModBlocks.ENDERANIUM_ORE.get())
+                .add(ModBlocks.ENDERANIUM_BLOCK.get());
+        this.tag(BlockTags.BEACON_BASE_BLOCKS)
+                .add(ModBlocks.ENDERANIUM_BLOCK.get());
     }
 }

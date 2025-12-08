@@ -35,6 +35,14 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.4
+- BLOCK Enderanium Block added
+- ITEM Raw Enderanium added
+- ITEM Enderanium Shard added
+- Recipe for Enderanium Ingot added
+- Enderanium Ore loot table changed to drop Raw Enderanium
+- Enderanium Ore now glows dimly and emits particles when interacted with
+
 endupdate-1.20.1-0.0.3
 - *BLOCK* Enderanium Ore added
 - *CREATIVE MODE TAB* End Update Blocks added
@@ -46,10 +54,6 @@ endupdate-1.20.1-0.0.2
 - *CREATIVE MODE TAB* End Update Items added 
 - Item Model Datagen added
 
-Released on 7/12/2025
-
 endupdate-1.20.1-0.0.1
 - Base Build
 - Parchment Mappings added
-
-Released on 6/12/2025

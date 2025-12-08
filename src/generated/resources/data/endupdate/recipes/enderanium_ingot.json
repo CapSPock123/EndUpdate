@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "endupdate:enderanium_shard"
+    },
+    {
+      "item": "endupdate:enderanium_shard"
+    },
+    {
+      "item": "endupdate:enderanium_shard"
+    },
+    {
+      "item": "endupdate:enderanium_shard"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:dragon_breath"
+    }
+  ],
+  "result": {
+    "item": "endupdate:enderanium_ingot"
+  }
+}

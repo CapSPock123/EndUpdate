@@ -18,6 +18,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.ENDERANIUM_INGOT);
+        simpleItem(ModItems.RAW_ENDERANIUM);
+        simpleItem(ModItems.ENDERANIUM_SHARD);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

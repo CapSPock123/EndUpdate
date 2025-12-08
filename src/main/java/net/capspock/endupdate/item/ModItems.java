@@ -13,6 +13,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> ENDERANIUM_INGOT = ITEMS.register("enderanium_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_ENDERANIUM = ITEMS.register("raw_enderanium",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDERANIUM_SHARD = ITEMS.register("enderanium_shard",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

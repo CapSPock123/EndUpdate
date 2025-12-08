@@ -1,7 +1,10 @@
 {
   "item.endupdate.enderanium_ingot": "Enderanium Ingot",
+  "item.endupdate.raw_enderanium": "Raw Enderanium",
+  "item.endupdate.enderanium_shard": "Enderanium Shard",
 
   "block.endupdate.enderanium_ore": "Enderanium Ore",
+  "block.endupdate.enderanium_block": "Enderanium Block",
 
   "creativetab.endupdate.end_update_items": "End Update Items",
   "creativetab.endupdate.end_update_blocks": "End Update Blocks"

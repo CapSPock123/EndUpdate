@@ -19,6 +19,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.endupdate.end_update_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ENDERANIUM_INGOT.get());
+                        output.accept(ModItems.RAW_ENDERANIUM.get());
+                        output.accept(ModItems.ENDERANIUM_SHARD.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("end_update_blocks_tab",
@@ -27,6 +29,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.endupdate.end_update_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.ENDERANIUM_ORE.get());
+                        output.accept(ModBlocks.ENDERANIUM_BLOCK.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
