@@ -21,6 +21,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDERANIUM_INGOT.get());
                         output.accept(ModItems.RAW_ENDERANIUM.get());
                         output.accept(ModItems.ENDERANIUM_SHARD.get());
+                        output.accept(ModItems.ENDERANIUM_NUGGET.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("end_update_blocks_tab",

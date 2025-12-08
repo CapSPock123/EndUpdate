@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ENDERANIUM_INGOT);
         simpleItem(ModItems.RAW_ENDERANIUM);
         simpleItem(ModItems.ENDERANIUM_SHARD);
+        simpleItem(ModItems.ENDERANIUM_NUGGET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

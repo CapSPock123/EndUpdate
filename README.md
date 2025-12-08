@@ -35,11 +35,15 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.5
+- *ITEM* Enderanium Nugget added
+- Enderanium Ore Generation added
+
 endupdate-1.20.1-0.0.4
-- BLOCK Enderanium Block added
-- ITEM Raw Enderanium added
-- ITEM Enderanium Shard added
-- Recipe for Enderanium Ingot added
+- *BLOCK* Enderanium Block added
+- *ITEM* Raw Enderanium added
+- *ITEM* Enderanium Shard added
+- *Recipe* for Enderanium Ingot added
 - Enderanium Ore loot table changed to drop Raw Enderanium
 - Enderanium Ore now glows dimly and emits particles when interacted with
 

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "endupdate:enderanium_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "endupdate:enderanium_nugget"
+  }
+}

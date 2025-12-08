@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_enderanium_shard": {
+    "has_enderanium_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "endupdate:enderanium_shard"
+              "endupdate:enderanium_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "endupdate:enderanium_ingot"
+        "recipe": "endupdate:enderanium_from_nugget"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_enderanium_shard",
+      "has_enderanium_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "endupdate:enderanium_ingot"
+      "endupdate:enderanium_from_nugget"
     ]
   },
   "sends_telemetry_event": false

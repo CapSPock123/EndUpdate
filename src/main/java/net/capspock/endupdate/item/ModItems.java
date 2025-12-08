@@ -17,6 +17,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDERANIUM_SHARD = ITEMS.register("enderanium_shard",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDERANIUM_NUGGET = ITEMS.register("enderanium_nugget",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

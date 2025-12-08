@@ -41,7 +41,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.ENDERANIUM_SHARD.get(), 4)
                 .requires(Items.ENDER_EYE, 4)
                 .requires(Items.DRAGON_BREATH)
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_SHARD.get()), has(ModItems.ENDERANIUM_INGOT.get()))
+                .unlockedBy(getHasName(ModItems.ENDERANIUM_SHARD.get()), has(ModItems.ENDERANIUM_SHARD.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDERANIUM_INGOT.get())
+                .pattern("EEE")
+                .pattern("EEE")
+                .pattern("EEE")
+                .define('E', ModItems.ENDERANIUM_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
+                .save(pWriter, EndUpdate.MOD_ID + ":enderanium_from_nugget");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERANIUM_NUGGET.get(), 9)
+                .requires(ModItems.ENDERANIUM_INGOT.get())
+                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
                 .save(pWriter);
 
         oreSmelting(pWriter, ENDERANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERANIUM_SHARD.get(),
