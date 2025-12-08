@@ -15,8 +15,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.ENDERANIUM_ORE);
-        blockWithItem(ModBlocks.ENDERANIUM_BLOCK);
+        blockWithItem(ModBlocks.ENDERSTEEL_ORE);
+        blockWithItem(ModBlocks.ENDERSTEEL_BLOCK);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

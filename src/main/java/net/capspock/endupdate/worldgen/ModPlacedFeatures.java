@@ -16,12 +16,12 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> ENDERANIUM_ORE_PLACED_KEY = registerKey("enderanium_ore_placed");
+    public static final ResourceKey<PlacedFeature> ENDERSTEEL_ORE_PLACED_KEY = registerKey("endersteel_ore_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, ENDERANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ENDERANIUM_ORE_KEY),
+        register(context, ENDERSTEEL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ENDERSTEEL_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(1,
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(11), VerticalAnchor.absolute(20))));
     }

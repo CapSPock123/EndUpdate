@@ -1,12 +1,19 @@
 {
-  "item.endupdate.enderanium_ingot": "Enderanium Ingot",
-  "item.endupdate.raw_enderanium": "Raw Enderanium",
-  "item.endupdate.enderanium_shard": "Enderanium Shard",
-  "item.endupdate.enderanium_nugget": "Enderanium Nugget",
+  "item.endupdate.endersteel_ingot": "Endersteel Ingot",
+  "item.endupdate.raw_endersteel": "Raw Endersteel",
+  "item.endupdate.endersteel_shard": "Endersteel Shard",
+  "item.endupdate.endersteel_nugget": "Endersteel Nugget",
 
-  "block.endupdate.enderanium_ore": "Enderanium Ore",
-  "block.endupdate.enderanium_block": "Enderanium Block",
+  "block.endupdate.endersteel_ore": "Endersteel Ore",
+  "block.endupdate.endersteel_block": "Block of Endersteel",
+
+  "item.endupdate.endersteel_sword": "Endersteel Sword",
+  "item.endupdate.endersteel_pickaxe": "Endersteel Pickaxe",
+  "item.endupdate.endersteel_shovel": "Endersteel Shovel",
+  "item.endupdate.endersteel_axe": "Endersteel Axe",
+  "item.endupdate.endersteel_hoe": "Endersteel Hoe",
 
   "creativetab.endupdate.end_update_items": "End Update Items",
-  "creativetab.endupdate.end_update_blocks": "End Update Blocks"
+  "creativetab.endupdate.end_update_blocks": "End Update Blocks",
+  "creativetab.endupdate.end_update_equipment": "End Update Equipment"
 }

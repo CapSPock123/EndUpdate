@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 3.0,
+  "group": "endersteel",
+  "ingredient": {
+    "item": "endupdate:endersteel_ore"
+  },
+  "result": "endupdate:endersteel_shard"
+}

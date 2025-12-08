@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "endupdate:endersteel_ingot"
+    },
+    "R": {
+      "item": "minecraft:end_rod"
+    }
+  },
+  "pattern": [
+    "E",
+    "E",
+    "R"
+  ],
+  "result": {
+    "item": "endupdate:endersteel_sword"
+  },
+  "show_notification": true
+}

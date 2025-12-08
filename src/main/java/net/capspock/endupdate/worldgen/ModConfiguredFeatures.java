@@ -15,12 +15,12 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTes
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ENDERANIUM_ORE_KEY = registerKey("enderanium_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ENDERSTEEL_ORE_KEY = registerKey("endersteel_ore");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest endStoneReplaceables = new BlockMatchTest(Blocks.END_STONE);
 
-        register(context, ENDERANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(endStoneReplaceables, ModBlocks.ENDERANIUM_ORE.get().defaultBlockState(), 3));
+        register(context, ENDERSTEEL_ORE_KEY, Feature.ORE, new OreConfiguration(endStoneReplaceables, ModBlocks.ENDERSTEEL_ORE.get().defaultBlockState(), 3));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

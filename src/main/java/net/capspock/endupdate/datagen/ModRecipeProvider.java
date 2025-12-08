@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    private static final List<ItemLike> ENDERANIUM_SMELTABLES = List.of(ModBlocks.ENDERANIUM_ORE.get(), ModItems.RAW_ENDERANIUM.get());
+    private static final List<ItemLike> ENDERSTEEL_SMELTABLES = List.of(ModBlocks.ENDERSTEEL_ORE.get(), ModItems.RAW_ENDERSTEEL.get());
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -24,43 +24,83 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENDERANIUM_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENDERSTEEL_BLOCK.get())
                 .pattern("EEE")
                 .pattern("EEE")
                 .pattern("EEE")
-                .define('E', ModItems.ENDERANIUM_INGOT.get())
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get()))
                 .save(pWriter);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERANIUM_INGOT.get(), 9)
-                .requires(ModBlocks.ENDERANIUM_BLOCK.get())
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
-                .save(pWriter, EndUpdate.MOD_ID + ":enderanium_from_block");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERSTEEL_INGOT.get(), 9)
+                .requires(ModBlocks.ENDERSTEEL_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get()))
+                .save(pWriter, EndUpdate.MOD_ID + ":endersteel_from_block");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERANIUM_INGOT.get())
-                .requires(ModItems.ENDERANIUM_SHARD.get(), 4)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERSTEEL_INGOT.get())
+                .requires(ModItems.ENDERSTEEL_SHARD.get(), 4)
                 .requires(Items.ENDER_EYE, 4)
                 .requires(Items.DRAGON_BREATH)
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_SHARD.get()), has(ModItems.ENDERANIUM_SHARD.get()))
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_SHARD.get()), has(ModItems.ENDERSTEEL_SHARD.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDERANIUM_INGOT.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDERSTEEL_INGOT.get())
                 .pattern("EEE")
                 .pattern("EEE")
                 .pattern("EEE")
-                .define('E', ModItems.ENDERANIUM_NUGGET.get())
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
-                .save(pWriter, EndUpdate.MOD_ID + ":enderanium_from_nugget");
+                .define('E', ModItems.ENDERSTEEL_NUGGET.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get()))
+                .save(pWriter, EndUpdate.MOD_ID + ":endersteel_from_nugget");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERANIUM_NUGGET.get(), 9)
-                .requires(ModItems.ENDERANIUM_INGOT.get())
-                .unlockedBy(getHasName(ModItems.ENDERANIUM_INGOT.get()), has(ModItems.ENDERANIUM_INGOT.get()))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERSTEEL_NUGGET.get(), 9)
+                .requires(ModItems.ENDERSTEEL_INGOT.get())
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get()))
                 .save(pWriter);
 
-        oreSmelting(pWriter, ENDERANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERANIUM_SHARD.get(),
-                3, 200, "enderanium");
-        oreBlasting(pWriter, ENDERANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERANIUM_SHARD.get(),
-                3, 100, "enderanium");
+        oreSmelting(pWriter, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL_SHARD.get(),
+                3, 200, "endersteel");
+        oreBlasting(pWriter, ENDERSTEEL_SMELTABLES, RecipeCategory.MISC, ModItems.ENDERSTEEL_SHARD.get(),
+                3, 100, "endersteel");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDERSTEEL_SWORD.get())
+                .pattern("E")
+                .pattern("E")
+                .pattern("R")
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .define('R', Items.END_ROD)
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDERSTEEL_PICKAXE.get())
+                .pattern("EEE")
+                .pattern(" R ")
+                .pattern(" R ")
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .define('R', Items.END_ROD)
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDERSTEEL_SHOVEL.get())
+                .pattern("E")
+                .pattern("R")
+                .pattern("R")
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .define('R', Items.END_ROD)
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDERSTEEL_AXE.get())
+                .pattern("EE")
+                .pattern("ER")
+                .pattern(" R")
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .define('R', Items.END_ROD)
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.ENDERSTEEL_HOE.get())
+                .pattern("EE")
+                .pattern(" R")
+                .pattern(" R")
+                .define('E', ModItems.ENDERSTEEL_INGOT.get())
+                .define('R', Items.END_ROD)
+                .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

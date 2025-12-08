@@ -1,7 +1,7 @@
 package net.capspock.endupdate.block;
 
 import net.capspock.endupdate.EndUpdate;
-import net.capspock.endupdate.block.custom.EnderaniumOreBlock;
+import net.capspock.endupdate.block.custom.EndersteelOreBlock;
 import net.capspock.endupdate.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -20,10 +20,10 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(Registries.BLOCK, EndUpdate.MOD_ID);
 
-    public static final RegistryObject<Block> ENDERANIUM_ORE = registerBlock("enderanium_ore",
-            () -> new EnderaniumOreBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).strength(33, 1200)
-                    .lightLevel(state -> state.getValue(EnderaniumOreBlock.LIT) ? 5 : 0)));
-    public static final RegistryObject<Block> ENDERANIUM_BLOCK = registerBlock("enderanium_block",
+    public static final RegistryObject<Block> ENDERSTEEL_ORE = registerBlock("endersteel_ore",
+            () -> new EndersteelOreBlock(BlockBehaviour.Properties.copy(Blocks.END_STONE).strength(33, 1200)
+                    .lightLevel(state -> state.getValue(EndersteelOreBlock.LIT) ? 5 : 0)));
+    public static final RegistryObject<Block> ENDERSTEEL_BLOCK = registerBlock("endersteel_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

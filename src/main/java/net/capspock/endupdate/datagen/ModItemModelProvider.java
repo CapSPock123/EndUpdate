@@ -17,15 +17,27 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.ENDERANIUM_INGOT);
-        simpleItem(ModItems.RAW_ENDERANIUM);
-        simpleItem(ModItems.ENDERANIUM_SHARD);
-        simpleItem(ModItems.ENDERANIUM_NUGGET);
+        simpleItem(ModItems.ENDERSTEEL_INGOT);
+        simpleItem(ModItems.RAW_ENDERSTEEL);
+        simpleItem(ModItems.ENDERSTEEL_SHARD);
+        simpleItem(ModItems.ENDERSTEEL_NUGGET);
+
+        handheldItem(ModItems.ENDERSTEEL_SWORD);
+        handheldItem(ModItems.ENDERSTEEL_PICKAXE);
+        handheldItem(ModItems.ENDERSTEEL_SHOVEL);
+        handheldItem(ModItems.ENDERSTEEL_AXE);
+        handheldItem(ModItems.ENDERSTEEL_HOE);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(EndUpdate.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "item/" + item.getId().getPath()));
     }
 }
