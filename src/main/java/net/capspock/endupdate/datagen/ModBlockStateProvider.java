@@ -17,6 +17,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.ENDERSTEEL_ORE);
         blockWithItem(ModBlocks.ENDERSTEEL_BLOCK);
+        blockWithItem(ModBlocks.RAW_ENDERSTEEL_BLOCK);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

@@ -35,6 +35,12 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.6
+- Enderanium renamed back to Endersteel
+- Endersteel Block renamed to Block of Endersteel
+- Endersteel Tools added
+- *BLOCK* Raw Block of Endersteel
+
 endupdate-1.20.1-0.0.5
 - *ITEM* Enderanium Nugget added
 - Enderanium Ore Generation added

@@ -26,6 +26,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.ENDERSTEEL_ORE.get(),
                 block -> createMutipleDrops(ModBlocks.ENDERSTEEL_ORE.get(), ModItems.RAW_ENDERSTEEL.get(), 1, 1));
         this.dropSelf(ModBlocks.ENDERSTEEL_BLOCK.get());
+        this.dropSelf(ModBlocks.RAW_ENDERSTEEL_BLOCK.get());
     }
 
     @Override

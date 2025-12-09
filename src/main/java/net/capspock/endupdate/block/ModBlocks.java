@@ -25,6 +25,8 @@ public class ModBlocks {
                     .lightLevel(state -> state.getValue(EndersteelOreBlock.LIT) ? 5 : 0)));
     public static final RegistryObject<Block> ENDERSTEEL_BLOCK = registerBlock("endersteel_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
+    public static final RegistryObject<Block> RAW_ENDERSTEEL_BLOCK = registerBlock("raw_endersteel_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
