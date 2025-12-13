@@ -4,7 +4,10 @@ import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.particle.ModParticles;
+import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -38,6 +41,8 @@ public class EndUpdate
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModParticles.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -63,6 +68,11 @@ public class EndUpdate
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             
+        }
+
+        @SubscribeEvent
+        public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.ECHO_SWEEP_ATTACK_PARTICLES.get(), AttackSweepParticle.Provider::new);
         }
     }
 }

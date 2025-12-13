@@ -20,7 +20,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_NUGGET = ITEMS.register("endersteel_nugget",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_SWORD = ITEMS.register("endersteel_sword",
-            () -> new SwordItem(ModToolTiers.ENDERSTEEL, 3, -0.2f, new Item.Properties()));
+            () -> new SwordItem(ModToolTiers.ENDERSTEEL, 3, -2.4f, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_PICKAXE = ITEMS.register("endersteel_pickaxe",
             () -> new PickaxeItem(ModToolTiers.ENDERSTEEL, 1, -2.8f, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_SHOVEL = ITEMS.register("endersteel_shovel",
