@@ -37,7 +37,8 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 endupdate-1.20.1-0.0.7
 - Endersteel Sword now has special "Echo" ability 
--*PARTICLE TYPE* Echo Sweep Attack Particle added
+- *PARTICLE TYPE* Echo Sweep Attack Particle added
+- Block of Endersteel texture tweaked
 
 endupdate-1.20.1-0.0.6
 - Enderanium renamed back to Endersteel
