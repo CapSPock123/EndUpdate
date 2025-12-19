@@ -35,10 +35,16 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.8
+- "Echoes of the Void" ability added to Enderstel Hoe
+- Tooltip for Endersteel Hoe added
+- Tooltip for Endersteel Sword added
+
 endupdate-1.20.1-0.0.7
 - Endersteel Sword now has special "Echo" ability 
 - *PARTICLE TYPE* Echo Sweep Attack Particle added
 - Block of Endersteel texture tweaked
+- Endersteel Sword texture tweaked
 
 endupdate-1.20.1-0.0.6
 - Enderanium renamed back to Endersteel

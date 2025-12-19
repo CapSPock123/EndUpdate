@@ -16,5 +16,9 @@
 
   "creativetab.endupdate.end_update_items": "End Update Items",
   "creativetab.endupdate.end_update_blocks": "End Update Blocks",
-  "creativetab.endupdate.end_update_equipment": "End Update Equipment"
+  "creativetab.endupdate.end_update_equipment": "End Update Equipment",
+
+  "tooltip.endupdate.endersteel_sword.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo attack to strike the enemy §a1s §fafter the initial strike.",
+  "tooltip.endupdate.endersteel_hoe.tooltip": "§6Ability: §dEchoes of the Void\n§fReplants the crop broken using this hoe §eautomatically §fwith another seed from your §eoffhand§f.",
+  "tooltip.endupdate.shift.tooltip": "Press §eSHIFT§r for more info"
 }
