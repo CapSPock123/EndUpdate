@@ -10,6 +10,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,6 +19,8 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.*;
 
 @Mod.EventBusSubscriber(modid = EndUpdate.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
@@ -88,11 +91,12 @@ public class ModEvents {
     @SubscribeEvent
     public static void onBlockBreak(BlockEvent.BreakEvent event) {
         Player player = event.getPlayer();
+        Item item = player.getMainHandItem().getItem();
         LevelAccessor level = event.getLevel();
         BlockPos blockPos = event.getPos();
         BlockState blockState = level.getBlockState(blockPos);
 
-        if(player.getMainHandItem().getItem() == ModItems.ENDERSTEEL_HOE.get()) {
+        if(item == ModItems.ENDERSTEEL_HOE.get()) {
             if(blockState.is(BlockTags.CROPS) &&
                     !(blockState.getBlock() instanceof StemBlock) &&
                     !(blockState.getBlock() instanceof PitcherCropBlock)) {
@@ -112,6 +116,73 @@ public class ModEvents {
                                 block = cropBlock;
                             }
                         }
+                    }
+                }
+            }
+        } else if(item == ModItems.ENDERSTEEL_AXE.get()) {
+            if(blockState.is(BlockTags.LOGS)) {
+                List<BlockPos> savedPositions = new ArrayList<>();
+                List<BlockPos> positionsToCheck = new ArrayList<>();
+                List<BlockPos> toBreak = new ArrayList<>();
+
+                savedPositions.add(blockPos);
+
+                int blocksBroken = 1;
+
+                while(!savedPositions.isEmpty()) {
+                    int size = savedPositions.size();
+
+                    for(int i = 0; i < size; i++) {
+                        positionsToCheck.add(savedPositions.get(0).above().north().west());
+                        positionsToCheck.add(savedPositions.get(0).above().north());
+                        positionsToCheck.add(savedPositions.get(0).above().north().east());
+                        positionsToCheck.add(savedPositions.get(0).above().west());
+                        positionsToCheck.add(savedPositions.get(0).above());
+                        positionsToCheck.add(savedPositions.get(0).above().east());
+                        positionsToCheck.add(savedPositions.get(0).above().south().west());
+                        positionsToCheck.add(savedPositions.get(0).above().south());
+                        positionsToCheck.add(savedPositions.get(0).above().south().east());
+
+                        positionsToCheck.add(savedPositions.get(0).north().west());
+                        positionsToCheck.add(savedPositions.get(0).north());
+                        positionsToCheck.add(savedPositions.get(0).north().east());
+                        positionsToCheck.add(savedPositions.get(0).west());
+                        positionsToCheck.add(savedPositions.get(0));
+                        positionsToCheck.add(savedPositions.get(0).east());
+                        positionsToCheck.add(savedPositions.get(0).south().west());
+                        positionsToCheck.add(savedPositions.get(0).south());
+                        positionsToCheck.add(savedPositions.get(0).south().east());
+
+                        positionsToCheck.add(savedPositions.get(0).below().north().west());
+                        positionsToCheck.add(savedPositions.get(0).below().north());
+                        positionsToCheck.add(savedPositions.get(0).below().north().east());
+                        positionsToCheck.add(savedPositions.get(0).below().west());
+                        positionsToCheck.add(savedPositions.get(0).below());
+                        positionsToCheck.add(savedPositions.get(0).below().east());
+                        positionsToCheck.add(savedPositions.get(0).below().south().west());
+                        positionsToCheck.add(savedPositions.get(0).below().south());
+                        positionsToCheck.add(savedPositions.get(0).below().south().east());
+
+                        savedPositions.remove(0);
+                    }
+
+                    for(BlockPos pos : positionsToCheck) {
+                        if(level.getBlockState(pos).is(BlockTags.LOGS) && !toBreak.contains(pos)) {
+                            System.out.println("hi");
+                            savedPositions.add(pos);
+                            toBreak.add(pos);
+                        }
+                    }
+
+                    positionsToCheck.clear();
+                }
+
+                for(BlockPos pos : toBreak) {
+                    if (blocksBroken <= 27) {
+                        level.destroyBlock(pos, !player.isCreative(), player);
+                        blocksBroken++;
+                    } else {
+                        return;
                     }
                 }
             }

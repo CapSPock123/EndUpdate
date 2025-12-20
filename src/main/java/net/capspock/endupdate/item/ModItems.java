@@ -42,7 +42,17 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_SHOVEL = ITEMS.register("endersteel_shovel",
             () -> new ShovelItem(ModToolTiers.ENDERSTEEL, 1.5f, -3f, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_AXE = ITEMS.register("endersteel_axe",
-            () -> new AxeItem(ModToolTiers.ENDERSTEEL, 5, -3f, new Item.Properties()));
+            () -> new AxeItem(ModToolTiers.ENDERSTEEL, 5, -3f, new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    if(Screen.hasShiftDown()) {
+                        pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_axe.tooltip"));
+                    } else {
+                        pTooltipComponents.add(Component.translatable("tooltip.endupdate.shift.tooltip"));
+                    }
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
     public static final RegistryObject<Item> ENDERSTEEL_HOE = ITEMS.register("endersteel_hoe",
             () -> new HoeItem(ModToolTiers.ENDERSTEEL, -4, 0, new Item.Properties()) {
                 @Override

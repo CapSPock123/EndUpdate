@@ -35,8 +35,12 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.9
+- "Echoes of the Void" ability added to Endersteel Axe
+- Tooltip for Endersteel Axe added
+
 endupdate-1.20.1-0.0.8
-- "Echoes of the Void" ability added to Enderstel Hoe
+- "Echoes of the Void" ability added to Endersteel Hoe
 - Tooltip for Endersteel Hoe added
 - Tooltip for Endersteel Sword added
 
