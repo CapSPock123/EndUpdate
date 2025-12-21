@@ -2,6 +2,7 @@ package net.capspock.endupdate.event;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.item.custom.HammerItem;
 import net.capspock.endupdate.particle.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -35,6 +36,8 @@ public class ModEvents {
     private static LevelAccessor levelAccessor;
     private static BlockPos position;
     private static CropBlock block;
+
+    private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
     @SubscribeEvent
     public static void onEndersteelSwordHit (LivingDamageEvent event) {
@@ -184,6 +187,22 @@ public class ModEvents {
                     } else {
                         return;
                     }
+                }
+            }
+        } else if(item instanceof HammerItem hammerItem) {
+            if(player instanceof ServerPlayer serverPlayer) {
+                if(HARVESTED_BLOCKS.contains(blockPos)) {
+                    return;
+                }
+
+                for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, blockPos, serverPlayer)) {
+                    if (pos == blockPos || !hammerItem.isCorrectToolForDrops(item.getDefaultInstance(), event.getLevel().getBlockState(pos))) {
+                        continue;
+                    }
+
+                    HARVESTED_BLOCKS.add(pos);
+                    level.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
+                    HARVESTED_BLOCKS.remove(pos);
                 }
             }
         }

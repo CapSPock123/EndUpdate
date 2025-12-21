@@ -1,8 +1,10 @@
 package net.capspock.endupdate.item;
 
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.item.custom.HammerItem;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -65,6 +67,10 @@ public class ModItems {
                     super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
                 }
             });
+    /*Hammer Textures adapted from Forge TutorialMod 1.21.X by Kaupenjoe
+    Distributed under the MIT License*/
+    public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
+            () -> new HammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

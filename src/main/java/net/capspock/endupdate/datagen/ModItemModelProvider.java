@@ -27,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ENDERSTEEL_SHOVEL);
         handheldItem(ModItems.ENDERSTEEL_AXE);
         handheldItem(ModItems.ENDERSTEEL_HOE);
+        handheldItem(ModItems.ENDERSTEEL_HAMMER);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
