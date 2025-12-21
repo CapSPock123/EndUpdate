@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "endupdate:endersteel_block"
+    },
+    "R": {
+      "item": "minecraft:end_rod"
+    }
+  },
+  "pattern": [
+    "BBB",
+    " R ",
+    " R "
+  ],
+  "result": {
+    "item": "endupdate:endersteel_hammer"
+  },
+  "show_notification": true
+}
