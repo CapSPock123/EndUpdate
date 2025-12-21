@@ -20,7 +20,7 @@
   "creativetab.endupdate.end_update_equipment": "End Update Equipment",
 
   "tooltip.endupdate.endersteel_sword.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo attack to strike the enemy §a1s §fafter the initial strike.",
-  "tooltip.endupdate.endersteel.shovel.tooltip": "§6Ability: §dEchoes of the Void\n§fInstantly destroys blocks in a §a3x3x1 §fradius around the broken block after breaking a block with this shovel. (Must be a block mineable by a shovel)",
+  "tooltip.endupdate.endersteel_shovel.tooltip": "§6Ability: §dEchoes of the Void\n§fInstantly destroys blocks in a §a3x3x1 §fradius around the broken block after breaking a block with this shovel. (Must be a block mineable by a shovel)",
   "tooltip.endupdate.endersteel_axe.tooltip": "§6Ability: §dEchoes of the Void\n§fInstantly destroys adjacent log blocks when breaking a log with this axe. (Capped at §a27 §fblocks)",
   "tooltip.endupdate.endersteel_hoe.tooltip": "§6Ability: §dEchoes of the Void\n§fReplants the crop broken using this hoe §eautomatically §fwith another seed from your §eoffhand§f.",
   "tooltip.endupdate.shift.tooltip": "Press §eSHIFT§r for more info"

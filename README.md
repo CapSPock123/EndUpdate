@@ -37,7 +37,7 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 endupdate-1.20.1-0.0.11
 - "Echoes of the Void" ability added to Endersteel Shovel
-- Tooltip added for Endersteel Shovel
+- Tooltip for Endersteel Shovel added
 - Endersteel Axe ability can now be disabled by shifting
 
 endupdate-1.20.1-0.0.10
