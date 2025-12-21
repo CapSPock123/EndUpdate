@@ -124,6 +124,9 @@ public class ModEvents {
             }
         } else if(item == ModItems.ENDERSTEEL_AXE.get()) {
             if(blockState.is(BlockTags.LOGS)) {
+                if(player.isShiftKeyDown()) {
+                    return;
+                }
                 List<BlockPos> savedPositions = new ArrayList<>();
                 List<BlockPos> positionsToCheck = new ArrayList<>();
                 List<BlockPos> toBreak = new ArrayList<>();
@@ -171,7 +174,6 @@ public class ModEvents {
 
                     for(BlockPos pos : positionsToCheck) {
                         if(level.getBlockState(pos).is(BlockTags.LOGS) && !toBreak.contains(pos)) {
-                            System.out.println("hi");
                             savedPositions.add(pos);
                             toBreak.add(pos);
                         }
@@ -191,6 +193,10 @@ public class ModEvents {
             }
         } else if(item instanceof HammerItem hammerItem) {
             if(player instanceof ServerPlayer serverPlayer) {
+                if(item == ModItems.ENDERSTEEL_SHOVEL.get() && serverPlayer.isShiftKeyDown()) {
+                    return;
+                }
+
                 if(HARVESTED_BLOCKS.contains(blockPos)) {
                     return;
                 }
