@@ -35,6 +35,12 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.12
+- "Echoes of the Void" ability added to Endersteel Pickaxe
+- Toggle for "Echoes of the Void" ability added to Endersteel Axe and Endersteel Shovel
+- Endersteel Hammer Texture Tweaked
+- *Bug Fix:* Endersteel Hammer added to End Update Equipment Creative Mode Tab
+
 endupdate-1.20.1-0.0.11
 - "Echoes of the Void" ability added to Endersteel Shovel
 - Tooltip for Endersteel Shovel added

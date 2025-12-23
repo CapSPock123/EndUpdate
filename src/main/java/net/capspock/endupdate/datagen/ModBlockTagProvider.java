@@ -25,6 +25,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.ENDERSTEEL_ORE.get())
                 .add(ModBlocks.ENDERSTEEL_BLOCK.get());
+        this.tag(Tags.Blocks.ORES)
+                .add(ModBlocks.ENDERSTEEL_ORE.get());
         this.tag(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.ENDERSTEEL_BLOCK.get());
     }

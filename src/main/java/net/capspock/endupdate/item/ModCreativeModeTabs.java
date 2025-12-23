@@ -44,6 +44,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDERSTEEL_SHOVEL.get());
                         output.accept(ModItems.ENDERSTEEL_AXE.get());
                         output.accept(ModItems.ENDERSTEEL_HOE.get());
+                        output.accept(ModItems.ENDERSTEEL_HAMMER.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

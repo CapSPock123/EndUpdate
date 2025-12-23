@@ -5,6 +5,8 @@ import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.item.custom.HammerItem;
 import net.capspock.endupdate.particle.ModParticles;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -12,14 +14,18 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.core.lookup.SystemPropertiesLookup;
 
 import java.util.*;
 
@@ -27,7 +33,11 @@ import java.util.*;
 public class ModEvents {
     private static int tickCount = 0;
     private static boolean actionScheduledSword = false;
+    private static boolean actionScheduledPickaxe = false;
+    private static boolean actionScheduledPickaxe2 = false;
     private static boolean actionScheduledHoe = false;
+    private static boolean isEchoOnAxe = false;
+    private static boolean isEchoOnShovel = false;
 
     private static LivingEntity entity;
     private static float amount;
@@ -36,6 +46,7 @@ public class ModEvents {
     private static LevelAccessor levelAccessor;
     private static BlockPos position;
     private static CropBlock block;
+    private static BlockState state;
 
     private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
 
@@ -73,6 +84,26 @@ public class ModEvents {
                     source = null;
                     amount = 0;
                     actionScheduledSword = false;
+                    tickCount = 0;
+                }
+            }
+
+            if(actionScheduledPickaxe) {
+                if(tickCount >= 10 && actionScheduledPickaxe2) {
+                    levelAccessor.setBlock(position, state, 3);
+                    actionScheduledPickaxe2 = false;
+                }
+
+                if(tickCount >= 20) {
+                    Player player = (Player) entity;
+                    levelAccessor.destroyBlock(position, !player.isCreative(), player);
+                    ((ServerLevel) event.level).sendParticles(ParticleTypes.REVERSE_PORTAL, position.getX() + 0.5,
+                            position.getY() + 0.5, position.getZ() + 0.5, 15, 0, 0, 0, 1);
+
+                    actionScheduledPickaxe = false;
+                    levelAccessor = null;
+                    position = null;
+                    entity = null;
                     tickCount = 0;
                 }
             }
@@ -122,11 +153,8 @@ public class ModEvents {
                     }
                 }
             }
-        } else if(item == ModItems.ENDERSTEEL_AXE.get()) {
+        } else if(item == ModItems.ENDERSTEEL_AXE.get() && isEchoOnAxe) {
             if(blockState.is(BlockTags.LOGS)) {
-                if(player.isShiftKeyDown()) {
-                    return;
-                }
                 List<BlockPos> savedPositions = new ArrayList<>();
                 List<BlockPos> positionsToCheck = new ArrayList<>();
                 List<BlockPos> toBreak = new ArrayList<>();
@@ -191,9 +219,21 @@ public class ModEvents {
                     }
                 }
             }
+        } else if(item == ModItems.ENDERSTEEL_PICKAXE.get()) {
+            if(blockState.is(Tags.Blocks.ORES) && item.getEnchantmentLevel(event.getPlayer().getMainHandItem(), Enchantments.SILK_TOUCH) == 0) {
+                if(Math.random() < 0.2) {
+                    actionScheduledPickaxe = true;
+                    actionScheduledPickaxe2 = true;
+                    tickCount = 0;
+                    levelAccessor = level;
+                    position = blockPos;
+                    state = blockState;
+                    entity = player;
+                }
+            }
         } else if(item instanceof HammerItem hammerItem) {
             if(player instanceof ServerPlayer serverPlayer) {
-                if(item == ModItems.ENDERSTEEL_SHOVEL.get() && serverPlayer.isShiftKeyDown()) {
+                if(item == ModItems.ENDERSTEEL_SHOVEL.get() && !isEchoOnShovel) {
                     return;
                 }
 
@@ -209,6 +249,32 @@ public class ModEvents {
                     HARVESTED_BLOCKS.add(pos);
                     level.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
                     HARVESTED_BLOCKS.remove(pos);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLeftClickAir(PlayerInteractEvent.LeftClickEmpty event) {
+        Player player = event.getEntity();
+        Item mainHandItem = player.getMainHandItem().getItem();
+        if(player.isShiftKeyDown()) {
+            if(mainHandItem == ModItems.ENDERSTEEL_AXE.get()) {
+                if(isEchoOnAxe) {
+                    player.displayClientMessage(Component.translatable("actionbar.endupdate.echo_toggle_off"), true);
+                    isEchoOnAxe = false;
+                } else {
+                    player.displayClientMessage(Component.translatable("actionbar.endupdate.echo_toggle_on"), true);
+
+                    isEchoOnAxe = true;
+                }
+            } else if(mainHandItem == ModItems.ENDERSTEEL_SHOVEL.get()) {
+                if(isEchoOnShovel) {
+                    player.displayClientMessage(Component.translatable("actionbar.endupdate.echo_toggle_off"), true);
+                    isEchoOnShovel = false;
+                } else {
+                    player.displayClientMessage(Component.translatable("actionbar.endupdate.echo_toggle_on"), true);
+                    isEchoOnShovel = true;
                 }
             }
         }

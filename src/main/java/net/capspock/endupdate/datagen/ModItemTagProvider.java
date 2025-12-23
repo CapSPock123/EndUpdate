@@ -2,7 +2,6 @@ package net.capspock.endupdate.datagen;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.item.ModItems;
-import net.capspock.endupdate.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
