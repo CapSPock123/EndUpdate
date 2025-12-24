@@ -25,17 +25,18 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.logging.log4j.core.lookup.SystemPropertiesLookup;
 
 import java.util.*;
 
 @Mod.EventBusSubscriber(modid = EndUpdate.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
     private static int tickCount = 0;
-    private static boolean actionScheduledSword = false;
-    private static boolean actionScheduledPickaxe = false;
-    private static boolean actionScheduledPickaxe2 = false;
-    private static boolean actionScheduledHoe = false;
+    private static boolean isActionScheduledSword = false;
+    private static boolean isActionScheduledPickaxe = false;
+    private static boolean isActionScheduledPickaxe2 = false;
+    private static boolean isActionScheduledHoe = false;
+    private static boolean isActionScheduledHammer = false;
+    private static boolean isActionScheduledHammer2 = false;
     private static boolean isEchoOnAxe = false;
     private static boolean isEchoOnShovel = false;
 
@@ -48,18 +49,20 @@ public class ModEvents {
     private static CropBlock block;
     private static BlockState state;
 
-    private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+    private static List<BlockPos> checkedBlocks = new ArrayList<>();
+    private static List<BlockPos> confirmedBlocks = new ArrayList<>();
+    private static List<BlockState> checkedBlocksBlockstates = new ArrayList<>();
 
     @SubscribeEvent
     public static void onEndersteelSwordHit (LivingDamageEvent event) {
         if(event.getSource().getDirectEntity() instanceof Player player) {
             if(player.getMainHandItem().getItem() == ModItems.ENDERSTEEL_SWORD.get()) {
-                if(Math.random() <= 0.2 && !actionScheduledSword) {
+                if(Math.random() <= 0.2 && !isActionScheduledSword) {
                 tickCount = 0;
                 entity = event.getEntity();
                 amount = event.getAmount();
                 source = event.getSource();
-                actionScheduledSword = true;
+                isActionScheduledSword = true;
                 }
             }
         }
@@ -70,7 +73,7 @@ public class ModEvents {
         if(!event.level.isClientSide()) {
             tickCount++;
 
-            if(actionScheduledSword) {
+            if(isActionScheduledSword) {
                 if (tickCount >= 50) {
                     entity.invulnerableTime = 0;
 
@@ -83,15 +86,15 @@ public class ModEvents {
                     entity = null;
                     source = null;
                     amount = 0;
-                    actionScheduledSword = false;
+                    isActionScheduledSword = false;
                     tickCount = 0;
                 }
             }
 
-            if(actionScheduledPickaxe) {
-                if(tickCount >= 10 && actionScheduledPickaxe2) {
+            if(isActionScheduledPickaxe) {
+                if(tickCount >= 10 && isActionScheduledPickaxe2) {
                     levelAccessor.setBlock(position, state, 3);
-                    actionScheduledPickaxe2 = false;
+                    isActionScheduledPickaxe2 = false;
                 }
 
                 if(tickCount >= 20) {
@@ -100,23 +103,61 @@ public class ModEvents {
                     ((ServerLevel) event.level).sendParticles(ParticleTypes.REVERSE_PORTAL, position.getX() + 0.5,
                             position.getY() + 0.5, position.getZ() + 0.5, 15, 0, 0, 0, 1);
 
-                    actionScheduledPickaxe = false;
+                    isActionScheduledPickaxe = false;
                     levelAccessor = null;
                     position = null;
                     entity = null;
+                    state = null;
                     tickCount = 0;
                 }
             }
 
-            if(actionScheduledHoe) {
+            if(isActionScheduledHoe) {
                 if(tickCount >= 20) {
                     levelAccessor.setBlock(position, block.getStateForAge(0), 3);
 
                     levelAccessor = null;
                     block = null;
                     position = null;
-                    actionScheduledHoe = false;
+                    isActionScheduledHoe = false;
                     tickCount = 0;
+                }
+            }
+
+            if(isActionScheduledHammer) {
+                if(tickCount == 1) {
+                    for(BlockPos pos : checkedBlocks) {;
+                        if(Math.random() < 0.2) {
+                            confirmedBlocks.add(pos);
+                        } else {
+                            checkedBlocksBlockstates.remove(0);
+                        }
+                    }
+                }
+
+                if(tickCount >= 10 && isActionScheduledHammer2 && !confirmedBlocks.isEmpty()) {
+                    for(BlockPos pos : confirmedBlocks) {
+                        levelAccessor.setBlock(pos, checkedBlocksBlockstates.get(0), 3);
+                        checkedBlocksBlockstates.remove(0);
+                        isActionScheduledHammer2 = false;
+                    }
+                }
+
+                if(tickCount >= 20) {
+                    Player player = (Player) entity;
+                    for(BlockPos pos : confirmedBlocks) {
+                        levelAccessor.destroyBlock(pos, !player.isCreative(), player);
+                        ((ServerLevel) event.level).sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5,
+                                pos.getY() + 0.5, pos.getZ() + 0.5, 15, 0, 0, 0, 1);
+                    }
+
+                    isActionScheduledHammer = false;
+                    levelAccessor = null;
+                    entity = null;
+                    tickCount = 0;
+                    checkedBlocks.clear();
+                    checkedBlocksBlockstates.clear();
+                    confirmedBlocks.clear();
                 }
             }
         }
@@ -220,10 +261,12 @@ public class ModEvents {
                 }
             }
         } else if(item == ModItems.ENDERSTEEL_PICKAXE.get()) {
-            if(blockState.is(Tags.Blocks.ORES) && item.getEnchantmentLevel(event.getPlayer().getMainHandItem(), Enchantments.SILK_TOUCH) == 0) {
+            if(blockState.is(Tags.Blocks.ORES) &&
+                    item.getEnchantmentLevel(event.getPlayer().getMainHandItem(), Enchantments.SILK_TOUCH) == 0 &&
+                    !(blockState.getBlock() == Blocks.ANCIENT_DEBRIS)) {
                 if(Math.random() < 0.2) {
-                    actionScheduledPickaxe = true;
-                    actionScheduledPickaxe2 = true;
+                    isActionScheduledPickaxe = true;
+                    isActionScheduledPickaxe2 = true;
                     tickCount = 0;
                     levelAccessor = level;
                     position = blockPos;
@@ -237,18 +280,31 @@ public class ModEvents {
                     return;
                 }
 
-                if(HARVESTED_BLOCKS.contains(blockPos)) {
-                    return;
-                }
-
                 for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, blockPos, serverPlayer)) {
                     if (pos == blockPos || !hammerItem.isCorrectToolForDrops(item.getDefaultInstance(), event.getLevel().getBlockState(pos))) {
                         continue;
                     }
 
-                    HARVESTED_BLOCKS.add(pos);
+                    BlockState state1 = level.getBlockState(pos);
+
                     level.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
-                    HARVESTED_BLOCKS.remove(pos);
+
+                    if(item == ModItems.ENDERSTEEL_HAMMER.get() &&
+                            item.getEnchantmentLevel(event.getPlayer().getMainHandItem(), Enchantments.SILK_TOUCH) == 0 &&
+                            !(blockState.getBlock() == Blocks.ANCIENT_DEBRIS)) {
+                        if(state1.is(Tags.Blocks.ORES) ) {
+                            checkedBlocks.add(pos);
+                            checkedBlocksBlockstates.add(state1);
+                        }
+                    }
+                }
+
+                if(item == ModItems.ENDERSTEEL_HAMMER.get() && !checkedBlocks.isEmpty()) {
+                    isActionScheduledHammer = true;
+                    isActionScheduledHammer2 = true;
+                    levelAccessor = level;
+                    entity = player;
+                    tickCount = 0;
                 }
             }
         }
@@ -281,7 +337,7 @@ public class ModEvents {
     }
 
     private static void changeHoeVariables(LevelAccessor level, BlockPos blockPos) {
-        actionScheduledHoe = true;
+        isActionScheduledHoe = true;
         tickCount = 0;
         levelAccessor = level;
         position = blockPos;

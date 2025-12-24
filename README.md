@@ -35,6 +35,15 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.13
+- "Echoes of the Void" ability added to Endersteel Hammer
+- Tooltip for Endersteel Hammer added
+- *ITEM* Iron Hammer added
+- *ITEM* Diamond Hammer added
+- *ITEM* Netherite Hammer added
+- *Bug Fix*: Fixed Endersteel Pickaxe Echoes of the Void Ability working on Ancient Debris
+- *Bug Fix*: Fixed Endersteel Tools not being able to be enchanted with an Enchanting Table
+
 endupdate-1.20.1-0.0.12
 - "Echoes of the Void" ability added to Endersteel Pickaxe
 - Tooltip for Endersteel Pickaxe added

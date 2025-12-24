@@ -22,5 +22,16 @@ public class ModItemTagProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(ItemTags.BEACON_PAYMENT_ITEMS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());
+        this.tag(ItemTags.SWORDS)
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(ItemTags.PICKAXES)
+                .add(ModItems.ENDERSTEEL_HAMMER.get())
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(ItemTags.SHOVELS)
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(ItemTags.AXES)
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(ItemTags.HOES)
+                .add(ModItems.ENDERSTEEL_PICKAXE.get());
     }
 }

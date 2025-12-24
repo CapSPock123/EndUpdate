@@ -6,6 +6,7 @@ import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.particle.ModParticles;
 import net.minecraft.client.particle.AttackSweepParticle;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,7 +54,11 @@ public class EndUpdate
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.IRON_HAMMER);
+            event.accept(ModItems.DIAMOND_HAMMER);
+            event.accept(ModItems.NETHERITE_HAMMER);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

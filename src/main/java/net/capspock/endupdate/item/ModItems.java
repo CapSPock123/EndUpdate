@@ -91,7 +91,24 @@ public class ModItems {
     /*Hammer Textures adapted from Forge TutorialMod 1.21.X by Kaupenjoe
     Distributed under the MIT License*/
     public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
-            () -> new HammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
+            () -> new HammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()) {
+                @Override
+                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                    if(Screen.hasShiftDown()) {
+                        pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_hammer.tooltip"));
+                    } else {
+                        pTooltipComponents.add(Component.translatable("tooltip.endupdate.shift.tooltip"));
+                    }
+                    super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+                }
+            });
+    public static final RegistryObject<Item> NETHERITE_HAMMER = ITEMS.register("netherite_hammer",
+        () -> new HammerItem(6, -3.2f, ModToolTiers.NETHERITE_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().fireResistant()));
+    public static final RegistryObject<Item> DIAMOND_HAMMER = ITEMS.register("diamond_hammer",
+            () -> new HammerItem(6, -3.2f, ModToolTiers.DIAMOND_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer",
+            () -> new HammerItem(6, -3.2f, ModToolTiers.IRON_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
