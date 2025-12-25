@@ -12,8 +12,10 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -49,20 +51,20 @@ public class ModEvents {
     private static CropBlock block;
     private static BlockState state;
 
-    private static List<BlockPos> checkedBlocks = new ArrayList<>();
-    private static List<BlockPos> confirmedBlocks = new ArrayList<>();
-    private static List<BlockState> checkedBlocksBlockstates = new ArrayList<>();
+    private static final List<BlockPos> checkedBlocks = new ArrayList<>();
+    private static final List<BlockPos> confirmedBlocks = new ArrayList<>();
+    private static final List<BlockState> checkedBlocksBlockstates = new ArrayList<>();
 
     @SubscribeEvent
     public static void onEndersteelSwordHit (LivingDamageEvent event) {
         if(event.getSource().getDirectEntity() instanceof Player player) {
             if(player.getMainHandItem().getItem() == ModItems.ENDERSTEEL_SWORD.get()) {
                 if(Math.random() <= 0.2 && !isActionScheduledSword) {
-                tickCount = 0;
-                entity = event.getEntity();
-                amount = event.getAmount();
-                source = event.getSource();
-                isActionScheduledSword = true;
+                    tickCount = 0;
+                    entity = event.getEntity();
+                    amount = event.getAmount();
+                    source = event.getSource();
+                    isActionScheduledSword = true;
                 }
             }
         }
@@ -299,7 +301,7 @@ public class ModEvents {
                     }
                 }
 
-                if(item == ModItems.ENDERSTEEL_HAMMER.get() && !checkedBlocks.isEmpty()) {
+                if(item == ModItems.ENDERSTEEL_HAMMER.get() && !checkedBlocks.isEmpty() && !isActionScheduledHammer) {
                     isActionScheduledHammer = true;
                     isActionScheduledHammer2 = true;
                     levelAccessor = level;

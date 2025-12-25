@@ -33,5 +33,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.HOES)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        tag(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.ENDERSTEEL_INGOT.get());
     }
 }

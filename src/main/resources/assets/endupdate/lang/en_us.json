@@ -23,6 +23,8 @@
   "creativetab.endupdate.end_update_blocks": "End Update Blocks",
   "creativetab.endupdate.end_update_equipment": "End Update Equipment",
 
+  "trim_material.endupdate.endersteel": "Endersteel Material",
+
   "tooltip.endupdate.endersteel_sword.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo attack to strike the enemy §a1s §fafter the initial strike.",
   "tooltip.endupdate.endersteel_pickaxe.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo ore to spawn after breaking the initial ore. (Does NOT work with Silk Touch)",
   "tooltip.endupdate.endersteel_shovel.tooltip": "§6Ability: §dEchoes of the Void §e§lSHIFT LEFT CLICK\n§fInstantly destroys blocks in a §a3x3x1 §fradius around blocks broken with this shovel.",

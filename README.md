@@ -35,6 +35,11 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.14
+- *TRIM MATERIAL* Endersteel Trim Material added
+- Sheep + End Rod event backported
+- *Bug Fix:* Fixed Endersteel Hammer causing a crash when breaking blocks too fast
+
 endupdate-1.20.1-0.0.13
 - "Echoes of the Void" ability added to Endersteel Hammer
 - Tooltip for Endersteel Hammer added
