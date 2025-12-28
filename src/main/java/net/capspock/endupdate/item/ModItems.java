@@ -102,12 +102,22 @@ public class ModItems {
                     super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
                 }
             });
+
     public static final RegistryObject<Item> NETHERITE_HAMMER = ITEMS.register("netherite_hammer",
         () -> new HammerItem(6, -3.2f, ModToolTiers.NETHERITE_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties().fireResistant()));
     public static final RegistryObject<Item> DIAMOND_HAMMER = ITEMS.register("diamond_hammer",
             () -> new HammerItem(6, -3.2f, ModToolTiers.DIAMOND_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
     public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer",
             () -> new HammerItem(6, -3.2f, ModToolTiers.IRON_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
+
+    public static final RegistryObject<Item> ENDERSTEEL_HELMET = ITEMS.register("endersteel_helmet",
+            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERSTEEL_CHESTPLATE = ITEMS.register("endersteel_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERSTEEL_LEGGINGS = ITEMS.register("endersteel_leggings",
+            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> ENDERSTEEL_BOOTS = ITEMS.register("endersteel_boots",
+            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

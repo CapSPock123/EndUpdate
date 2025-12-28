@@ -35,6 +35,10 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.0.15
+- Endersteel Armor added
+- *Bug Fix:* Fixed Netherite Hammer having the wrong amount of durability
+
 endupdate-1.20.1-0.0.14
 - *TRIM MATERIAL* Endersteel Trim Material added
 - Sheep + End Rod event backported

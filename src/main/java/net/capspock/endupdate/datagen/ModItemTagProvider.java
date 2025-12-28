@@ -25,15 +25,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.SWORDS)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.PICKAXES)
-                .add(ModItems.ENDERSTEEL_HAMMER.get())
-                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+                .add(ModItems.ENDERSTEEL_HAMMER.get(),
+                        ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.SHOVELS)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.AXES)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.HOES)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ENDERSTEEL_HELMET.get(),
+                        ModItems.ENDERSTEEL_CHESTPLATE.get(),
+                        ModItems.ENDERSTEEL_LEGGINGS.get(),
+                        ModItems.ENDERSTEEL_BOOTS.get());
         tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());
+
     }
 }

@@ -45,6 +45,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDERSTEEL_AXE.get());
                         output.accept(ModItems.ENDERSTEEL_HOE.get());
                         output.accept(ModItems.ENDERSTEEL_HAMMER.get());
+                        output.accept(ModItems.ENDERSTEEL_HELMET.get());
+                        output.accept(ModItems.ENDERSTEEL_CHESTPLATE.get());
+                        output.accept(ModItems.ENDERSTEEL_LEGGINGS.get());
+                        output.accept(ModItems.ENDERSTEEL_BOOTS.get());
                         output.accept(ModItems.IRON_HAMMER.get());
                         output.accept(ModItems.DIAMOND_HAMMER.get());
                         output.accept(ModItems.NETHERITE_HAMMER.get());
