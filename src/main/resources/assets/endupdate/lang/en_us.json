@@ -30,12 +30,13 @@
 
   "trim_material.endupdate.endersteel": "Endersteel Material",
 
-  "tooltip.endupdate.endersteel_sword.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo attack to strike the enemy §a1s §fafter the initial strike.",
+  "tooltip.endupdate.endersteel_sword.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo attack to strike the enemy §a0.5s §fafter the initial strike.",
   "tooltip.endupdate.endersteel_pickaxe.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for a second Echo ore to spawn after breaking the initial ore. (Does NOT work with Silk Touch)",
   "tooltip.endupdate.endersteel_shovel.tooltip": "§6Ability: §dEchoes of the Void §e§lSHIFT LEFT CLICK\n§fInstantly destroys blocks in a §a3x3x1 §fradius around blocks broken with this shovel.",
   "tooltip.endupdate.endersteel_axe.tooltip": "§6Ability: §dEchoes of the Void §e§lSHIFT LEFT CLICK\n§fInstantly destroys adjacent log blocks when breaking a log with this axe. (Capped at §a27 §fblocks)",
   "tooltip.endupdate.endersteel_hoe.tooltip": "§6Ability: §dEchoes of the Void\n§fReplants the crop broken using this hoe §eautomatically §fwith another seed from your §eoffhand§f.",
-  "tooltip.endupdate.endersteel_hammer.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for additional Echo ores to spawn after breaking initial ores. (Does NOT work with Silk Touch)",
+  "tooltip.endupdate.endersteel_hammer.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for additional Echo ores to spawn after breaking initial ores.",
+  "tooltip.endupdate.endersteel_armor.tooltip": "§6Full Set Ability: §dEchoes of the Void\n§fGrants a §a50% §fchance for attacks to be nullified and echoed onto nearby enemies when health is under §a50%§f. \nGrants immunity to damage from ender pearls.",
   "tooltip.endupdate.shift.tooltip": "Press §eSHIFT§r for more info",
 
   "actionbar.endupdate.echo_toggle_on": "Echo: §aON",

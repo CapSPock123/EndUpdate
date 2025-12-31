@@ -35,6 +35,24 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.0
+- "Echoes of the Void" ability added to Endersteel Armor
+- Tooltip for Endersteel Armor added
+- *PARTICLE TYPE* Echo Sonic Boom Particle added
+- *Tweak:* Gave Endersteel Axe's "Echo" ability an animation
+- *Tweak:* Added sound when "Echo" ability of Endersteel Pickaxe activates
+- *Tweak:* Added sound when "Echo" ability of Endersteel Sword activates
+- *Tweak:* Added sound when "Echo" ability of Endersteel Hammer activates
+- *Bug Fix:* "Echoes of the Void" abilities' timings fixed
+- *Bug Fix:* Fixed Endersteel Sword Echo not contributing to statistics
+- *Bug Fix:* Fixed blocks broken by hammers not contributing to statistics
+- *Bug Fix:* Fixed Endersteel Hoe's "Echo" ability not replacing crops fast enough
+- *Balancing:* Endersteel Sword's "Echo" ability now deals knockback (+)
+- *Balancing:* Endersteel Sword's "Echo" ability now applies 0.5s after initial strike (+)
+- *Balancing:* Endersteel Sword's "Echo" attack now deals Void damage (+)
+- *Balancing:* Crits no longer affect Endersteel Sword "Echo" attack damage (-)
+- *Balancing:* Endersteel Sword's "Echo" ability only deals 50% of the initial attack's damage (-)
+
 endupdate-1.20.1-0.0.15
 - Endersteel Armor added
 - *Bug Fix:* Fixed Netherite Hammer having the wrong amount of durability

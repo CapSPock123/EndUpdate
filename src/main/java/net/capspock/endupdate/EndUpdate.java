@@ -6,6 +6,7 @@ import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.particle.ModParticles;
 import net.minecraft.client.particle.AttackSweepParticle;
+import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
@@ -78,6 +79,7 @@ public class EndUpdate
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(ModParticles.ECHO_SWEEP_ATTACK_PARTICLES.get(), AttackSweepParticle.Provider::new);
+            event.registerSpriteSet(ModParticles.ECHO_SONIC_BOOM_PARTICLES.get(), SonicBoomParticle.Provider::new);
         }
     }
 }

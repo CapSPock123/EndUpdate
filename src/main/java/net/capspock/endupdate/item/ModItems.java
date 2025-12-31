@@ -1,7 +1,7 @@
 package net.capspock.endupdate.item;
 
 import net.capspock.endupdate.EndUpdate;
-import net.capspock.endupdate.item.custom.HammerItem;
+import net.capspock.endupdate.item.custom.*;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
@@ -29,7 +29,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ENDERSTEEL_SWORD = ITEMS.register("endersteel_sword",
-            () -> new SwordItem(ModToolTiers.ENDERSTEEL, 3, -2.4f, new Item.Properties()) {
+            () -> new EndersteelSwordItem(ModToolTiers.ENDERSTEEL, 3, -2.4f, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -41,7 +41,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> ENDERSTEEL_PICKAXE = ITEMS.register("endersteel_pickaxe",
-            () -> new PickaxeItem(ModToolTiers.ENDERSTEEL, 1, -2.8f, new Item.Properties()) {
+            () -> new EndersteelPickaxeItem(ModToolTiers.ENDERSTEEL, 1, -2.8f, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -53,7 +53,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> ENDERSTEEL_SHOVEL = ITEMS.register("endersteel_shovel",
-            () -> new HammerItem( 1.5f, -3f, ModToolTiers.ENDERSTEEL, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties()) {
+            () -> new EndersteelShovelItem( 1.5f, -3f, ModToolTiers.ENDERSTEEL, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -65,7 +65,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> ENDERSTEEL_AXE = ITEMS.register("endersteel_axe",
-            () -> new AxeItem(ModToolTiers.ENDERSTEEL, 5, -3f, new Item.Properties()) {
+            () -> new EndersteelAxeItem(ModToolTiers.ENDERSTEEL, 5, -3f, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -77,7 +77,7 @@ public class ModItems {
                 }
             });
     public static final RegistryObject<Item> ENDERSTEEL_HOE = ITEMS.register("endersteel_hoe",
-            () -> new HoeItem(ModToolTiers.ENDERSTEEL, -4, 0, new Item.Properties()) {
+            () -> new EndersteelHoeItem(ModToolTiers.ENDERSTEEL, -4, 0, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -91,7 +91,7 @@ public class ModItems {
     /*Hammer Textures adapted from Forge TutorialMod 1.21.X by Kaupenjoe
     Distributed under the MIT License*/
     public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
-            () -> new HammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()) {
+            () -> new EndersteelHammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
@@ -111,13 +111,13 @@ public class ModItems {
             () -> new HammerItem(6, -3.2f, ModToolTiers.IRON_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
 
     public static final RegistryObject<Item> ENDERSTEEL_HELMET = ITEMS.register("endersteel_helmet",
-            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new EndersteelArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_CHESTPLATE = ITEMS.register("endersteel_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new EndersteelArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_LEGGINGS = ITEMS.register("endersteel_leggings",
-            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new EndersteelArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> ENDERSTEEL_BOOTS = ITEMS.register("endersteel_boots",
-            () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new EndersteelArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

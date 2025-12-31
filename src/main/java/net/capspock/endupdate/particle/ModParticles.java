@@ -14,6 +14,8 @@ public class ModParticles {
 
     public static final RegistryObject<SimpleParticleType> ECHO_SWEEP_ATTACK_PARTICLES =
             PARTICLE_TYPES.register("echo_sweep_attack_particles", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> ECHO_SONIC_BOOM_PARTICLES =
+            PARTICLE_TYPES.register("echo_sonic_boom_particles", () -> new SimpleParticleType(true));
 
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);

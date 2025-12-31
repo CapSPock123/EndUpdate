@@ -19,7 +19,7 @@ public class HammerItem extends DiggerItem {
         super(pAttackDamageModifier, pAttackSpeedModifier, pTier, pBlocks, pProperties);
     }
 
-    public static List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {
+    public List<BlockPos> getBlocksToBeDestroyed(int range, BlockPos initalBlockPos, ServerPlayer player) {
         List<BlockPos> positions = new ArrayList<>();
 
         BlockHitResult traceResult = player.level().clip(new ClipContext(player.getEyePosition(1f),
