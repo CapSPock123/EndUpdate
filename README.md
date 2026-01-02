@@ -45,6 +45,7 @@ endupdate-1.20.1-0.1.0
 - *Tweak:* Added sound when "Echo" ability of Endersteel Hammer activates
 - *Bug Fix:* "Echoes of the Void" abilities' timings fixed
 - *Bug Fix:* Fixed Endersteel Sword Echo not contributing to statistics
+- *Bug Fix:* Fixed Endersteel Axe Echo not contributing to statistics
 - *Bug Fix:* Fixed blocks broken by hammers not contributing to statistics
 - *Bug Fix:* Fixed Endersteel Hoe's "Echo" ability not replacing crops fast enough
 - *Balancing:* Endersteel Sword's "Echo" ability now deals knockback (+)

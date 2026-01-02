@@ -23,6 +23,8 @@ import java.util.List;
 
 public class EndersteelArmorItem extends ArmorItem {
     public boolean isEchoScheduled = false;
+    private boolean shouldStartCooldown = false;
+    public int cooldown = 0;
     public float amount = 0;
 
     public EndersteelArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
@@ -42,7 +44,7 @@ public class EndersteelArmorItem extends ArmorItem {
     @Override
     public void onArmorTick(ItemStack stack, Level level, Player player) {
         if(!level.isClientSide()) {
-            if(isEchoScheduled) {
+            if(isEchoScheduled && cooldown == 0) {
                 ((ServerLevel) level).sendParticles(ModParticles.ECHO_SONIC_BOOM_PARTICLES.get(), player.getX() + 0.5, player.getY() + 1.5, player.getZ(), 1, 0.1, 0.1, 0.1, 1);
                 level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WARDEN_SONIC_BOOM, SoundSource.PLAYERS, 2, 1);
                 List<LivingEntity> entities = new ArrayList<>();
@@ -61,6 +63,17 @@ public class EndersteelArmorItem extends ArmorItem {
                 }
 
                 isEchoScheduled = false;
+                shouldStartCooldown = true;
+                cooldown = 100;
+            }
+
+            if(shouldStartCooldown) {
+                System.out.println("cooldown Time");
+                cooldown--;
+
+                if(cooldown == 0) {
+                    shouldStartCooldown = false;
+                }
             }
         }
     }

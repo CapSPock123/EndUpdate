@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
@@ -45,7 +46,7 @@ public class ModEvents {
         }
 
         if(event.getEntity() instanceof ServerPlayer player && isWearingFullEndersteel(player) && player.getHealth() <= player.getMaxHealth() * 0.5 && Math.random() <= 0.5 &&
-                sourceEntity instanceof LivingEntity && player.getInventory().getArmor(3).getItem() instanceof EndersteelArmorItem endersteelArmorItem) {
+                sourceEntity instanceof LivingEntity && player.getInventory().getArmor(3).getItem() instanceof EndersteelArmorItem endersteelArmorItem && endersteelArmorItem.cooldown == 0) {
             endersteelArmorItem.isEchoScheduled = true;
             endersteelArmorItem.amount = event.getAmount();
             event.setCanceled(true);
@@ -141,22 +142,23 @@ public class ModEvents {
                 endersteelHoeItem.blockPos = blockPos;
             }
         } else if(mainHandItem instanceof HammerItem hammerItem) {
+            Level level1 = (Level) level;
             if (player instanceof ServerPlayer serverPlayer) {
                 for (BlockPos pos : hammerItem.getBlocksToBeDestroyed(1, blockPos, serverPlayer)) {
                     if (pos == blockPos || !hammerItem.isCorrectToolForDrops(mainHandItem.getDefaultInstance(), event.getLevel().getBlockState(pos))) {
                         continue;
                     }
                     BlockState state1 = level.getBlockState(pos);
-                    level.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
-                    player.awardStat(Stats.BLOCK_MINED.get(block));
+                    level1.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
+                    serverPlayer.awardStat(Stats.BLOCK_MINED.get(block));
 
-                    if(hammerItem instanceof EndersteelHammerItem endersteelHammerItem && state1.is(Tags.Blocks.ORES) && block != Blocks.ANCIENT_DEBRIS) {
+                    if (hammerItem instanceof EndersteelHammerItem endersteelHammerItem && state1.is(Tags.Blocks.ORES) && block != Blocks.ANCIENT_DEBRIS) {
                         endersteelHammerItem.checkedBlocks.add(pos);
                         endersteelHammerItem.checkedBlocksBlockstates.add(state1);
                     }
                 }
 
-                if(hammerItem instanceof EndersteelHammerItem endersteelHammerItem && !endersteelHammerItem.checkedBlocks.isEmpty() &&
+                if (hammerItem instanceof EndersteelHammerItem endersteelHammerItem && !endersteelHammerItem.checkedBlocks.isEmpty() &&
                         !endersteelHammerItem.isEchoScheduled) {
                     endersteelHammerItem.isEchoScheduled = true;
                     endersteelHammerItem.level = level;

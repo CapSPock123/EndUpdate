@@ -1,6 +1,7 @@
 package net.capspock.endupdate.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -31,7 +32,9 @@ public class EndersteelAxeItem extends AxeItem {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         if(!pLevel.isClientSide()) {
             if(!toBreak.isEmpty()) {
-                pLevel.destroyBlock(toBreak.get(0), !((Player) pEntity).isCreative(), pEntity);
+                Player player = ((Player) pEntity);
+                player.awardStat(Stats.BLOCK_MINED.get(pLevel.getBlockState(toBreak.get(0)).getBlock()));
+                pLevel.destroyBlock(toBreak.get(0), !player.isCreative(), pEntity);
                 toBreak.remove(0);
             }
         }
