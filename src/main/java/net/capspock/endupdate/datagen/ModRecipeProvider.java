@@ -11,7 +11,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -40,8 +39,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ENDERSTEEL_INGOT.get())
                 .requires(ModItems.ENDERSTEEL_SHARD.get(), 4)
-                .requires(Items.ENDER_EYE, 4)
                 .requires(Items.DRAGON_BREATH)
+                .requires(Items.ENDER_EYE, 4)
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_SHARD.get()), has(ModItems.ENDERSTEEL_SHARD.get()))
                 .save(pWriter);
 

@@ -6,23 +6,37 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 
 public class EndersteelPickaxeItem extends PickaxeItem {
     private int tickCount = 0;
     public boolean isEchoScheduled = false;
     public BlockState blockState = null;
     public BlockPos blockPos = null;
-    public LevelAccessor levelAccessor = null;
 
     public EndersteelPickaxeItem(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
         super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
+    }
+
+    @Override
+    public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pEntityLiving) {
+        if(pState.is(Tags.Blocks.ORES) &&
+                pStack.getEnchantmentLevel(Enchantments.SILK_TOUCH) == 0 &&
+                pState.getBlock() != Blocks.ANCIENT_DEBRIS && Math.random() <= 0.2) {
+            isEchoScheduled = true;
+            blockPos = pPos;
+            blockState = pState;
+        }
+        return super.mineBlock(pStack, pLevel, pState, pPos, pEntityLiving);
     }
 
     @Override
@@ -31,12 +45,12 @@ public class EndersteelPickaxeItem extends PickaxeItem {
             if(isEchoScheduled) {
                 tickCount++;
                 if(tickCount == 5) {
-                    levelAccessor.setBlock(blockPos, blockState, 3);
+                    pLevel.setBlock(blockPos, blockState, 3);
                 }
 
                 if(tickCount == 6) {
                     Player player = (Player) pEntity;
-                    levelAccessor.destroyBlock(blockPos, !player.isCreative(), player, 512);
+                    pLevel.destroyBlock(blockPos, !player.isCreative(), player, 512);
                     ((ServerLevel) pLevel).sendParticles(ParticleTypes.REVERSE_PORTAL, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5,
                             15, 0.1, 0.1, 0.1, 1);
                     pLevel.playSound(null, blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 2, 5);

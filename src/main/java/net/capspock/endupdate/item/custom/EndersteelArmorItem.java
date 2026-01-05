@@ -68,7 +68,6 @@ public class EndersteelArmorItem extends ArmorItem {
             }
 
             if(shouldStartCooldown) {
-                System.out.println("cooldown Time");
                 cooldown--;
 
                 if(cooldown == 0) {
