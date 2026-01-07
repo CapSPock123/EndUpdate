@@ -1,7 +1,7 @@
 package net.capspock.endupdate.event;
 
 import net.capspock.endupdate.EndUpdate;
-import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.item.ModArmorMaterials;
 import net.capspock.endupdate.item.custom.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -14,8 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -44,8 +43,10 @@ public class ModEvents {
             }
         }
 
-        if(event.getEntity() instanceof ServerPlayer player && isWearingFullEndersteel(player) && player.getHealth() <= player.getMaxHealth() * 0.5 && Math.random() <= 0.5 &&
-                sourceEntity instanceof LivingEntity && player.getInventory().getArmor(3).getItem() instanceof EndersteelArmorItem endersteelArmorItem && endersteelArmorItem.cooldown == 0) {
+        if(event.getEntity() instanceof ServerPlayer player && isWearingFullSet(player, ModArmorMaterials.ENDERSTEEL) &&
+                player.getHealth() <= player.getMaxHealth() * 0.5 && Math.random() <= 0.5 && sourceEntity instanceof LivingEntity &&
+                player.getInventory().getArmor(3).getItem() instanceof EndersteelArmorItem endersteelArmorItem && endersteelArmorItem.cooldown == 0) {
+            System.out.println("hi");
             endersteelArmorItem.isEchoScheduled = true;
             endersteelArmorItem.amount = event.getAmount();
             event.setCanceled(true);
@@ -142,15 +143,25 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void onEnderPearlTeleport(EntityTeleportEvent.EnderPearl event) {
-        if(isWearingFullEndersteel(event.getPlayer())) {
+        if(isWearingFullSet(event.getPlayer(), ModArmorMaterials.ENDERSTEEL)) {
             event.setAttackDamage(0);
         }
     }
 
-    private static boolean isWearingFullEndersteel(ServerPlayer player) {
-        return player.getInventory().getArmor(0).getItem() == ModItems.ENDERSTEEL_BOOTS.get() &&
-                player.getInventory().getArmor(1).getItem() == ModItems.ENDERSTEEL_LEGGINGS.get() &&
-                player.getInventory().getArmor(2).getItem() == ModItems.ENDERSTEEL_CHESTPLATE.get() &&
-                player.getInventory().getArmor(3).getItem() == ModItems.ENDERSTEEL_HELMET.get();
+    private static boolean isWearingFullSet(ServerPlayer player, ArmorMaterial armorMaterial) {
+        Item boots = player.getInventory().getArmor(0).getItem();
+        Item leggings = player.getInventory().getArmor(1).getItem();
+        Item chestplate = player.getInventory().getArmor(2).getItem();
+        Item helmet = player.getInventory().getArmor(3).getItem();
+
+        if (helmet instanceof ArmorItem && chestplate instanceof ArmorItem &&
+                leggings instanceof ArmorItem && boots instanceof ArmorItem) {
+            return ((ArmorItem) boots).getMaterial() == armorMaterial &&
+                    ((ArmorItem) leggings).getMaterial() == armorMaterial &&
+                    ((ArmorItem) chestplate).getMaterial() == armorMaterial &&
+                    ((ArmorItem) helmet).getMaterial() == armorMaterial;
+        } else {
+            return false;
+        }
     }
 }

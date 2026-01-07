@@ -3,6 +3,9 @@
     "endupdate:endersteel_helmet",
     "endupdate:endersteel_chestplate",
     "endupdate:endersteel_leggings",
-    "endupdate:endersteel_boots"
+    "endupdate:endersteel_boots",
+    "endupdate:diamond_elytra_chestplate",
+    "endupdate:netherite_elytra_chestplate",
+    "endupdate:endersteel_elytra_chestplate"
   ]
 }

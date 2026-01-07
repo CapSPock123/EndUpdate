@@ -2,6 +2,7 @@ package net.capspock.endupdate.datagen;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.item.custom.ElytraChestplateItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.LinkedHashMap;
 
 public class ModItemModelProvider extends ItemModelProvider {
-    private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
+    private static final LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
         trimMaterials.put(TrimMaterials.IRON, 0.2F);
@@ -43,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_ENDERSTEEL);
         simpleItem(ModItems.ENDERSTEEL_SHARD);
         simpleItem(ModItems.ENDERSTEEL_NUGGET);
+        simpleItem(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
 
         handheldItem(ModItems.ENDERSTEEL_SWORD);
         handheldItem(ModItems.ENDERSTEEL_PICKAXE);
@@ -59,6 +61,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.ENDERSTEEL_CHESTPLATE);
         trimmedArmorItem(ModItems.ENDERSTEEL_LEGGINGS);
         trimmedArmorItem(ModItems.ENDERSTEEL_BOOTS);
+
+        trimmedElytraChestplateItem(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
+        trimmedElytraChestplateItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
+        trimmedElytraChestplateItem(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE);
     }
 
     /*Methods from Forge TutorialMod 1.21.X by Kaupenjoe
@@ -109,6 +115,74 @@ public class ModItemModelProvider extends ItemModelProvider {
                         .model(new ModelFile.UncheckedModelFile(trimNameResLoc))
                         .predicate(mcLoc("trim_type"), trimValue).end()
                         .texture("layer0", ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "item/" + itemRegistryObject.getId().getPath()));
+            });
+        }
+    }
+
+    private void trimmedElytraChestplateItem(RegistryObject<Item> itemRegistryObject) {
+        if(itemRegistryObject.get() instanceof ElytraChestplateItem elytraChestplateItem) {
+            String brokenArmorItemPath = "item/broken_" + elytraChestplateItem;
+
+            trimMaterials.entrySet().forEach(entry -> {
+
+                ResourceKey<TrimMaterial> trimMaterial = entry.getKey();
+                float trimValue = entry.getValue();
+
+                String armorItemPath = "item/" + elytraChestplateItem;
+                String trimPath = "trims/items/chestplate" + "_trim_" + trimMaterial.location().getPath();
+                String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
+                String currentTrimName1 = brokenArmorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
+                ResourceLocation armorItemResLoc = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, armorItemPath);
+                ResourceLocation armorItemResLoc1 = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, brokenArmorItemPath);
+                ResourceLocation trimResLoc = ResourceLocation.withDefaultNamespace(trimPath);
+                ResourceLocation trimNameResLoc = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, currentTrimName);
+                ResourceLocation trimNameResLoc1 = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, currentTrimName1);
+
+                existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
+
+                getBuilder(currentTrimName)
+                        .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                        .texture("layer0", armorItemResLoc)
+                        .texture("layer1", trimResLoc);
+
+                getBuilder(currentTrimName1)
+                        .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                        .texture("layer0", armorItemResLoc1)
+                        .texture("layer1", trimResLoc);
+
+                this.withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/generated"))
+                        .override()
+                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc))
+                        .predicate(mcLoc("trim_type"), trimValue).end()
+                        .texture("layer0", ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, armorItemPath));
+            });
+
+            getBuilder(brokenArmorItemPath)
+                    .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                    .texture("layer0", ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, brokenArmorItemPath));
+
+            this.withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/generated"))
+                    .override()
+                    .predicate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "broken"), 1)
+                    .model(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, brokenArmorItemPath)));
+
+            trimMaterials.entrySet().forEach(entry -> {
+
+                ResourceKey<TrimMaterial> trimMaterial = entry.getKey();
+                float trimValue = entry.getValue();
+
+                String trimPath = "trims/items/chestplate" + "_trim_" + trimMaterial.location().getPath();
+                String currentTrimName = brokenArmorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
+                ResourceLocation trimResLoc = ResourceLocation.withDefaultNamespace(trimPath);
+                ResourceLocation trimNameResLoc = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, currentTrimName);
+
+                existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
+
+                this.withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/generated"))
+                        .override()
+                        .model(new ModelFile.UncheckedModelFile(trimNameResLoc))
+                        .predicate(mcLoc("trim_type"), trimValue)
+                        .predicate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "broken"), 1).end();
             });
         }
     }

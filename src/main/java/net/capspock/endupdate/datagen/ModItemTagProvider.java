@@ -37,9 +37,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERSTEEL_HELMET.get(),
                         ModItems.ENDERSTEEL_CHESTPLATE.get(),
                         ModItems.ENDERSTEEL_LEGGINGS.get(),
-                        ModItems.ENDERSTEEL_BOOTS.get());
-        tag(ItemTags.TRIM_MATERIALS)
+                        ModItems.ENDERSTEEL_BOOTS.get())
+                .add(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get(),
+                        ModItems.NETHERITE_ELYTRA_CHESTPLATE.get(),
+                        ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
+        this.tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());
-
     }
 }

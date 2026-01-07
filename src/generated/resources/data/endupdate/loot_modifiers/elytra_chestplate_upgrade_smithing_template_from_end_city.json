@@ -1,0 +1,14 @@
+{
+  "type": "endupdate:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
+    },
+    {
+      "chance": 0.4,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
+}

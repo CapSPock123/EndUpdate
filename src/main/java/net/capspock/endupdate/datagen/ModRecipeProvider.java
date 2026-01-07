@@ -5,6 +5,7 @@ import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -135,6 +136,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("# #")
                 .define('#', ModItems.ENDERSTEEL_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
+
+        netheriteSmithing(pWriter, ModItems.DIAMOND_ELYTRA_CHESTPLATE.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
+        smithingUpgrade(pWriter, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.DIAMOND_CHESTPLATE, Items.ELYTRA, RecipeCategory.COMBAT, ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
+        smithingUpgrade(pWriter, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.NETHERITE_CHESTPLATE, Items.ELYTRA, RecipeCategory.COMBAT, ModItems.NETHERITE_ELYTRA_CHESTPLATE.get(), EndUpdate.MOD_ID + ":netherite_elytra_chestplate_from_elytra_chestplate_upgrade_smithing_template");
+        smithingUpgrade(pWriter, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), ModItems.ENDERSTEEL_CHESTPLATE.get(), Items.ELYTRA, RecipeCategory.COMBAT, ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
+    }
+
+    protected static void smithingUpgrade(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item pTemplateItem, Item pBaseItem, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(pTemplateItem), Ingredient.of(pBaseItem), Ingredient.of(pIngredientItem),
+                pCategory, pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pFinishedRecipeConsumer, EndUpdate.MOD_ID + ":" + getItemName(pResultItem) + "_smithing");
+    }
+
+    protected static void smithingUpgrade(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item pTemplateItem, Item pBaseItem, Item pIngredientItem, RecipeCategory pCategory, Item pResultItem, String pRecipeId) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(pTemplateItem), Ingredient.of(pBaseItem), Ingredient.of(pIngredientItem),
+                pCategory, pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pFinishedRecipeConsumer, pRecipeId);
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

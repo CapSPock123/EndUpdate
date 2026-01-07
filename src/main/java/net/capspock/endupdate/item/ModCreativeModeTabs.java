@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_ENDERSTEEL.get());
                         output.accept(ModItems.ENDERSTEEL_SHARD.get());
                         output.accept(ModItems.ENDERSTEEL_NUGGET.get());
+                        output.accept(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("end_update_blocks_tab",
@@ -52,6 +53,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.IRON_HAMMER.get());
                         output.accept(ModItems.DIAMOND_HAMMER.get());
                         output.accept(ModItems.NETHERITE_HAMMER.get());
+                        output.accept(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
+                        output.accept(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
+                        output.accept(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {

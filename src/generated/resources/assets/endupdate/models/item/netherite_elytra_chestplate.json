@@ -1,0 +1,144 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_quartz_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_iron_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.2
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_netherite_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.3
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_redstone_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.4
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_copper_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.5
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_gold_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.6
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_emerald_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.7
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_diamond_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.8
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_lapis_trim",
+      "predicate": {
+        "minecraft:trim_type": 0.9
+      }
+    },
+    {
+      "model": "endupdate:item/netherite_elytra_chestplate_amethyst_trim",
+      "predicate": {
+        "minecraft:trim_type": 1.0
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate",
+      "predicate": {
+        "endupdate:broken": 1.0
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_quartz_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.1
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_iron_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.2
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_netherite_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.3
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_redstone_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.4
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_copper_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.5
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_gold_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.6
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_emerald_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.7
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_diamond_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.8
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_lapis_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 0.9
+      }
+    },
+    {
+      "model": "endupdate:item/broken_netherite_elytra_chestplate_amethyst_trim",
+      "predicate": {
+        "endupdate:broken": 1.0,
+        "minecraft:trim_type": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "endupdate:item/netherite_elytra_chestplate"
+  }
+}

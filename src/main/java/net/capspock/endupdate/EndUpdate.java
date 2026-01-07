@@ -2,13 +2,20 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
+import net.capspock.endupdate.entity.client.ModElytraLayer;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.ModParticles;
+import net.capspock.endupdate.util.ModItemProperties;
 import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -35,13 +42,14 @@ public class EndUpdate
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
-
         MinecraftForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModLootModifiers.register(modEventBus);
 
         ModParticles.register(modEventBus);
 
@@ -60,6 +68,15 @@ public class EndUpdate
             event.accept(ModItems.DIAMOND_HAMMER);
             event.accept(ModItems.NETHERITE_HAMMER);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
+            event.accept(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -73,13 +90,30 @@ public class EndUpdate
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            
+            ModItemProperties.addCustomItemProperties();
         }
 
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(ModParticles.ECHO_SWEEP_ATTACK_PARTICLES.get(), AttackSweepParticle.Provider::new);
             event.registerSpriteSet(ModParticles.ECHO_SONIC_BOOM_PARTICLES.get(), SonicBoomParticle.Provider::new);
+        }
+
+        /* Code adapted from ElytraChestplates by FrogMan650
+        GitHub Repo: https://github.com/FrogMan650/ElytraChestplates
+        Distributed under the MIT License */
+        @SubscribeEvent @SuppressWarnings({"rawtypes", "unchecked"})
+        public static void addLayers(EntityRenderersEvent.AddLayers event) {
+            for (String skin : event.getSkins()) {
+                LivingEntityRenderer renderer = event.getPlayerSkin(skin);
+                if (renderer != null) {
+                    renderer.addLayer(new ModElytraLayer(renderer, event.getEntityModels()));
+                }
+            }
+            EntityRenderer renderer = event.getEntityRenderer(EntityType.ARMOR_STAND);
+            if (renderer != null) {
+                ((LivingEntityRenderer)renderer).addLayer(new ModElytraLayer(((LivingEntityRenderer)renderer), event.getEntityModels()));
+            }
         }
     }
 }

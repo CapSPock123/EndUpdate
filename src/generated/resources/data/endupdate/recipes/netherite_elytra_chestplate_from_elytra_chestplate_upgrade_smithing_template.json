@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:elytra"
+  },
+  "base": {
+    "item": "minecraft:netherite_chestplate"
+  },
+  "result": {
+    "item": "endupdate:netherite_elytra_chestplate"
+  },
+  "template": {
+    "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
+  }
+}

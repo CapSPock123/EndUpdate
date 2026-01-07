@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "endupdate:item/broken_netherite_elytra_chestplate",
+    "layer1": "minecraft:trims/items/chestplate_trim_gold"
+  }
+}
