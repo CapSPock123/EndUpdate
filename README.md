@@ -35,6 +35,12 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.1
+- Diamond Elytra Chestplate added
+- Netherite Elytra Chestplate added
+- Endersteel Elytra Chestplate added
+- Elytra Chestplate Upgrade Smithing Template added
+
 endupdate-1.20.1-0.1.0
 - "Echoes of the Void" ability added to Endersteel Armor
 - Tooltip for Endersteel Armor added
