@@ -1,0 +1,8 @@
+{
+  "endersteel_echo_activate": {
+    "subtitles": "sounds.endupdate.endersteel_echo_activate",
+    "sounds": [
+      "endupdate:endersteel_echo_activate"
+    ]
+  }
+}

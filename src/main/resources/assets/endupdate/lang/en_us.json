@@ -50,5 +50,7 @@
   "upgrade.endupdate.elytra_chestplate_upgrade": "Elytra Chestplate Upgrade",
   "item.endupdate.smithing_template.elytra_chestplate_upgrade.applies_to": "Diamond, Netherite or Endersteel Chestplate",
   "item.endupdate.smithing_template.elytra_chestplate_upgrade.base_slot_description": "Add Diamond, Netherite or Endersteel Chestplate",
-  "item.endupdate.smithing_template.elytra_chestplate_upgrade.additions_slot_description": "Add Elytra"
+  "item.endupdate.smithing_template.elytra_chestplate_upgrade.additions_slot_description": "Add Elytra",
+
+  "sounds.endupdate.endersteel_echo_activate": "Endersteel Tool Echoes"
 }

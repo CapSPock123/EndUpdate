@@ -7,6 +7,7 @@ import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.ModParticles;
+import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
@@ -51,6 +52,7 @@ public class EndUpdate
 
         ModLootModifiers.register(modEventBus);
 
+        ModSounds.register(modEventBus);
         ModParticles.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);

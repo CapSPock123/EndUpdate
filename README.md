@@ -35,6 +35,9 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.2
+- Custom sound added when Endersteel Pickaxe or Hammer activates
+
 endupdate-1.20.1-0.1.1
 - Diamond Elytra Chestplate added
 - Netherite Elytra Chestplate added

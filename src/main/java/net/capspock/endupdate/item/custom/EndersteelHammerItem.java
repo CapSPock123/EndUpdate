@@ -1,9 +1,9 @@
 package net.capspock.endupdate.item.custom;
 
+import net.capspock.endupdate.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.Entity;
@@ -65,7 +65,7 @@ public class EndersteelHammerItem extends HammerItem {
                         pLevel.destroyBlock(pos, !player.isCreative(), player, 512);
                         ((ServerLevel) pLevel).sendParticles(ParticleTypes.REVERSE_PORTAL, pos.getX() + 0.5,
                                 pos.getY() + 0.5, pos.getZ() + 0.5, 15, 0.1, 0.1, 0.1, 1);
-                        pLevel.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 2, 5);
+                        pLevel.playSound(null, pos.getX(), pos.getY(), pos.getZ(), ModSounds.ENDERSTEEL_ECHO_ACTIVATE.get(), SoundSource.BLOCKS, 2, 1);
                     }
 
                     isEchoScheduled = false;

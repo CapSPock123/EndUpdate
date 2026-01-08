@@ -1,9 +1,9 @@
 package net.capspock.endupdate.item.custom;
 
+import net.capspock.endupdate.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -53,7 +53,7 @@ public class EndersteelPickaxeItem extends PickaxeItem {
                     pLevel.destroyBlock(blockPos, !player.isCreative(), player, 512);
                     ((ServerLevel) pLevel).sendParticles(ParticleTypes.REVERSE_PORTAL, blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5,
                             15, 0.1, 0.1, 0.1, 1);
-                    pLevel.playSound(null, blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.BLOCKS, 2, 5);
+                    pLevel.playSound(null, blockPos.getX(), blockPos.getY(), blockPos.getZ(), ModSounds.ENDERSTEEL_ECHO_ACTIVATE.get(), SoundSource.BLOCKS, 2, 1);
 
                     isEchoScheduled = false;
                     tickCount = 0;
