@@ -1,0 +1,6 @@
+{
+  "parent": "endupdate:item/ender_bow",
+  "textures": {
+    "layer0": "endupdate:item/ender_bow_pulling_1"
+  }
+}

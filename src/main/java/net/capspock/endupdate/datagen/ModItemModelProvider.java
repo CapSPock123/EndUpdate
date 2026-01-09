@@ -45,6 +45,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ENDERSTEEL_SHARD);
         simpleItem(ModItems.ENDERSTEEL_NUGGET);
         simpleItem(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
+        simpleItem(ModItems.AURORA_POWDER);
 
         handheldItem(ModItems.ENDERSTEEL_SWORD);
         handheldItem(ModItems.ENDERSTEEL_PICKAXE);
@@ -136,7 +137,6 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation armorItemResLoc1 = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, brokenArmorItemPath);
                 ResourceLocation trimResLoc = ResourceLocation.withDefaultNamespace(trimPath);
                 ResourceLocation trimNameResLoc = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, currentTrimName);
-                ResourceLocation trimNameResLoc1 = ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, currentTrimName1);
 
                 existingFileHelper.trackGenerated(trimResLoc, PackType.CLIENT_RESOURCES, ".png", "textures");
 
@@ -163,7 +163,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
             this.withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/generated"))
                     .override()
-                    .predicate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "broken"), 1)
+                    .predicate(ResourceLocation.withDefaultNamespace("broken"), 1)
                     .model(new ModelFile.UncheckedModelFile(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, brokenArmorItemPath)));
 
             trimMaterials.entrySet().forEach(entry -> {
@@ -182,7 +182,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                         .override()
                         .model(new ModelFile.UncheckedModelFile(trimNameResLoc))
                         .predicate(mcLoc("trim_type"), trimValue)
-                        .predicate(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "broken"), 1).end();
+                        .predicate(ResourceLocation.withDefaultNamespace("broken"), 1).end();
             });
         }
     }

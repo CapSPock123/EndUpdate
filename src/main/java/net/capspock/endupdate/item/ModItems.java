@@ -11,6 +11,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_SWORD = ITEMS.register("endersteel_sword",
             () -> new EndersteelSwordItem(ModToolTiers.ENDERSTEEL, 3, -2.4f, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_sword.tooltip"));
                     } else {
@@ -43,7 +44,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_PICKAXE = ITEMS.register("endersteel_pickaxe",
             () -> new EndersteelPickaxeItem(ModToolTiers.ENDERSTEEL, 1, -2.8f, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_pickaxe.tooltip"));
                     } else {
@@ -55,7 +56,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_SHOVEL = ITEMS.register("endersteel_shovel",
             () -> new EndersteelShovelItem( 1.5f, -3f, ModToolTiers.ENDERSTEEL, BlockTags.MINEABLE_WITH_SHOVEL, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_shovel.tooltip"));
                     } else {
@@ -67,7 +68,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_AXE = ITEMS.register("endersteel_axe",
             () -> new EndersteelAxeItem(ModToolTiers.ENDERSTEEL, 5, -3f, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_axe.tooltip"));
                     } else {
@@ -79,7 +80,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_HOE = ITEMS.register("endersteel_hoe",
             () -> new EndersteelHoeItem(ModToolTiers.ENDERSTEEL, -4, 0, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_hoe.tooltip"));
                     } else {
@@ -93,7 +94,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_HAMMER = ITEMS.register("endersteel_hammer",
             () -> new EndersteelHammerItem(6, -3.2f, ModToolTiers.ENDERSTEEL_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_hammer.tooltip"));
                     } else {
@@ -115,7 +116,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_CHESTPLATE = ITEMS.register("endersteel_chestplate",
             () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_armor.tooltip"));
                     } else {
@@ -127,7 +128,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_LEGGINGS = ITEMS.register("endersteel_leggings",
             () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.LEGGINGS, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_armor.tooltip"));
                     } else {
@@ -139,7 +140,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_BOOTS = ITEMS.register("endersteel_boots",
             () -> new ArmorItem(ModArmorMaterials.ENDERSTEEL, ArmorItem.Type.BOOTS, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_armor.tooltip"));
                     } else {
@@ -148,6 +149,8 @@ public class ModItems {
                     super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
                 }
             });
+    public static final RegistryObject<Item> ENDER_BOW = ITEMS.register("ender_bow",
+            () -> new BowItem(new Item.Properties().durability(1528)));
 
     public static final RegistryObject<Item> DIAMOND_ELYTRA_CHESTPLATE = ITEMS.register("diamond_elytra_chestplate",
             () -> new ElytraChestplateItem(ArmorMaterials.DIAMOND, new Item.Properties()));
@@ -156,7 +159,7 @@ public class ModItems {
     public static final RegistryObject<Item> ENDERSTEEL_ELYTRA_CHESTPLATE = ITEMS.register("endersteel_elytra_chestplate",
             () -> new ElytraChestplateItem(ModArmorMaterials.ENDERSTEEL, new Item.Properties()) {
                 @Override
-                public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+                public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
                     if(Screen.hasShiftDown()) {
                         pTooltipComponents.add(Component.translatable("tooltip.endupdate.endersteel_armor.tooltip"));
                     } else {
@@ -167,6 +170,9 @@ public class ModItems {
             });
     public static final RegistryObject<Item> ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE = ITEMS.register("elytra_chestplate_upgrade_smithing_template",
             ElytraChestplateSmithingTemplateItem::createElytraChestplateUpgradeTemplate);
+
+    public static final RegistryObject<Item> AURORA_POWDER = ITEMS.register("aurora_powder",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

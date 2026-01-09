@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "endupdate:endersteel_ingot"
+    },
+    "A": {
+      "item": "endupdate:aurora_powder"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " #S",
+    "EAS",
+    " #S"
+  ],
+  "result": {
+    "item": "endupdate:ender_bow"
+  },
+  "show_notification": true
+}

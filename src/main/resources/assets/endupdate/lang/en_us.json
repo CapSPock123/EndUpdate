@@ -14,6 +14,7 @@
   "item.endupdate.endersteel_axe": "Endersteel Axe",
   "item.endupdate.endersteel_hoe": "Endersteel Hoe",
   "item.endupdate.endersteel_hammer": "Endersteel Hammer",
+  "item.endupdate.ender_bow": "Ender Bow",
 
   "item.endupdate.endersteel_helmet": "Endersteel Helmet",
   "item.endupdate.endersteel_chestplate": "Endersteel Chestplate",
@@ -27,6 +28,8 @@
   "item.endupdate.diamond_elytra_chestplate": "Diamond Elytra Chestplate",
   "item.endupdate.netherite_elytra_chestplate": "Netherite Elytra Chestplate",
   "item.endupdate.endersteel_elytra_chestplate": "Endersteel Elytra Chestplate",
+
+  "item.endupdate.aurora_powder": "Aurora Powder",
 
   "creativetab.endupdate.end_update_items": "End Update Items",
   "creativetab.endupdate.end_update_blocks": "End Update Blocks",

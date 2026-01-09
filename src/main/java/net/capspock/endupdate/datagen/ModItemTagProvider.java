@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +34,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.HOES)
                 .add(ModItems.ENDERSTEEL_PICKAXE.get());
+        this.tag(Tags.Items.TOOLS_BOWS)
+                .add(ModItems.ENDER_BOW.get());
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.ENDERSTEEL_HELMET.get(),
                         ModItems.ENDERSTEEL_CHESTPLATE.get(),
