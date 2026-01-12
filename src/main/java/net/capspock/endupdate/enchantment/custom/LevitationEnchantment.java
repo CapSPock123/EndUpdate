@@ -10,8 +10,18 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import org.jetbrains.annotations.NotNull;
 
 public class LevitationEnchantment extends Enchantment {
-    public LevitationEnchantment() {
-        super(Rarity.RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
+    public LevitationEnchantment(Rarity pRarity, EnchantmentCategory pCategory, EquipmentSlot... pApplicableSlots) {
+        super(pRarity, pCategory, pApplicableSlots);
+    }
+
+    @Override
+    public int getMinCost(int pEnchantmentLevel) {
+        return 10 + 20 * (pEnchantmentLevel - 1);
+    }
+
+    @Override
+    public int getMaxCost(int pEnchantmentLevel) {
+        return super.getMinCost(pEnchantmentLevel) + 50;
     }
 
     @Override
