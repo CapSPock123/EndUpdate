@@ -35,10 +35,13 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.4
+- Tweak: Elytra Chestplates now have 2 durability bars
+
 endupdate-1.20.1-0.1.3
 - Ender Bow added
 - Aurora Powder added
-- Elytra Chestplates now convert into regular Elytras when destroyed
+- Tweak: Elytra Chestplates now convert into regular Elytras when destroyed
 
 endupdate-1.20.1-0.1.2
 - Custom sound added when Endersteel Pickaxe or Hammer activates

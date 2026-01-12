@@ -2,6 +2,7 @@ package net.capspock.endupdate.datagen;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -46,5 +47,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
                         ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
         this.tag(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());
+        this.tag(ModTags.Items.ELYTRA_CHESTPLATE)
+                .add(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get())
+                .add(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
     }
 }

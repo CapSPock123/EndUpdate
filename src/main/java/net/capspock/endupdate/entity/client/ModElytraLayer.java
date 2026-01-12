@@ -1,6 +1,6 @@
 package net.capspock.endupdate.entity.client;
 
-import net.capspock.endupdate.item.custom.ElytraChestplateItem;
+import net.capspock.endupdate.util.ModTags;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
@@ -18,6 +18,6 @@ public class ModElytraLayer<T extends LivingEntity, M extends EntityModel<T>> ex
 
     @Override
     public boolean shouldRender(ItemStack stack, T entity) {
-        return stack.getItem() instanceof ElytraChestplateItem;
+        return stack.is(ModTags.Items.ELYTRA_CHESTPLATE);
     }
 }

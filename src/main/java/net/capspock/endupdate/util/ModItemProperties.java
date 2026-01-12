@@ -3,7 +3,6 @@ package net.capspock.endupdate.util;
 import net.capspock.endupdate.item.ModItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 
 public class ModItemProperties {
@@ -21,6 +20,6 @@ public class ModItemProperties {
 
     private static void makeCustomElytra(Item item) {
         ItemProperties.register(item, ResourceLocation.withDefaultNamespace("broken"),
-                (itemStack, clientLevel, livingEntity, i) -> ElytraItem.isFlyEnabled(itemStack) ? 0f : 1f);
+                (itemStack, clientLevel, livingEntity, i) -> item.canElytraFly(itemStack, livingEntity) ? 0f : 1f);
     }
 }

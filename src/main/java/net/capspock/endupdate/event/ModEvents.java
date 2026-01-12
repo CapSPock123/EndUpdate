@@ -6,6 +6,7 @@ import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.item.ModArmorMaterials;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.item.custom.*;
+import net.capspock.endupdate.util.ModTags;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -36,6 +37,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
@@ -44,12 +46,16 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = EndUpdate.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
+    private static final Logger log = LoggerFactory.getLogger(ModEvents.class);
+
     @SubscribeEvent
     public static void onLivingDamage(LivingDamageEvent event) {
         Entity hurtEntity = event.getEntity();
@@ -77,7 +83,7 @@ public class ModEvents {
             if(player.getInventory().getArmor(2).getDamageValue() == elytraChestplateItem.getDefaultInstance().getMaxDamage() - 1) {
                 ItemStack elytra = new ItemStack(Items.ELYTRA);
                 player.setItemSlot(EquipmentSlot.CHEST, elytra);
-                elytra.setDamageValue(431);
+                elytra.setDamageValue(player.getInventory().getArmor(2).getTag().getInt("endupdate.elytra_damage"));
             }
         }
     }
@@ -246,6 +252,54 @@ public class ModEvents {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onAnvilChange(AnvilUpdateEvent event) {
+        ItemStack left = event.getLeft();
+        ItemStack right = event.getRight();
+        String key = "endupdate.elytra_damage";
+        if(left.is(ModTags.Items.ELYTRA_CHESTPLATE) && right.is(Items.PHANTOM_MEMBRANE)) {
+            ItemStack output = left.copy();
+            ElytraChestplateItem elytraChestplateItem = (ElytraChestplateItem) output.getItem();
+            int elytraDamageValue = elytraChestplateItem.getElytraDamageValue(output);
+            int maxElytraDamageValue = 432;
+            if(elytraChestplateItem.isElytraBarVisible(output)) {
+                int materialCost = Math.min(4,right.getCount());
+                double materialRepairValue = maxElytraDamageValue * materialCost * 0.25;
+                double actualRepairValue = Math.min(elytraDamageValue, materialRepairValue);
+                output.getTag().putInt(key, elytraDamageValue - (int) actualRepairValue);
+                if(output.getTag().getInt(key) == 0) {
+                    output.removeTagKey(key);
+                }
+                event.setOutput(output);
+
+                int repairCost = output.getBaseRepairCost();
+                if(repairCost == 0) {
+                    repairCost = 1;
+                }
+
+                event.setCost(repairCost);
+                output.setRepairCost(repairCost * 2);
+
+                int materialAmountToBeConsumed = materialCost;
+
+                for(int i = 1; i < materialCost; i++) {
+                    double materialRepairValue1 = maxElytraDamageValue * i * 0.25;
+                    double actualRepairValue1 = Math.min(elytraDamageValue, materialRepairValue1);
+                    if(materialRepairValue1 != actualRepairValue1) {
+                        if(materialRepairValue1 - actualRepairValue1 >= maxElytraDamageValue * 0.25 * (i - 1) &&
+                                materialRepairValue1 - actualRepairValue1 < maxElytraDamageValue * 0.25 * (i + 1)) {
+                            System.out.println("hi2");
+                            materialAmountToBeConsumed = i;
+                            break;
+                        }
+                    }
+                }
+
+                event.setMaterialCost(materialAmountToBeConsumed);
             }
         }
     }
