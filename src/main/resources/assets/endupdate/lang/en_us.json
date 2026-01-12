@@ -21,6 +21,7 @@
   "item.endupdate.endersteel_leggings": "Endersteel Leggings",
   "item.endupdate.endersteel_boots": "Endersteel Boots",
 
+  "item.endupdate.gold_hammer": "Gold Hammer",
   "item.endupdate.iron_hammer": "Iron Hammer",
   "item.endupdate.diamond_hammer": "Diamond Hammer",
   "item.endupdate.netherite_hammer": "Netherite Hammer",
@@ -56,5 +57,7 @@
   "item.endupdate.smithing_template.elytra_chestplate_upgrade.base_slot_description": "Add Diamond, Netherite or Endersteel Chestplate",
   "item.endupdate.smithing_template.elytra_chestplate_upgrade.additions_slot_description": "Add Elytra",
 
-  "sounds.endupdate.endersteel_echo_activate": "Endersteel Tool Echoes"
+  "sounds.endupdate.endersteel_echo_activate": "Endersteel Tool Echoes",
+
+  "enchantment.endupdate.levitation": "Levitation"
 }

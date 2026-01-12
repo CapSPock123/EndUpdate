@@ -2,6 +2,7 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
+import net.capspock.endupdate.enchantment.ModEnchantments;
 import net.capspock.endupdate.entity.client.ModElytraLayer;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
@@ -49,6 +50,8 @@ public class EndUpdate
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModEnchantments.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
 

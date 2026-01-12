@@ -35,6 +35,20 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.5
+- Levitation Enchantment added
+- Gold Hammer added
+- Bug Fix: Fixed Silk Touch and Fortune not working on Hammers
+- Bug Fix: Fixed Netherite Hammer having the wrong mining speed
+- Bug Fix: Fixed Endersteel Sword not having the "Sword" tag
+- Bug Fix: Fixed Endersteel Shovel not having the "Shovel" tag
+- Bug Fix: Fixed Endersteel Axe not having the "Axe" tag
+- Bug Fix: Fixed Endersteel Hoe not having the "Hoe" tag
+- Bug Fix: Fixed Endersteel Pickaxe having the "Sword", "Shovel", "Axe" and "Hoe" tag
+- Bug Fix: Fixed Iron Hammer not having the "Pickaxe" tag
+- Bug Fix: Fixed Diamond Hammer not having the "Pickaxe" tag
+- Bug Fix: Fixed Netherite Hammer not having the "Pickaxe" tag
+
 endupdate-1.20.1-0.1.4
 - Tweak: Elytra Chestplates now have 2 durability bars
 

@@ -30,6 +30,7 @@ import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -135,17 +136,27 @@ public class ModEvents {
             Level level1 = (Level) level;
             if (player instanceof ServerPlayer serverPlayer) {
                 for (BlockPos pos : hammerItem.getBlocksToBeDestroyed(1, blockPos, serverPlayer)) {
-                    if (pos == blockPos || !hammerItem.isCorrectToolForDrops(mainHandItem.getDefaultInstance(), event.getLevel().getBlockState(pos))) {
+                    if (pos == blockPos || !hammerItem.isCorrectToolForDrops(mainHandItem.getDefaultInstance(), level.getBlockState(pos))) {
                         continue;
                     }
-                    BlockState state1 = level.getBlockState(pos);
-                    level1.destroyBlock(pos, serverPlayer.gameMode.isSurvival(), serverPlayer);
-                    serverPlayer.awardStat(Stats.BLOCK_MINED.get(block));
 
-                    if (hammerItem instanceof EndersteelHammerItem endersteelHammerItem && state1.is(Tags.Blocks.ORES) && block != Blocks.ANCIENT_DEBRIS) {
+                    BlockState state1 = level.getBlockState(pos);
+                    Block block1 = state1.getBlock();
+                    level1.destroyBlock(pos, false, serverPlayer);
+                    state1.getBlock().playerDestroy(level1, serverPlayer, pos, state1, level1.getBlockEntity(pos), serverPlayer.getMainHandItem());
+                    serverPlayer.awardStat(Stats.BLOCK_MINED.get(block1));
+
+                    if (shouldEchoActivate(hammerItem, blockState, block, serverPlayer)) {
+                        EndersteelHammerItem endersteelHammerItem = (EndersteelHammerItem) hammerItem;
                         endersteelHammerItem.checkedBlocks.add(pos);
                         endersteelHammerItem.checkedBlocksBlockstates.add(state1);
                     }
+                }
+
+                if(shouldEchoActivate(hammerItem, blockState, block, serverPlayer)) {
+                    EndersteelHammerItem endersteelHammerItem = (EndersteelHammerItem) hammerItem;
+                    endersteelHammerItem.checkedBlocks.add(blockPos);
+                    endersteelHammerItem.checkedBlocksBlockstates.add(blockState);
                 }
             }
         }
@@ -302,6 +313,11 @@ public class ModEvents {
                 event.setMaterialCost(materialAmountToBeConsumed);
             }
         }
+    }
+
+    private static boolean shouldEchoActivate(HammerItem hammerItem, BlockState blockState, Block block, ServerPlayer serverPlayer) {
+        return hammerItem instanceof EndersteelHammerItem endersteelHammerItem && blockState.is(Tags.Blocks.ORES) && block != Blocks.ANCIENT_DEBRIS &&
+                endersteelHammerItem.getEnchantmentLevel(serverPlayer.getMainHandItem(), Enchantments.SILK_TOUCH) == 1;
     }
 
     private static boolean isWearingFullSet(ServerPlayer player, ArmorMaterial armorMaterial) {

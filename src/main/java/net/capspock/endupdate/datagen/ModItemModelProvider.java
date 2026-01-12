@@ -54,6 +54,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ENDERSTEEL_HOE);
         handheldItem(ModItems.ENDERSTEEL_HAMMER);
 
+        handheldItem(ModItems.GOLD_HAMMER);
         handheldItem(ModItems.IRON_HAMMER);
         handheldItem(ModItems.DIAMOND_HAMMER);
         handheldItem(ModItems.NETHERITE_HAMMER);

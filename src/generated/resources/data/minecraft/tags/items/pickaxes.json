@@ -1,5 +1,9 @@
 {
   "values": [
+    "endupdate:gold_hammer",
+    "endupdate:iron_hammer",
+    "endupdate:diamond_hammer",
+    "endupdate:netherite_hammer",
     "endupdate:endersteel_hammer",
     "endupdate:endersteel_pickaxe"
   ]

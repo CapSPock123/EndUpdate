@@ -25,16 +25,20 @@ public class ModItemTagProvider extends ItemTagsProvider {
         this.tag(ItemTags.BEACON_PAYMENT_ITEMS)
                 .add(ModItems.ENDERSTEEL_INGOT.get());
         this.tag(ItemTags.SWORDS)
-                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+                .add(ModItems.ENDERSTEEL_SWORD.get());
         this.tag(ItemTags.PICKAXES)
-                .add(ModItems.ENDERSTEEL_HAMMER.get(),
+                .add(ModItems.GOLD_HAMMER.get(),
+                        ModItems.IRON_HAMMER.get(),
+                        ModItems.DIAMOND_HAMMER.get(),
+                        ModItems.NETHERITE_HAMMER.get(),
+                        ModItems.ENDERSTEEL_HAMMER.get(),
                         ModItems.ENDERSTEEL_PICKAXE.get());
         this.tag(ItemTags.SHOVELS)
-                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+                .add(ModItems.ENDERSTEEL_SHOVEL.get());
         this.tag(ItemTags.AXES)
-                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+                .add(ModItems.ENDERSTEEL_AXE.get());
         this.tag(ItemTags.HOES)
-                .add(ModItems.ENDERSTEEL_PICKAXE.get());
+                .add(ModItems.ENDERSTEEL_HOE.get());
         this.tag(Tags.Items.TOOLS_BOWS)
                 .add(ModItems.ENDER_BOW.get());
         this.tag(ItemTags.TRIMMABLE_ARMOR)

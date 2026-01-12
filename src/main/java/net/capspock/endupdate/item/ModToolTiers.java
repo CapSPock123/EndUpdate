@@ -27,7 +27,7 @@ public class ModToolTiers {
             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "endersteel_block"), List.of(Tiers.NETHERITE), List.of());
 
     public static final Tier NETHERITE_BLOCK = TierSortingRegistry.registerTier(
-            new ForgeTier(4, 2031, 12f, 4f, 15,
+            new ForgeTier(4, 2031, 9f, 4f, 15,
                     Tags.Blocks.NEEDS_NETHERITE_TOOL, () -> Ingredient.of(Blocks.NETHERITE_BLOCK)),
             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "netherite_block"), List.of(Tiers.DIAMOND), List.of());
 
@@ -40,4 +40,9 @@ public class ModToolTiers {
             new ForgeTier(2, 250, 6f, 2f, 14,
                     BlockTags.NEEDS_IRON_TOOL, () -> Ingredient.of(Blocks.IRON_BLOCK)),
             ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "iron_block"), List.of(Tiers.STONE), List.of());
+
+    public static final Tier GOLD_BLOCK = TierSortingRegistry.registerTier(
+            new ForgeTier(0, 32, 12f, 0f, 22,
+                    Tags.Blocks.NEEDS_GOLD_TOOL, () -> Ingredient.of(Blocks.GOLD_BLOCK)),
+            ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "gold_block"), List.of(Tiers.GOLD), List.of());
 }

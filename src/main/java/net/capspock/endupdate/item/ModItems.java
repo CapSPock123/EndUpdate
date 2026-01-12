@@ -110,6 +110,8 @@ public class ModItems {
             () -> new HammerItem(6, -3.2f, ModToolTiers.DIAMOND_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
     public static final RegistryObject<Item> IRON_HAMMER = ITEMS.register("iron_hammer",
             () -> new HammerItem(6, -3.2f, ModToolTiers.IRON_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_HAMMER = ITEMS.register("gold_hammer",
+            () -> new HammerItem(6, -3.2f, ModToolTiers.GOLD_BLOCK, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()));
 
     public static final RegistryObject<Item> ENDERSTEEL_HELMET = ITEMS.register("endersteel_helmet",
             () -> new EndersteelArmorItem(new Item.Properties()));
