@@ -1,12 +1,14 @@
 package net.capspock.endupdate.item;
 
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.entity.ModEntities;
 import net.capspock.endupdate.item.custom.*;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -176,6 +178,10 @@ public class ModItems {
     public static final RegistryObject<Item> AURORA_POWDER = ITEMS.register("aurora_powder",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x5b1386, 0xa159cb, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

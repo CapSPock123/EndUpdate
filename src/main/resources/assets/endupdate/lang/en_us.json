@@ -4,6 +4,11 @@
   "item.endupdate.endersteel_shard": "Endersteel Shard",
   "item.endupdate.endersteel_nugget": "Endersteel Nugget",
 
+  "item.endupdate.ender_slimeball": "Ender Slimeball",
+  "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
+
+  "item.endupdate.aurora_powder": "Aurora Powder",
+
   "block.endupdate.endersteel_ore": "Endersteel Ore",
   "block.endupdate.endersteel_block": "Block of Endersteel",
   "block.endupdate.raw_endersteel_block": "Raw Block of Endersteel",
@@ -30,11 +35,10 @@
   "item.endupdate.netherite_elytra_chestplate": "Netherite Elytra Chestplate",
   "item.endupdate.endersteel_elytra_chestplate": "Endersteel Elytra Chestplate",
 
-  "item.endupdate.aurora_powder": "Aurora Powder",
-
   "creativetab.endupdate.end_update_items": "End Update Items",
   "creativetab.endupdate.end_update_blocks": "End Update Blocks",
   "creativetab.endupdate.end_update_equipment": "End Update Equipment",
+  "creativetab.endupdate.end_update_mobs": "End Update Mobs",
 
   "trim_material.endupdate.endersteel": "Endersteel Material",
 
@@ -59,5 +63,7 @@
 
   "sounds.endupdate.endersteel_echo_activate": "Endersteel Tool Echoes",
 
-  "enchantment.endupdate.levitation": "Levitation"
+  "enchantment.endupdate.levitation": "Levitation",
+
+  "entity.endupdate.ender_slime": "Ender Slime"
 }

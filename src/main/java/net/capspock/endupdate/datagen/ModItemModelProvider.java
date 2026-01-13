@@ -46,6 +46,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ENDERSTEEL_NUGGET);
         simpleItem(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.AURORA_POWDER);
+        simpleItem(ModItems.ENDER_SLIMEBALL);
 
         handheldItem(ModItems.ENDERSTEEL_SWORD);
         handheldItem(ModItems.ENDERSTEEL_PICKAXE);
@@ -67,6 +68,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedElytraChestplateItem(ModItems.DIAMOND_ELYTRA_CHESTPLATE);
         trimmedElytraChestplateItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
         trimmedElytraChestplateItem(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE);
+
+        spawnEggItem(ModItems.ENDER_SLIME_SPAWN_EGG);
     }
 
     /*Methods from Forge TutorialMod 1.21.X by Kaupenjoe
@@ -186,5 +189,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                         .predicate(ResourceLocation.withDefaultNamespace("broken"), 1).end();
             });
         }
+    }
+
+    private void spawnEggItem(RegistryObject<Item> itemRegistryObject) {
+        withExistingParent(itemRegistryObject.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 }

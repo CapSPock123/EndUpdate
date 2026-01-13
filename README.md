@@ -36,6 +36,13 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 ## Changelog
 
 endupdate-1.20.1-0.1.5
+- Ender Slimeball added
+- Ender Slime added
+- Ender Slime Spawn Egg added
+- Ender Slime Breaking Item Particle added
+- Added Aurora Powder to End Update Items Creative Mode Tab
+
+endupdate-1.20.1-0.1.5
 - Levitation Enchantment added
 - Gold Hammer added
 - Bug Fix: Fixed Silk Touch and Fortune not working on Hammers

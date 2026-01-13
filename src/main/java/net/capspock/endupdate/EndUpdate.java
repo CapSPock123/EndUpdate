@@ -3,24 +3,34 @@ package net.capspock.endupdate;
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
 import net.capspock.endupdate.enchantment.ModEnchantments;
+import net.capspock.endupdate.entity.ModEntities;
+import net.capspock.endupdate.entity.client.EnderSlimeModel;
+import net.capspock.endupdate.entity.client.EnderSlimeRenderer;
 import net.capspock.endupdate.entity.client.ModElytraLayer;
+import net.capspock.endupdate.entity.custom.EnderSlimeEntity;
 import net.capspock.endupdate.item.ModCreativeModeTabs;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.ModParticles;
+import net.capspock.endupdate.particle.custom.EnderSlimeballBreakingItemParticle;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -50,6 +60,7 @@ public class EndUpdate
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         ModEnchantments.register(modEventBus);
 
@@ -96,12 +107,32 @@ public class EndUpdate
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
+
+            EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
         }
 
         @SubscribeEvent
         public static void registerParticleProvider(RegisterParticleProvidersEvent event) {
             event.registerSpriteSet(ModParticles.ECHO_SWEEP_ATTACK_PARTICLES.get(), AttackSweepParticle.Provider::new);
             event.registerSpriteSet(ModParticles.ECHO_SONIC_BOOM_PARTICLES.get(), SonicBoomParticle.Provider::new);
+            event.registerSpecial(ModParticles.ITEM_ENDER_SLIME_PARTICLES.get(), new EnderSlimeballBreakingItemParticle.EnderSlimeProvider());
+        }
+
+        @SubscribeEvent
+        public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+            event.registerLayerDefinition(EnderSlimeModel.LAYER_LOCATION, EnderSlimeModel::createInnerBodyLayer);
+            event.registerLayerDefinition(EnderSlimeModel.ENDER_SLIME_OUTER, EnderSlimeModel::createOuterBodyLayer);
+        }
+
+        @SubscribeEvent
+        public static void registerAttributes(EntityAttributeCreationEvent event) {
+            event.put(ModEntities.ENDER_SLIME.get(), EnderSlimeEntity.createAttributes().build());
+        }
+
+        @SubscribeEvent
+        public static void registerSpawnPlacement(SpawnPlacementRegisterEvent event) {
+            event.register(ModEntities.ENDER_SLIME.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    EnderSlimeEntity::checkEnderSlimeSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
         }
 
         /* Code adapted from ElytraChestplates by FrogMan650

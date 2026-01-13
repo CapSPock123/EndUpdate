@@ -1,11 +1,13 @@
 package net.capspock.endupdate.util;
 
 import net.capspock.endupdate.EndUpdate;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
@@ -22,5 +24,16 @@ public class ModTags {
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));
         }
+    }
+
+    public static class Biomes {
+        public static final TagKey<Biome> OUTER_END_ISLANDS = createTag("outer_end_islands");
+        private static TagKey<Biome> createTag(String name) {
+            return createBiomeTag(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));
+        }
+    }
+
+    public static TagKey<Biome> createBiomeTag(ResourceLocation name) {
+        return TagKey.create(Registries.BIOME, name);
     }
 }
