@@ -1,6 +1,7 @@
 package net.capspock.endupdate.block;
 
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.block.custom.EnderSlimeBlock;
 import net.capspock.endupdate.block.custom.EndersteelOreBlock;
 import net.capspock.endupdate.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -8,6 +9,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +29,10 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
     public static final RegistryObject<Block> RAW_ENDERSTEEL_BLOCK = registerBlock("raw_endersteel_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
+
+    public static final RegistryObject<Block> ENDER_SLIME_BLOCK = registerBlock("ender_slime_block",
+            () -> new EnderSlimeBlock(BlockBehaviour.Properties.of().strength(0f).sound(SoundType.SLIME_BLOCK)
+                    .explosionResistance(0f).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

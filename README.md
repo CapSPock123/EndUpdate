@@ -35,6 +35,9 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.7
+- Ender Slime Block added
+
 endupdate-1.20.1-0.1.6
 - Ender Slimeball added
 - Ender Slime added

@@ -4,10 +4,12 @@
   "item.endupdate.endersteel_shard": "Endersteel Shard",
   "item.endupdate.endersteel_nugget": "Endersteel Nugget",
 
+  "item.endupdate.aurora_powder": "Aurora Powder",
+
   "item.endupdate.ender_slimeball": "Ender Slimeball",
   "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
 
-  "item.endupdate.aurora_powder": "Aurora Powder",
+  "block.endupdate.ender_slime_block": "Ender Slime Block",
 
   "block.endupdate.endersteel_ore": "Endersteel Ore",
   "block.endupdate.endersteel_block": "Block of Endersteel",

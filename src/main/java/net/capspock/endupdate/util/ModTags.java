@@ -21,6 +21,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> ELYTRA_CHESTPLATE = createTag("elytra_chestplate");
+
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));
         }
@@ -28,6 +29,7 @@ public class ModTags {
 
     public static class Biomes {
         public static final TagKey<Biome> OUTER_END_ISLANDS = createTag("outer_end_islands");
+
         private static TagKey<Biome> createTag(String name) {
             return createBiomeTag(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));
         }

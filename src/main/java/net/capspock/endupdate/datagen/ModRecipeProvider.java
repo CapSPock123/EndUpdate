@@ -148,6 +148,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ModItems.ENDERSTEEL_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ENDER_SLIME_BLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.ENDER_SLIMEBALL.get())
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pWriter);
+
         netheriteSmithing(pWriter, ModItems.DIAMOND_ELYTRA_CHESTPLATE.get(), RecipeCategory.COMBAT, ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
         smithingUpgrade(pWriter, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.DIAMOND_CHESTPLATE, Items.ELYTRA, RecipeCategory.COMBAT, ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
         smithingUpgrade(pWriter, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get(), Items.NETHERITE_CHESTPLATE, Items.ELYTRA, RecipeCategory.COMBAT, ModItems.NETHERITE_ELYTRA_CHESTPLATE.get(), EndUpdate.MOD_ID + ":netherite_elytra_chestplate_from_elytra_chestplate_upgrade_smithing_template");

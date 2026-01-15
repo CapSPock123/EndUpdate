@@ -17,6 +17,8 @@ import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
@@ -109,6 +111,8 @@ public class EndUpdate
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDER_SLIME_BLOCK.get(), RenderType.translucent());
         }
 
         @SubscribeEvent
