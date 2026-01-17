@@ -8,6 +8,7 @@
 
   "item.endupdate.ender_slimeball": "Ender Slimeball",
   "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
+  "item.endupdate.slingshot": "Slingshot",
 
   "block.endupdate.ender_slime_block": "Ender Slime Block",
 
@@ -64,6 +65,8 @@
   "item.endupdate.smithing_template.elytra_chestplate_upgrade.additions_slot_description": "Add Elytra",
 
   "sounds.endupdate.endersteel_echo_activate": "Endersteel Tool Echoes",
+
+  "effect.endupdate.sticky": "Sticky",
 
   "enchantment.endupdate.levitation": "Levitation",
 

@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -55,5 +56,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get())
                 .add(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get())
                 .add(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
+        this.tag(ModTags.Items.SLINGSHOT_PROJECTILES)
+                .add(ModItems.ENDER_SLIMEBALL.get())
+                .add(Items.FIRE_CHARGE);
     }
 }

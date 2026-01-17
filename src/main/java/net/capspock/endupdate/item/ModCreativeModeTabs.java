@@ -61,15 +61,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.DIAMOND_ELYTRA_CHESTPLATE.get());
                         output.accept(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
                         output.accept(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
+                        output.accept(ModItems.SLINGSHOT.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_MOBS_TAB = CREATIVE_MODE_TABS.register("end_update_mobs_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENDER_SLIME_SPAWN_EGG.get()))
                     .withTabsBefore(END_UPDATE_EQUIPMENT_TAB.getId())
                     .title(Component.translatable("creativetab.endupdate.end_update_mobs"))
-                    .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.ENDER_SLIME_SPAWN_EGG.get());
-                    }).build());
+                    .displayItems((itemDisplayParameters, output) -> output.accept(ModItems.ENDER_SLIME_SPAWN_EGG.get())).build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);

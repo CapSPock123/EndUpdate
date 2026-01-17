@@ -2,6 +2,7 @@ package net.capspock.endupdate;
 
 import com.mojang.logging.LogUtils;
 import net.capspock.endupdate.block.ModBlocks;
+import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.enchantment.ModEnchantments;
 import net.capspock.endupdate.entity.ModEntities;
 import net.capspock.endupdate.entity.client.EnderSlimeModel;
@@ -22,6 +23,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -64,6 +66,7 @@ public class EndUpdate
         ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
 
+        ModEffects.register(modEventBus);
         ModEnchantments.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
@@ -111,6 +114,7 @@ public class EndUpdate
             ModItemProperties.addCustomItemProperties();
 
             EntityRenderers.register(ModEntities.ENDER_SLIME.get(), EnderSlimeRenderer::new);
+            EntityRenderers.register(ModEntities.ENDER_SLIMEBALL.get(), ThrownItemRenderer::new);
 
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.ENDER_SLIME_BLOCK.get(), RenderType.translucent());
         }

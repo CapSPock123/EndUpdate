@@ -31,8 +31,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.COLOR_PURPLE).strength(80, 1200)));
 
     public static final RegistryObject<Block> ENDER_SLIME_BLOCK = registerBlock("ender_slime_block",
-            () -> new EnderSlimeBlock(BlockBehaviour.Properties.of().strength(0f).sound(SoundType.SLIME_BLOCK)
-                    .explosionResistance(0f).noOcclusion()));
+            () -> new EnderSlimeBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(0f).sound(SoundType.SLIME_BLOCK)
+                    .explosionResistance(0f).mapColor(MapColor.COLOR_PURPLE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

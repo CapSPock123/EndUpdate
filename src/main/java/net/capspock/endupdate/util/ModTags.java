@@ -21,6 +21,7 @@ public class ModTags {
 
     public static class Items {
         public static final TagKey<Item> ELYTRA_CHESTPLATE = createTag("elytra_chestplate");
+        public static final TagKey<Item> SLINGSHOT_PROJECTILES = createTag("slingshot_projectiles");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));

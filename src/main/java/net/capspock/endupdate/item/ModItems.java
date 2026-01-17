@@ -179,9 +179,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ENDER_SLIMEBALL = ITEMS.register("ender_slimeball",
-            () -> new Item(new Item.Properties()));
+            () -> new EnderSlimeballItem(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x5b1386, 0xa159cb, new Item.Properties()));
+
+    public static final RegistryObject<Item> SLINGSHOT = ITEMS.register("slingshot",
+            () -> new SlingshotItem(new Item.Properties().durability(577)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

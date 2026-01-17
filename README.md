@@ -35,6 +35,13 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.8
+- Slingshot added
+- Ender Slimeball Projectile added
+- Sticky Effect added
+- Bug Fix: Fixed Ender Slime Block not having friction
+- Bug Fix: Fixed Elytra Chestplate's elytra durability taking damage in creative mode
+
 endupdate-1.20.1-0.1.7
 - Ender Slime Block added
 
