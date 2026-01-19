@@ -35,6 +35,11 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.1.9
+- Ender Slime Boots added
+- Recipe for Slingshot added
+- Balancing: Sticky Effect now prevents Elytra flight (+)
+
 endupdate-1.20.1-0.1.8
 - Slingshot added
 - Ender Slimeball Projectile added

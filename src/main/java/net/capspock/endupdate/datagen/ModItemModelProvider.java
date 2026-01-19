@@ -70,6 +70,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedElytraChestplateItem(ModItems.NETHERITE_ELYTRA_CHESTPLATE);
         trimmedElytraChestplateItem(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE);
 
+        trimmedArmorItem(ModItems.ENDER_SLIME_BOOTS);
+
         spawnEggItem(ModItems.ENDER_SLIME_SPAWN_EGG);
     }
 

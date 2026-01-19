@@ -1,5 +1,6 @@
 package net.capspock.endupdate.item.custom;
 
+import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.util.ModTags;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -32,7 +33,7 @@ public class ElytraChestplateItem extends ArmorItem {
 
     @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        return this.getElytraDamageValue(stack) < maxElytraDamage - 1;
+        return this.getElytraDamageValue(stack) < maxElytraDamage - 1 && !entity.hasEffect(ModEffects.STICKY_EFFECT.get());
     }
 
     @Override

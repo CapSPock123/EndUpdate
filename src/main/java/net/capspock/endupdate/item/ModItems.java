@@ -182,9 +182,12 @@ public class ModItems {
             () -> new EnderSlimeballItem(new Item.Properties()));
     public static final RegistryObject<Item> ENDER_SLIME_SPAWN_EGG = ITEMS.register("ender_slime_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.ENDER_SLIME, 0x5b1386, 0xa159cb, new Item.Properties()));
-
     public static final RegistryObject<Item> SLINGSHOT = ITEMS.register("slingshot",
             () -> new SlingshotItem(new Item.Properties().durability(577)));
+    /*Texture adapted from Tinkers' Construct by SlimeKnights
+      Distributed under the MIT License*/
+    public static final RegistryObject<Item> ENDER_SLIME_BOOTS = ITEMS.register("ender_slime_boots",
+            () -> new EnderSlimeArmorItem(ModArmorMaterials.ENDER_SLIME, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

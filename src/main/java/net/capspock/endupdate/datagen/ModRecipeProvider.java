@@ -148,10 +148,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ModItems.ENDERSTEEL_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SLINGSHOT.get())
+                .pattern("SRS")
+                .pattern("#S#")
+                .pattern(" S ")
+                .define('#', ModItems.ENDER_SLIMEBALL.get())
+                .define('S', Items.STICK)
+                .define('R', Items.STRING)
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pWriter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ENDER_SLIME_BLOCK.get())
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
+                .define('#', ModItems.ENDER_SLIMEBALL.get())
+                .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENDER_SLIME_BOOTS.get())
+                .pattern("# #")
+                .pattern("# #")
                 .define('#', ModItems.ENDER_SLIMEBALL.get())
                 .unlockedBy(getHasName(ModItems.ENDER_SLIMEBALL.get()), has(ModItems.ENDER_SLIMEBALL.get())).save(pWriter);
 

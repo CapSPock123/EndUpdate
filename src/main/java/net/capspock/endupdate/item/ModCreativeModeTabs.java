@@ -62,6 +62,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.NETHERITE_ELYTRA_CHESTPLATE.get());
                         output.accept(ModItems.ENDERSTEEL_ELYTRA_CHESTPLATE.get());
                         output.accept(ModItems.SLINGSHOT.get());
+                        output.accept(ModItems.ENDER_SLIME_BOOTS.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_MOBS_TAB = CREATIVE_MODE_TABS.register("end_update_mobs_tab",

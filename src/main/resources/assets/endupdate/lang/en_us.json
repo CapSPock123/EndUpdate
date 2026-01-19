@@ -9,6 +9,7 @@
   "item.endupdate.ender_slimeball": "Ender Slimeball",
   "item.endupdate.ender_slime_spawn_egg": "Ender Slime Spawn Egg",
   "item.endupdate.slingshot": "Slingshot",
+  "item.endupdate.ender_slime_boots": "Ender Slime Boots",
 
   "block.endupdate.ender_slime_block": "Ender Slime Block",
 
@@ -53,6 +54,7 @@
   "tooltip.endupdate.endersteel_hammer.tooltip": "§6Ability: §dEchoes of the Void\n§fGrants a §a20% §fchance for additional Echo ores to spawn after breaking initial ores.",
   "tooltip.endupdate.endersteel_armor.tooltip": "§6Full Set Ability: §dEchoes of the Void\n§fGrants a §a50% §fchance for attacks to be nullified and echoed onto nearby enemies when health is under §a50%§f. (Cooldown: §a5s§f) \nGrants immunity to damage from ender pearls.",
   "tooltip.endupdate.shift.tooltip": "Press §eSHIFT§r for more info",
+
   "tooltip.endupdate.elytra_durability.tooltip": "Elytra Durability: %s / %s",
 
   "actionbar.endupdate.echo_toggle_on": "Echo: §aON",

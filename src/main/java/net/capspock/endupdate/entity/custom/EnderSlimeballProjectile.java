@@ -27,13 +27,10 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.UUID;
-
 import static net.minecraftforge.event.ForgeEventFactory.onProjectileImpact;
 
 public class EnderSlimeballProjectile extends Projectile implements ItemSupplier {
     private static final EntityDataAccessor<ItemStack> DATA_ITEM_STACK = SynchedEntityData.defineId(EnderSlimeballProjectile.class, EntityDataSerializers.ITEM_STACK);
-    private final double baseDamage = 1.0;
 
     public EnderSlimeballProjectile(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -94,11 +91,11 @@ public class EnderSlimeballProjectile extends Projectile implements ItemSupplier
 
     @Override
     protected void onHitEntity(EntityHitResult pResult) {
-        System.out.println(UUID.nameUUIDFromBytes("endupdate:sticky".getBytes()));
         super.onHitEntity(pResult);
         Entity entity = pResult.getEntity();
+        double baseDamage = 1.0;
         float multiplier = (float)this.getDeltaMovement().length();
-        int finalDamage = Mth.ceil(Mth.clamp((double)multiplier * this.baseDamage, 0.0D, Integer.MAX_VALUE));
+        int finalDamage = Mth.ceil(Mth.clamp((double)multiplier * baseDamage, 0.0D, Integer.MAX_VALUE));
 
         Entity owner = this.getOwner();
         DamageSource damagesource;
