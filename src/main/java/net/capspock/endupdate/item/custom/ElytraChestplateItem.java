@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class ElytraChestplateItem extends ArmorItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if(pStack.getTag().contains(key) && pIsAdvanced.isAdvanced()) {
             pTooltipComponents.add(Component.translatable("tooltip.endupdate.elytra_durability.tooltip",
                     maxElytraDamage - this.getElytraDamageValue(pStack), 432));
@@ -33,7 +34,11 @@ public class ElytraChestplateItem extends ArmorItem {
 
     @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        return this.getElytraDamageValue(stack) < maxElytraDamage - 1 && !entity.hasEffect(ModEffects.STICKY_EFFECT.get());
+        if(entity != null) {
+            return this.getElytraDamageValue(stack) < maxElytraDamage - 1 && !entity.hasEffect(ModEffects.STICKY_EFFECT.get());
+        }
+
+        return this.getElytraDamageValue(stack) < maxElytraDamage - 1;
     }
 
     @Override

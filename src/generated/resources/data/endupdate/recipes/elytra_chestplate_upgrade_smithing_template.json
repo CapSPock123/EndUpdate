@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "P": {
+      "item": "minecraft:end_stone"
+    },
+    "T": {
+      "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "#T#",
+    "#P#",
+    "###"
+  ],
+  "result": {
+    "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

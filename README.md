@@ -35,6 +35,14 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.2.0
+- Slimey Potion added
+- Slimey Effect added
+- Added recipe to duplicate Elytra Chestplate Upgrade Smithing Templates
+- Bug Fix: Fixed crash when using /give to give a player an elytra chestplate
+- Bug Fix: Fixed hammers dropping blocks in Creative Mode
+- Bug Fix: Fixed Sticky Effect reducing horse jump strength
+
 endupdate-1.20.1-0.1.9
 - Ender Slime Boots added
 - Recipe for Slingshot added

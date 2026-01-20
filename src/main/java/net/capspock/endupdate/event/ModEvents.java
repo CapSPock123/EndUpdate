@@ -29,6 +29,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -39,6 +41,7 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.AnvilUpdateEvent;
+import net.minecraftforge.event.brewing.PotionBrewEvent;
 import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
@@ -143,7 +146,9 @@ public class ModEvents {
                     BlockState state1 = level.getBlockState(pos);
                     Block block1 = state1.getBlock();
                     level1.destroyBlock(pos, false, serverPlayer);
-                    state1.getBlock().playerDestroy(level1, serverPlayer, pos, state1, level1.getBlockEntity(pos), serverPlayer.getMainHandItem());
+                    if(!player.isCreative()) {
+                        state1.getBlock().playerDestroy(level1, serverPlayer, pos, state1, level1.getBlockEntity(pos), serverPlayer.getMainHandItem());
+                    }
                     serverPlayer.awardStat(Stats.BLOCK_MINED.get(block1));
 
                     if (shouldEchoActivate(hammerItem, blockState, block, serverPlayer)) {
@@ -312,6 +317,14 @@ public class ModEvents {
 
                 event.setMaterialCost(materialAmountToBeConsumed);
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onPotionBrew(PotionBrewEvent event) {
+        for(int i = 0; i < event.getLength(); i++) {
+            System.out.println(PotionUtils.getPotion(event.getItem(i)) == Potions.AWKWARD);
+            System.out.println(event.getItem(i));
         }
     }
 

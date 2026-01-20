@@ -148,6 +148,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('#', ModItems.ENDERSTEEL_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ENDERSTEEL_INGOT.get()), has(ModItems.ENDERSTEEL_INGOT.get())).save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get())
+                .pattern("#T#")
+                .pattern("#P#")
+                .pattern("###")
+                .define('T', ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get())
+                .define('P', Items.END_STONE)
+                .define('#', Items.PHANTOM_MEMBRANE)
+                .unlockedBy(getHasName(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get()),
+                        has(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get())).save(pWriter);
+
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SLINGSHOT.get())
                 .pattern("SRS")
                 .pattern("#S#")

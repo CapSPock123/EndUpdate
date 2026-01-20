@@ -14,6 +14,7 @@ import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.loot.ModLootModifiers;
 import net.capspock.endupdate.particle.ModParticles;
 import net.capspock.endupdate.particle.custom.EnderSlimeballBreakingItemParticle;
+import net.capspock.endupdate.potion.ModPotions;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
 import net.minecraft.client.particle.AttackSweepParticle;
@@ -24,14 +25,20 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.brewing.IBrewingRecipe;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
@@ -43,6 +50,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -67,6 +75,7 @@ public class EndUpdate
         ModEntities.register(modEventBus);
 
         ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
         ModEnchantments.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
@@ -80,7 +89,30 @@ public class EndUpdate
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        IBrewingRecipe iBrewingRecipe = new IBrewingRecipe() {
+            @Override
+            public boolean isInput(@NotNull ItemStack input) {
+                return PotionUtils.getPotion(input) == Potions.AWKWARD;
+            }
 
+            @Override
+            public boolean isIngredient(ItemStack ingredient) {
+                return ingredient.is(ModItems.ENDER_SLIMEBALL.get());
+            }
+
+            @Override
+            public @NotNull ItemStack getOutput(@NotNull ItemStack input, @NotNull ItemStack ingredient) {
+                if(!this.isInput(input) || !this.isIngredient(ingredient)) {
+                    return ItemStack.EMPTY;
+                }
+
+                ItemStack itemStack = new ItemStack(input.getItem());
+                itemStack.setTag(new CompoundTag());
+                return PotionUtils.setPotion(itemStack, ModPotions.SLIMEY_POTION.get());
+            }
+        };
+
+        event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(iBrewingRecipe));
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
