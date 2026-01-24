@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "endupdate:end_altar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 36870895,
+    "spacing": 20,
+    "separation": 6,
+    "type": "minecraft:random_spread"
+  }
+}

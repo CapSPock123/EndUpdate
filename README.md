@@ -35,6 +35,10 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.1-0.2.1
+- End Altar added
+- Void Essence added
+
 endupdate-1.20.1-0.2.0
 - Slimey Potion added
 - Slimey Effect added

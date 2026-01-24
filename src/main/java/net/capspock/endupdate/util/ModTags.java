@@ -30,6 +30,7 @@ public class ModTags {
 
     public static class Biomes {
         public static final TagKey<Biome> OUTER_END_ISLANDS = createTag("outer_end_islands");
+        public static final TagKey<Biome> HAS_END_ALTAR = createTag("has_structure/has_end_altar");
 
         private static TagKey<Biome> createTag(String name) {
             return createBiomeTag(ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, name));

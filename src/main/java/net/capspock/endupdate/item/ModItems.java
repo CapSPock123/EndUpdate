@@ -189,6 +189,9 @@ public class ModItems {
     public static final RegistryObject<Item> ENDER_SLIME_BOOTS = ITEMS.register("ender_slime_boots",
             () -> new EnderSlimeArmorItem(ModArmorMaterials.ENDER_SLIME, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> VOID_ESSENCE = ITEMS.register("void_essence",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

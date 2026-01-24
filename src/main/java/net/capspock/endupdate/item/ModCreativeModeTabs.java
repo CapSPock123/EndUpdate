@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENDER_SLIMEBALL.get());
                         output.accept(ModItems.AURORA_POWDER.get());
                         output.accept(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE.get());
+                        output.accept(ModItems.VOID_ESSENCE.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("end_update_blocks_tab",

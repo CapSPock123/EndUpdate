@@ -47,6 +47,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ELYTRA_CHESTPLATE_UPGRADE_SMITHING_TEMPLATE);
         simpleItem(ModItems.AURORA_POWDER);
         simpleItem(ModItems.ENDER_SLIMEBALL);
+        simpleItem(ModItems.VOID_ESSENCE);
 
         handheldItem(ModItems.ENDERSTEEL_SWORD);
         handheldItem(ModItems.ENDERSTEEL_PICKAXE);

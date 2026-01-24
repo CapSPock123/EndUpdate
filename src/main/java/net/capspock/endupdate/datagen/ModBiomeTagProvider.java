@@ -24,5 +24,9 @@ public class ModBiomeTagProvider extends BiomeTagsProvider {
                 .add(Biomes.END_HIGHLANDS)
                 .add(Biomes.END_MIDLANDS)
                 .add(Biomes.SMALL_END_ISLANDS);
+        tag(ModTags.Biomes.HAS_END_ALTAR)
+                .replace(false)
+                .add(Biomes.END_HIGHLANDS)
+                .add(Biomes.END_MIDLANDS);
     }
 }
