@@ -2,11 +2,14 @@ package net.capspock.endupdate.datagen;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.util.ModTags;
+import net.capspock.endupdate.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,15 +21,18 @@ public class ModBiomeTagProvider extends BiomeTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider) {
-        tag(ModTags.Biomes.OUTER_END_ISLANDS)
-                .add(Biomes.END_BARRENS)
-                .add(Biomes.END_HIGHLANDS)
-                .add(Biomes.END_MIDLANDS)
-                .add(Biomes.SMALL_END_ISLANDS);
+    protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         tag(ModTags.Biomes.HAS_END_ALTAR)
                 .replace(false)
                 .add(Biomes.END_HIGHLANDS)
                 .add(Biomes.END_MIDLANDS);
+        tag(BiomeTags.IS_END)
+                .addOptional(ModBiomes.ENDER_MIRE.location());
+        tag(ModTags.Biomes.OUTER_END_ISLANDS)
+                .add(Biomes.END_BARRENS)
+                .add(Biomes.END_HIGHLANDS)
+                .add(Biomes.END_MIDLANDS)
+                .add(Biomes.SMALL_END_ISLANDS)
+                .addOptional(ModBiomes.ENDER_MIRE.location());
     }
 }

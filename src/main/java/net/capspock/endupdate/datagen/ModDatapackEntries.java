@@ -5,6 +5,7 @@ import net.capspock.endupdate.trim.ModTrimMaterials;
 import net.capspock.endupdate.worldgen.ModBiomeModifiers;
 import net.capspock.endupdate.worldgen.ModConfiguredFeatures;
 import net.capspock.endupdate.worldgen.ModPlacedFeatures;
+import net.capspock.endupdate.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -20,7 +21,8 @@ public class ModDatapackEntries extends DatapackBuiltinEntriesProvider {
             .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
-            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);;
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
+            .add(Registries.BIOME, ModBiomes::bootstrap);
     public ModDatapackEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(EndUpdate.MOD_ID));
     }

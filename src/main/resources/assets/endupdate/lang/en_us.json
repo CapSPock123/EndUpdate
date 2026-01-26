@@ -19,6 +19,8 @@
   "block.endupdate.endersteel_block": "Block of Endersteel",
   "block.endupdate.raw_endersteel_block": "Raw Block of Endersteel",
 
+  "block.endupdate.ender_bog": "Ender Bog",
+
   "item.endupdate.endersteel_sword": "Endersteel Sword",
   "item.endupdate.endersteel_pickaxe": "Endersteel Pickaxe",
   "item.endupdate.endersteel_shovel": "Endersteel Shovel",
@@ -76,6 +78,7 @@
   "item.minecraft.potion.effect.slimey_potion": "Potion of Slimey",
   "item.minecraft.splash_potion.effect.slimey_potion": "Splash Potion of Slimey",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Lingering Potion of Slimey",
+  "item.minecraft.tipped_arrow.effect.slimey_potion": "Arrow of Slimey",
 
   "enchantment.endupdate.levitation": "Levitation",
 

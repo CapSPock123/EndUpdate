@@ -3,6 +3,7 @@ package net.capspock.endupdate.event;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.ParseResults;
 import net.capspock.endupdate.EndUpdate;
+import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.item.ModArmorMaterials;
 import net.capspock.endupdate.item.ModItems;
 import net.capspock.endupdate.item.custom.*;
@@ -19,9 +20,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.monster.EnderMan;
@@ -29,8 +28,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -41,12 +38,13 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.AnvilUpdateEvent;
-import net.minecraftforge.event.brewing.PotionBrewEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityTeleportEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerXpEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -55,6 +53,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Mod.EventBusSubscriber(modid = EndUpdate.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEvents {
@@ -200,6 +199,21 @@ public class ModEvents {
     }
 
     @SubscribeEvent
+    public static void onElytraGlide(TickEvent.PlayerTickEvent event) {
+        if(!event.side.isClient()) {
+            Player player = event.player;
+            if(player != null) {
+                if(player.hasEffect(ModEffects.STICKY_EFFECT.get()) && player.isFallFlying()) {
+                    ItemStack chestplate = player.getInventory().getArmor(2);
+                    if(chestplate.getItem() instanceof ElytraItem || chestplate.getItem() instanceof ElytraChestplateItem) {
+                        player.stopFallFlying();
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onProjectileHit(ProjectileImpactEvent event) {
         Projectile projectile = event.getProjectile();
         Entity owner = event.getProjectile().getOwner();
@@ -207,7 +221,7 @@ public class ModEvents {
             if(event.getRayTraceResult() instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof EnderMan enderMan &&
                     owner instanceof Player player && projectile instanceof Arrow arrow && (player.getMainHandItem().getItem() == ModItems.ENDER_BOW.get() ||
                     player.getOffhandItem().getItem() == ModItems.ENDER_BOW.get())) {
-                event.setCanceled(true);
+                event.setImpactResult(ProjectileImpactEvent.ImpactResult.STOP_AT_CURRENT_NO_DAMAGE);
 
                 float f = (float)arrow.getDeltaMovement().length();
                 int i = Mth.ceil(Mth.clamp((double)f * arrow.getBaseDamage(), 0.0D, Integer.MAX_VALUE));
@@ -286,8 +300,8 @@ public class ModEvents {
                 int materialCost = Math.min(4,right.getCount());
                 double materialRepairValue = maxElytraDamageValue * materialCost * 0.25;
                 double actualRepairValue = Math.min(elytraDamageValue, materialRepairValue);
-                output.getTag().putInt(key, elytraDamageValue - (int) actualRepairValue);
-                if(output.getTag().getInt(key) == 0) {
+                elytraChestplateItem.setElytraDamageValue(output, elytraDamageValue - (int) actualRepairValue);
+                if(elytraChestplateItem.getElytraDamageValue(output) == 0) {
                     output.removeTagKey(key);
                 }
                 event.setOutput(output);
@@ -308,7 +322,6 @@ public class ModEvents {
                     if(materialRepairValue1 != actualRepairValue1) {
                         if(materialRepairValue1 - actualRepairValue1 >= maxElytraDamageValue * 0.25 * (i - 1) &&
                                 materialRepairValue1 - actualRepairValue1 < maxElytraDamageValue * 0.25 * (i + 1)) {
-                            System.out.println("hi2");
                             materialAmountToBeConsumed = i;
                             break;
                         }
@@ -321,10 +334,22 @@ public class ModEvents {
     }
 
     @SubscribeEvent
-    public static void onPotionBrew(PotionBrewEvent event) {
-        for(int i = 0; i < event.getLength(); i++) {
-            System.out.println(PotionUtils.getPotion(event.getItem(i)) == Potions.AWKWARD);
-            System.out.println(event.getItem(i));
+    public static void onPickupXP(PlayerXpEvent.PickupXp event) {
+        Player player = event.getEntity();
+        Map.Entry<EquipmentSlot, ItemStack> entry = EnchantmentHelper.getRandomItemWith(Enchantments.MENDING, player,
+                (itemStack -> itemStack.getItem() instanceof ElytraChestplateItem elytraChestplateItem &&
+                        elytraChestplateItem.getElytraDamageValue(itemStack) > 0));
+        System.out.println(entry);
+        if (entry != null) {
+            ExperienceOrb experienceOrb = event.getOrb();
+            ItemStack itemstack = entry.getValue();
+            int value = experienceOrb.getValue();
+            if(itemstack.getItem() instanceof ElytraChestplateItem elytraChestplateItem) {
+                int damageValue = elytraChestplateItem.getElytraDamageValue(itemstack);
+                int repairValue = Math.min((int) (value * itemstack.getXpRepairRatio()), damageValue);
+                elytraChestplateItem.setElytraDamageValue(itemstack, damageValue - repairValue);
+                event.getOrb().value = value - repairValue / 2;
+            }
         }
     }
 

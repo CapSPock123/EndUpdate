@@ -35,6 +35,19 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.4-0.2.2
+- Updated to 1.20.4
+- Terrablender API dependency added
+- Ender Mire added
+- Ender Bog added
+- Balancing: Ender Slimes are now immune to fall damage (+)
+- Balancing: Ender Slimes no longer spawn outside of the Ender Mire biome (-)
+- Bug Fix: Fixed Sticky Effect not preventing flight on normal Elytras
+- Bug Fix: Elytra Chestplates now work with Unbreaking
+- Bug Fix: Elytra Chestplates now work with Mending
+- Bug Fix: Fixed Slimey Arrow not having a translation
+- Bug Fix: Fixed Elytra Chestplate Upgrade Smithing Template duplication recipe
+
 endupdate-1.20.1-0.2.1
 - End Altar added
 - Void Essence added

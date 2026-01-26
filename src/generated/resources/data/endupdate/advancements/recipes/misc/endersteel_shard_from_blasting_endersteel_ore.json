@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_endersteel_ore",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_endersteel_ore"
     ]
   ],
   "rewards": {
     "recipes": [
       "endupdate:endersteel_shard_from_blasting_endersteel_ore"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

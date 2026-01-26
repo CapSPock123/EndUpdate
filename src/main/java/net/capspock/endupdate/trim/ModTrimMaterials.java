@@ -7,7 +7,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -20,7 +19,7 @@ public class ModTrimMaterials {
             ResourceKey.create(Registries.TRIM_MATERIAL, ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "endersteel"));
 
     public static void bootstrap(BootstapContext<TrimMaterial> context) {
-        register(context, ENDERSTEEL, ModItems.ENDERSTEEL_INGOT.get(), Style.EMPTY.withColor(TextColor.parseColor("#9E39DA")), 1.0F);
+        register(context, ENDERSTEEL, ModItems.ENDERSTEEL_INGOT.get(), Style.EMPTY.withColor(15857218), 1.0F);
     }
 
     public static void register(BootstapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item, Style style, float itemModelIndex) {

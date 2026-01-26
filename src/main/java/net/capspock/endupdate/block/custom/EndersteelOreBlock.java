@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
 public class EndersteelOreBlock extends Block {
     public static final BooleanProperty LIT = BooleanProperty.create("lit");
@@ -27,14 +28,12 @@ public class EndersteelOreBlock extends Block {
         this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 
-
-
-    public void attack(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer) {
+    public void attack(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer) {
         interact(pState, pLevel, pPos);
         super.attack(pState, pLevel, pPos, pPlayer);
     }
 
-    public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
+    public void stepOn(@NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, Entity pEntity) {
         if (!pEntity.isSteppingCarefully()) {
             interact(pState, pLevel, pPos);
         }
@@ -42,7 +41,8 @@ public class EndersteelOreBlock extends Block {
         super.stepOn(pLevel, pPos, pState, pEntity);
     }
 
-    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+    public @NotNull InteractionResult use(@NotNull BlockState pState, Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer,
+                                          @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
         if (pLevel.isClientSide) {
             spawnParticles(pLevel, pPos);
         } else {
@@ -56,12 +56,12 @@ public class EndersteelOreBlock extends Block {
     private static void interact(BlockState pState, Level pLevel, BlockPos pPos) {
         spawnParticles(pLevel, pPos);
         if (!pState.getValue(LIT)) {
-            pLevel.setBlock(pPos, pState.setValue(LIT, Boolean.valueOf(true)), 3);
+            pLevel.setBlock(pPos, pState.setValue(LIT, Boolean.TRUE), 3);
         }
 
     }
 
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+    public void animateTick(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
         if (pState.getValue(LIT)) {
             spawnParticles(pLevel, pPos);
         }
@@ -91,9 +91,9 @@ public class EndersteelOreBlock extends Block {
     }
 
     @Override
-    public void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+    public void randomTick(BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
         if (pState.getValue(LIT)) {
-            pLevel.setBlock(pPos, pState.setValue(LIT, Boolean.valueOf(false)), 3);
+            pLevel.setBlock(pPos, pState.setValue(LIT, Boolean.FALSE), 3);
         }
     }
 

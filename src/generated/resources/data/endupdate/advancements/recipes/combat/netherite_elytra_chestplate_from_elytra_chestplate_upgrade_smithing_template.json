@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_elytra",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_elytra"
     ]
   ],
   "rewards": {
     "recipes": [
       "endupdate:netherite_elytra_chestplate_from_elytra_chestplate_upgrade_smithing_template"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -3,10 +3,10 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:phantom_membrane"
+      "item": "minecraft:end_stone"
     },
     "P": {
-      "item": "minecraft:end_stone"
+      "item": "minecraft:phantom_membrane"
     },
     "T": {
       "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
@@ -18,7 +18,7 @@
     "###"
   ],
   "result": {
+    "count": 2,
     "item": "endupdate:elytra_chestplate_upgrade_smithing_template"
-  },
-  "show_notification": true
+  }
 }

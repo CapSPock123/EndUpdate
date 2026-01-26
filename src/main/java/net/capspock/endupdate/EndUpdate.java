@@ -17,6 +17,8 @@ import net.capspock.endupdate.particle.custom.EnderSlimeballBreakingItemParticle
 import net.capspock.endupdate.potion.ModPotions;
 import net.capspock.endupdate.sound.ModSounds;
 import net.capspock.endupdate.util.ModItemProperties;
+import net.capspock.endupdate.worldgen.biome.ModTerrablender;
+import net.capspock.endupdate.worldgen.biome.surface.ModSurfaceRules;
 import net.minecraft.client.particle.AttackSweepParticle;
 import net.minecraft.client.particle.SonicBoomParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -25,6 +27,7 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -52,6 +55,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(EndUpdate.MOD_ID)
@@ -83,6 +87,8 @@ public class EndUpdate
         ModSounds.register(modEventBus);
         ModParticles.register(modEventBus);
 
+        ModTerrablender.registerBiomes();
+
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -112,7 +118,10 @@ public class EndUpdate
             }
         };
 
-        event.enqueueWork(() -> BrewingRecipeRegistry.addRecipe(iBrewingRecipe));
+        event.enqueueWork(() -> {
+            BrewingRecipeRegistry.addRecipe(iBrewingRecipe);
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeRules());
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -180,7 +189,7 @@ public class EndUpdate
         Distributed under the MIT License */
         @SubscribeEvent @SuppressWarnings({"rawtypes", "unchecked"})
         public static void addLayers(EntityRenderersEvent.AddLayers event) {
-            for (String skin : event.getSkins()) {
+            for (PlayerSkin.Model skin : event.getSkins()) {
                 LivingEntityRenderer renderer = event.getPlayerSkin(skin);
                 if (renderer != null) {
                     renderer.addLayer(new ModElytraLayer(renderer, event.getEntityModels()));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "endupdate:block/ender_bog_bottom",
+    "side": "endupdate:block/ender_bog_side",
+    "top": "endupdate:block/ender_bog_top"
+  }
+}

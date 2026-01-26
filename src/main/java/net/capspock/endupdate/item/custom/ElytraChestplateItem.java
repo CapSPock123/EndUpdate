@@ -1,6 +1,5 @@
 package net.capspock.endupdate.item.custom;
 
-import net.capspock.endupdate.effect.ModEffects;
 import net.capspock.endupdate.util.ModTags;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -8,6 +7,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.DigDurabilityEnchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
@@ -24,8 +25,8 @@ public class ElytraChestplateItem extends ArmorItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
-        if(pStack.getTag().contains(key) && pIsAdvanced.isAdvanced()) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
+        if(this.elytraIsDamaged(pStack) && pIsAdvanced.isAdvanced()) {
             pTooltipComponents.add(Component.translatable("tooltip.endupdate.elytra_durability.tooltip",
                     maxElytraDamage - this.getElytraDamageValue(pStack), 432));
         }
@@ -34,10 +35,6 @@ public class ElytraChestplateItem extends ArmorItem {
 
     @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
-        if(entity != null) {
-            return this.getElytraDamageValue(stack) < maxElytraDamage - 1 && !entity.hasEffect(ModEffects.STICKY_EFFECT.get());
-        }
-
         return this.getElytraDamageValue(stack) < maxElytraDamage - 1;
     }
 
@@ -51,12 +48,16 @@ public class ElytraChestplateItem extends ArmorItem {
                         return true;
                     }
 
-                    if(stack.getTag().contains(key)) {
-                        stack.getTag().putInt(key, this.getElytraDamageValue(stack) + 1);
-                    } else {
-                        CompoundTag tag = new CompoundTag();
-                        tag.putInt(key, 1);
-                        stack.addTagElement(key, tag);
+                    int unbreakingLevel = stack.getEnchantmentLevel(Enchantments.UNBREAKING);
+                    int unbreakingProc = 0;
+                    for(int i = 0; i < unbreakingLevel; i++) {
+                        if(DigDurabilityEnchantment.shouldIgnoreDurabilityDrop(stack, unbreakingLevel, entity.getRandom())) {
+                            unbreakingProc++;
+                        }
+                    }
+
+                    if(unbreakingProc == 0) {
+                        this.setElytraDamageValue(stack, this.getElytraDamageValue(stack) + 1);
                     }
                 }
                 entity.gameEvent(GameEvent.ELYTRA_GLIDE);
@@ -67,18 +68,30 @@ public class ElytraChestplateItem extends ArmorItem {
 
     public int getElytraDamageValue(ItemStack itemStack) {
         return itemStack.is(ModTags.Items.ELYTRA_CHESTPLATE) ?
-                itemStack.getTag().contains(key) ? itemStack.getTag().getInt(key) : 0 : 0;
+                elytraIsDamaged(itemStack) ? itemStack.getTag().getInt(key) : 0 : 0;
+    }
+
+    public void setElytraDamageValue(ItemStack itemStack, int value) {
+        if(itemStack.getItem() instanceof ElytraChestplateItem) {
+            if(elytraIsDamaged(itemStack)) {
+                itemStack.getTag().putInt(key, value);
+            } else {
+                CompoundTag tag = new CompoundTag();
+                tag.putInt(key, value);
+                itemStack.addTagElement(key, tag);
+            }
+        }
     }
 
     public boolean isElytraBarVisible(ItemStack pStack) {
         if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE)) {
-            return pStack.getTag().contains(key);
+            return elytraIsDamaged(pStack);
         }
         return super.isBarVisible(pStack);
     }
 
     public int getElytraBarWidth(ItemStack pStack) {
-        if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE) && pStack.getTag().contains(key)) {
+        if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE) && elytraIsDamaged(pStack)) {
             return Math.round(13.0F - (float)this.getElytraDamageValue(pStack) * 13.0F / (float) maxElytraDamage);
         }
 
@@ -86,10 +99,14 @@ public class ElytraChestplateItem extends ArmorItem {
     }
 
     public int getElytraBarColor(ItemStack pStack) {
-        if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE) && pStack.getTag().contains(key)) {
+        if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE) && elytraIsDamaged(pStack)) {
             float f = Math.max(0.0F, ((maxElytraDamage - (float)this.getElytraDamageValue(pStack)) / maxElytraDamage));
             return Mth.hsvToRgb(f / 3.0F, 1.0F, 1.0F);
         }
         return super.getBarColor(pStack);
+    }
+
+    private boolean elytraIsDamaged(ItemStack itemStack) {
+        return itemStack.getTag().contains(key);
     }
 }

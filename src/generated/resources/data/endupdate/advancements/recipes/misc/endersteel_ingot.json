@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_endersteel_shard",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_endersteel_shard"
     ]
   ],
   "rewards": {
     "recipes": [
       "endupdate:endersteel_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
