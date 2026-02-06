@@ -35,13 +35,25 @@ Optionally, you can also instead use a launcher like Prism or ATLauncher to run 
 
 ## Changelog
 
+endupdate-1.20.4-0.2.3
+- Ender Slime Geyser added
+- Tweak: Changed Ender Bog Sounds
+- Balancing: Ender Mires no longer replace End Midlands
+- Bug Fix: Fixed Elytra Chestplate's second durability bar still showing up when the durability is at max
+- Bug Fix: Fixed Ender Slimeball Projectiles not having a translation
+- Bug Fix: Fixed Ender Slimeball Projectiles creating arrows on the hit entity
+- Bug Fix: Made Ender Bog a pickaxe mineable block
+- Bug Fix: Made Ender Bog require wooden tools to break
+- Bug Fix: Made Raw Block of Endersteel a pickaxe mineable block
+- Bug Fix: Made Raw Block of Endersteel require netherite tools to break
+
 endupdate-1.20.4-0.2.2
 - Updated to 1.20.4
 - Terrablender API dependency added
 - Ender Mire added
 - Ender Bog added
 - Balancing: Ender Slimes are now immune to fall damage (+)
-- Balancing: Ender Slimes no longer spawn outside of the Ender Mire biome (-)
+- Balancing: Ender Slimes no longer spawn outside the Ender Mire biome (-)
 - Bug Fix: Fixed Sticky Effect not preventing flight on normal Elytras
 - Bug Fix: Elytra Chestplates now work with Unbreaking
 - Bug Fix: Elytra Chestplates now work with Mending

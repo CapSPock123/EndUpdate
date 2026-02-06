@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "endupdate:block/ender_slime_geyser_side",
+    "top": "endupdate:block/ender_slime_geyser_top"
+  }
+}

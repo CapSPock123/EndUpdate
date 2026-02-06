@@ -38,6 +38,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_ENDERSTEEL_BLOCK.get());
                         output.accept(ModBlocks.ENDER_SLIME_BLOCK.get());
                         output.accept(ModBlocks.ENDER_BOG.get());
+                        output.accept(ModBlocks.ENDER_SLIME_GEYSER.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> END_UPDATE_EQUIPMENT_TAB = CREATIVE_MODE_TABS.register("end_update_equipment_tab",

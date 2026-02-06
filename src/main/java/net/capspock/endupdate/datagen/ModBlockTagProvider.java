@@ -8,6 +8,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,13 +19,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider) {
+    protected void addTags(HolderLookup.@NotNull Provider pProvider) {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ENDERSTEEL_ORE.get())
-                .add(ModBlocks.ENDERSTEEL_BLOCK.get());
+                .add(ModBlocks.ENDERSTEEL_BLOCK.get())
+                .add(ModBlocks.RAW_ENDERSTEEL_BLOCK.get())
+                .add(ModBlocks.ENDER_BOG.get())
+                .add(ModBlocks.ENDER_SLIME_GEYSER.get());
+        this.tag(Tags.Blocks.NEEDS_WOOD_TOOL)
+                .add(ModBlocks.ENDER_BOG.get())
+                .add(ModBlocks.ENDER_SLIME_GEYSER.get());
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlocks.ENDERSTEEL_ORE.get())
-                .add(ModBlocks.ENDERSTEEL_BLOCK.get());
+                .add(ModBlocks.ENDERSTEEL_BLOCK.get())
+                .add(ModBlocks.RAW_ENDERSTEEL_BLOCK.get());
         this.tag(Tags.Blocks.ORES)
                 .add(ModBlocks.ENDERSTEEL_ORE.get());
         this.tag(BlockTags.BEACON_BASE_BLOCKS)

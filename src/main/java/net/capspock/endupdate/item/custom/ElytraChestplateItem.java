@@ -87,7 +87,8 @@ public class ElytraChestplateItem extends ArmorItem {
         if(pStack.is(ModTags.Items.ELYTRA_CHESTPLATE)) {
             return elytraIsDamaged(pStack);
         }
-        return super.isBarVisible(pStack);
+
+        return false;
     }
 
     public int getElytraBarWidth(ItemStack pStack) {
@@ -95,7 +96,7 @@ public class ElytraChestplateItem extends ArmorItem {
             return Math.round(13.0F - (float)this.getElytraDamageValue(pStack) * 13.0F / (float) maxElytraDamage);
         }
 
-        return super.getBarWidth(pStack);
+        return 0;
     }
 
     public int getElytraBarColor(ItemStack pStack) {
@@ -103,10 +104,14 @@ public class ElytraChestplateItem extends ArmorItem {
             float f = Math.max(0.0F, ((maxElytraDamage - (float)this.getElytraDamageValue(pStack)) / maxElytraDamage));
             return Mth.hsvToRgb(f / 3.0F, 1.0F, 1.0F);
         }
-        return super.getBarColor(pStack);
+        return 0;
     }
 
     private boolean elytraIsDamaged(ItemStack itemStack) {
+        if(itemStack.getTag().getInt(key) == 0) {
+            itemStack.removeTagKey(key);
+        }
+
         return itemStack.getTag().contains(key);
     }
 }

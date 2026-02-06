@@ -339,7 +339,6 @@ public class ModEvents {
         Map.Entry<EquipmentSlot, ItemStack> entry = EnchantmentHelper.getRandomItemWith(Enchantments.MENDING, player,
                 (itemStack -> itemStack.getItem() instanceof ElytraChestplateItem elytraChestplateItem &&
                         elytraChestplateItem.getElytraDamageValue(itemStack) > 0));
-        System.out.println(entry);
         if (entry != null) {
             ExperienceOrb experienceOrb = event.getOrb();
             ItemStack itemstack = entry.getValue();

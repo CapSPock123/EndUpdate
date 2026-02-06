@@ -81,7 +81,7 @@ public class EnderSlimeballProjectile extends Projectile implements ItemSupplier
     }
 
     @Override
-    protected void onHit(HitResult pResult) {
+    protected void onHit(@NotNull HitResult pResult) {
         super.onHit(pResult);
         if (!this.level().isClientSide) {
             this.level().broadcastEntityEvent(this, (byte)3);
@@ -90,7 +90,7 @@ public class EnderSlimeballProjectile extends Projectile implements ItemSupplier
     }
 
     @Override
-    protected void onHitEntity(EntityHitResult pResult) {
+    protected void onHitEntity(@NotNull EntityHitResult pResult) {
         super.onHitEntity(pResult);
         Entity entity = pResult.getEntity();
         double baseDamage = 1.0;
@@ -114,10 +114,6 @@ public class EnderSlimeballProjectile extends Projectile implements ItemSupplier
             }
 
             if (entity instanceof LivingEntity livingentity) {
-                if (!this.level().isClientSide()) {
-                    livingentity.setArrowCount(livingentity.getArrowCount() + 1);
-                }
-
                 this.doPostHurtEffects(livingentity);
                 this.level().broadcastEntityEvent(this, (byte)3);
             }

@@ -30,6 +30,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_ENDERSTEEL_BLOCK.get());
         this.dropSelf(ModBlocks.ENDER_SLIME_BLOCK.get());
         this.dropSelf(ModBlocks.ENDER_BOG.get());
+        this.dropWhenSilkTouch(ModBlocks.ENDER_SLIME_GEYSER.get());
     }
 
     @Override

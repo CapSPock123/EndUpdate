@@ -2,8 +2,10 @@ package net.capspock.endupdate.block;
 
 import net.capspock.endupdate.EndUpdate;
 import net.capspock.endupdate.block.custom.EnderSlimeBlock;
+import net.capspock.endupdate.block.custom.EnderSlimeGeyserBlock;
 import net.capspock.endupdate.block.custom.EndersteelOreBlock;
 import net.capspock.endupdate.item.ModItems;
+import net.capspock.endupdate.sound.ModSounds;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -35,7 +37,9 @@ public class ModBlocks {
                     .explosionResistance(0f).mapColor(MapColor.COLOR_PURPLE)));
 
     public static final RegistryObject<Block> ENDER_BOG = registerBlock("ender_bog",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).mapColor(MapColor.COLOR_PURPLE).sound(SoundType.NYLIUM).friction(0.85f)));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.END_STONE).mapColor(MapColor.COLOR_PURPLE).sound(ModSounds.ENDER_BOG_SOUNDS).friction(0.85f)));
+    public static final RegistryObject<Block> ENDER_SLIME_GEYSER = registerBlock("ender_slime_geyser",
+            () -> new EnderSlimeGeyserBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.ENDER_BOG.get()).randomTicks()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

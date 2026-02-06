@@ -1,6 +1,9 @@
 {
   "values": [
     "endupdate:endersteel_ore",
-    "endupdate:endersteel_block"
+    "endupdate:endersteel_block",
+    "endupdate:raw_endersteel_block",
+    "endupdate:ender_bog",
+    "endupdate:ender_slime_geyser"
   ]
 }

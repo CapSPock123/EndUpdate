@@ -20,6 +20,7 @@
   "block.endupdate.raw_endersteel_block": "Raw Block of Endersteel",
 
   "block.endupdate.ender_bog": "Ender Bog",
+  "block.endupdate.ender_slime_geyser": "Ender Slime Geyser",
 
   "item.endupdate.endersteel_sword": "Endersteel Sword",
   "item.endupdate.endersteel_pickaxe": "Endersteel Pickaxe",
@@ -82,5 +83,6 @@
 
   "enchantment.endupdate.levitation": "Levitation",
 
-  "entity.endupdate.ender_slime": "Ender Slime"
+  "entity.endupdate.ender_slime": "Ender Slime",
+  "entity.endupdate.ender_slimeball": "Ender Slimeball"
 }

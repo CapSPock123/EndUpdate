@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlimeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 
 public class EnderSlimeBlock extends SlimeBlock {
     public EnderSlimeBlock(Properties pProperties) {
@@ -22,7 +23,7 @@ public class EnderSlimeBlock extends SlimeBlock {
     }
 
     @Override
-    public void updateEntityAfterFallOn(BlockGetter pLevel, Entity pEntity) {
+    public void updateEntityAfterFallOn(@NotNull BlockGetter pLevel, Entity pEntity) {
         if (pEntity.isSuppressingBounce()) {
             super.updateEntityAfterFallOn(pLevel, pEntity);
         } else {

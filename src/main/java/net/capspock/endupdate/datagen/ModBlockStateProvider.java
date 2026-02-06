@@ -21,6 +21,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_ENDERSTEEL_BLOCK);
 
         cubeBottomTopBlockWithItem(ModBlocks.ENDER_BOG);
+        cubeTopBlockWithItem(ModBlocks.ENDER_SLIME_GEYSER);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
@@ -29,9 +30,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void cubeBottomTopBlockWithItem(RegistryObject<Block> blockRegistryObject) {
         String path = blockRegistryObject.getId().getPath();
-        simpleBlockWithItem(blockRegistryObject.get(), models().cubeBottomTop(path,
+        simpleBlockWithItem(blockRegistryObject.get(), models().cubeBottomTop(path    ,
                 ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "block/" + path + "_side"),
                 ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "block/" + path + "_bottom"),
+                ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "block/" + path + "_top")));
+    }
+
+    private void cubeTopBlockWithItem(RegistryObject<Block> blockRegistryObject) {
+        String path = blockRegistryObject.getId().getPath();
+        simpleBlockWithItem(blockRegistryObject.get(), models().cubeTop(path,
+                ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "block/" + path + "_side"),
                 ResourceLocation.fromNamespaceAndPath(EndUpdate.MOD_ID, "block/" + path + "_top")));
     }
 }
