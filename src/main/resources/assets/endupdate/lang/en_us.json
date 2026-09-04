@@ -1,0 +1,13 @@
+{
+  "itemGroup.endupdate": "Example Mod Tab",
+  "block.endupdate.example_block": "Example Block",
+  "item.endupdate.example_item": "Example Item",
+
+  "endupdate.configuration.title": "End Update Configs",
+  "endupdate.configuration.section.endupdate.common.toml": "End Update Configs",
+  "endupdate.configuration.section.endupdate.common.toml.title": "End Update Configs",
+  "endupdate.configuration.items": "Item List",
+  "endupdate.configuration.logDirtBlock": "Log Dirt Block",
+  "endupdate.configuration.magicNumberIntroduction": "Magic Number Text",
+  "endupdate.configuration.magicNumber": "Magic Number"
+}
